@@ -6,17 +6,21 @@
 //  Copyright © 2019 ZDD. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "TEMPAppDelegate.h"
 
-@interface AppDelegate ()
+#import "TEMPSDKManager.h"
+#import "TEMPLaunchManager.h"
+@interface TEMPAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation TEMPAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [[TEMPSDKManager defaultManager] launchInWindow:self.window options:launchOptions];
+    [[TEMPLaunchManager defaultManager] launchInWindow:self.window];
     return YES;
 }
 

@@ -7,9 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		753BD049224E6B65003C4424 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BD048224E6B65003C4424 /* AppDelegate.m */; };
-		753BD04C224E6B65003C4424 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BD04B224E6B65003C4424 /* ViewController.m */; };
-		753BD04F224E6B65003C4424 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753BD04D224E6B65003C4424 /* Main.storyboard */; };
+		752A1A77224E7F5F004B4B31 /* mook.json in Resources */ = {isa = PBXBuildFile; fileRef = 752A1A76224E7F5F004B4B31 /* mook.json */; };
+		752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7A224E7F7A004B4B31 /* UIView+LH.m */; };
+		752A1A88224E7F7F004B4B31 /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7B224E7F7A004B4B31 /* UIView+ZDD.m */; };
+		752A1A89224E7F7F004B4B31 /* NSMutableDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7E224E7F7C004B4B31 /* NSMutableDictionary+Attributes.m */; };
+		752A1A8A224E7F7F004B4B31 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A81224E7F7D004B4B31 /* NSString+Regex.m */; };
+		752A1A8B224E7F7F004B4B31 /* NSMutableAttributedString+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A83224E7F7E004B4B31 /* NSMutableAttributedString+Chain.m */; };
+		752A1A8C224E7F7F004B4B31 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A85224E7F7E004B4B31 /* UIColor+CustomColors.m */; };
+		752A1A8D224E7F7F004B4B31 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A86224E7F7E004B4B31 /* ASButtonNode+LHExtension.m */; };
+		752A1A91224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A90224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		752A1A97224E7FC3004B4B31 /* TEMPKeyConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A95224E7FC3004B4B31 /* TEMPKeyConfiguration.m */; };
+		752A1A9B224E7FD2004B4B31 /* ZDDNotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A9A224E7FD2004B4B31 /* ZDDNotificationName.m */; };
+		752A1A9F224E7FE0004B4B31 /* ZDDThemeConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A9E224E7FE0004B4B31 /* ZDDThemeConfiguration.m */; };
+		752A1AA2224E7FEC004B4B31 /* UIColor+ZDDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AA1224E7FEC004B4B31 /* UIColor+ZDDColor.m */; };
+		752A1AA7224E7FF6004B4B31 /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AA3224E7FF6004B4B31 /* UIView+ZDD.m */; };
+		752A1AA8224E7FF6004B4B31 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AA5224E7FF6004B4B31 /* UIImage+Blur.m */; };
+		752A1AB1224E8011004B4B31 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AAB224E800F004B4B31 /* Foundation+Log.m */; };
+		752A1AB2224E8011004B4B31 /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AAD224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.m */; };
+		752A1AB3224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AAF224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m */; };
+		752A1AB4224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AB0224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m */; };
+		752A1AB8224E801F004B4B31 /* ZDDPhotoBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AB6224E801F004B4B31 /* ZDDPhotoBrowseView.m */; };
+		752A1ABC224E8359004B4B31 /* GODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ABA224E8358004B4B31 /* GODWebViewController.m */; };
+		752A1AC3224E8377004B4B31 /* TEMPAppDelegate+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ABF224E8375004B4B31 /* TEMPAppDelegate+OpenURL.m */; };
+		752A1AC4224E8377004B4B31 /* TEMPAppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AC1224E8376004B4B31 /* TEMPAppDelegate+PushService.m */; };
+		752A1AC5224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AC2224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m */; };
+		752A1ACA224E83A8004B4B31 /* TEMPLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AC9224E83A8004B4B31 /* TEMPLaunchManager.m */; };
+		752A1ACD224E83B5004B4B31 /* TEMPSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ACC224E83B5004B4B31 /* TEMPSDKManager.m */; };
+		752A1AD6224E83DC004B4B31 /* ZDDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD0224E83DA004B4B31 /* ZDDTabBarController.m */; };
+		752A1AD7224E83DC004B4B31 /* ZDDNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD3224E83DB004B4B31 /* ZDDNavController.m */; };
+		752A1AD8224E83DC004B4B31 /* ZDDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD5224E83DC004B4B31 /* ZDDBaseViewController.m */; };
+		752A1ADC224E83F7004B4B31 /* YMHLVideoFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ADB224E83F6004B4B31 /* YMHLVideoFlowViewController.m */; };
+		752A1AE3224E8400004B4B31 /* YMHLVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */; };
+		752A1AE4224E8400004B4B31 /* YMHLVideoFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE0224E83FE004B4B31 /* YMHLVideoFlowLayout.m */; };
+		752A1AE5224E8400004B4B31 /* YMHLVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE2224E83FF004B4B31 /* YMHLVideoModel.m */; };
+		752A1AEB224E8433004B4B31 /* ZDDThridController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE9224E8432004B4B31 /* ZDDThridController.m */; };
+		752A1AEE224E8441004B4B31 /* ZDDSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AEC224E8440004B4B31 /* ZDDSecondController.m */; };
+		752A1AF5224E8462004B4B31 /* ZDDFirstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AF3224E8461004B4B31 /* ZDDFirstController.m */; };
+		752A1AF8224E8472004B4B31 /* ZDDFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AF6224E8471004B4B31 /* ZDDFileModel.m */; };
+		752A1AFF224E847C004B4B31 /* ZDDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AFB224E847B004B4B31 /* ZDDInputView.m */; };
+		752A1B00224E847C004B4B31 /* ZDDFistListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AFC224E847B004B4B31 /* ZDDFistListCellNode.m */; };
+		752A1B01224E847C004B4B31 /* ZDDCommentLIstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AFE224E847C004B4B31 /* ZDDCommentLIstView.m */; };
+		753BD049224E6B65003C4424 /* TEMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BD048224E6B65003C4424 /* TEMPAppDelegate.m */; };
 		753BD051224E6B66003C4424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753BD050224E6B66003C4424 /* Assets.xcassets */; };
 		753BD054224E6B66003C4424 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753BD052224E6B66003C4424 /* LaunchScreen.storyboard */; };
 		753BD057224E6B66003C4424 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BD056224E6B66003C4424 /* main.m */; };
@@ -19,12 +57,89 @@
 /* Begin PBXFileReference section */
 		0FC519B347F9056DD4EFD649 /* libPods-HAHA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HAHA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4B2110EE268EF4AA6ABCD8 /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
+		752A1A74224E7EF7004B4B31 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		752A1A76224E7F5F004B4B31 /* mook.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mook.json; sourceTree = "<group>"; };
+		752A1A79224E7F7A004B4B31 /* NSMutableAttributedString+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Chain.h"; sourceTree = "<group>"; };
+		752A1A7A224E7F7A004B4B31 /* UIView+LH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LH.m"; sourceTree = "<group>"; };
+		752A1A7B224E7F7A004B4B31 /* UIView+ZDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZDD.m"; sourceTree = "<group>"; };
+		752A1A7C224E7F7B004B4B31 /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
+		752A1A7D224E7F7B004B4B31 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		752A1A7E224E7F7C004B4B31 /* NSMutableDictionary+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Attributes.m"; sourceTree = "<group>"; };
+		752A1A7F224E7F7C004B4B31 /* UIView+ZDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
+		752A1A80224E7F7C004B4B31 /* UIView+LH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LH.h"; sourceTree = "<group>"; };
+		752A1A81224E7F7D004B4B31 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
+		752A1A82224E7F7D004B4B31 /* ASButtonNode+LHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASButtonNode+LHExtension.h"; sourceTree = "<group>"; };
+		752A1A83224E7F7E004B4B31 /* NSMutableAttributedString+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Chain.m"; sourceTree = "<group>"; };
+		752A1A84224E7F7E004B4B31 /* NSMutableDictionary+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Attributes.h"; sourceTree = "<group>"; };
+		752A1A85224E7F7E004B4B31 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
+		752A1A86224E7F7E004B4B31 /* ASButtonNode+LHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASButtonNode+LHExtension.m"; sourceTree = "<group>"; };
+		752A1A8F224E7F92004B4B31 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		752A1A90224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		752A1A93224E7FAB004B4B31 /* TEMPMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPMacro.h; sourceTree = "<group>"; };
+		752A1A95224E7FC3004B4B31 /* TEMPKeyConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPKeyConfiguration.m; sourceTree = "<group>"; };
+		752A1A96224E7FC3004B4B31 /* TEMPKeyConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPKeyConfiguration.h; sourceTree = "<group>"; };
+		752A1A99224E7FD2004B4B31 /* ZDDNotificationName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDNotificationName.h; sourceTree = "<group>"; };
+		752A1A9A224E7FD2004B4B31 /* ZDDNotificationName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDNotificationName.m; sourceTree = "<group>"; };
+		752A1A9D224E7FE0004B4B31 /* ZDDThemeConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDThemeConfiguration.h; sourceTree = "<group>"; };
+		752A1A9E224E7FE0004B4B31 /* ZDDThemeConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDThemeConfiguration.m; sourceTree = "<group>"; };
+		752A1AA0224E7FEB004B4B31 /* UIColor+ZDDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZDDColor.h"; sourceTree = "<group>"; };
+		752A1AA1224E7FEC004B4B31 /* UIColor+ZDDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZDDColor.m"; sourceTree = "<group>"; };
+		752A1AA3224E7FF6004B4B31 /* UIView+ZDD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZDD.m"; sourceTree = "<group>"; };
+		752A1AA4224E7FF6004B4B31 /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blur.h"; sourceTree = "<group>"; };
+		752A1AA5224E7FF6004B4B31 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
+		752A1AA6224E7FF6004B4B31 /* UIView+ZDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
+		752A1AAA224E800F004B4B31 /* NSSet+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		752A1AAB224E800F004B4B31 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		752A1AAC224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		752A1AAD224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		752A1AAE224E8010004B4B31 /* NSArray+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		752A1AAF224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		752A1AB0224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		752A1AB6224E801F004B4B31 /* ZDDPhotoBrowseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDPhotoBrowseView.m; sourceTree = "<group>"; };
+		752A1AB7224E801F004B4B31 /* ZDDPhotoBrowseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDPhotoBrowseView.h; sourceTree = "<group>"; };
+		752A1ABA224E8358004B4B31 /* GODWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODWebViewController.m; sourceTree = "<group>"; };
+		752A1ABB224E8358004B4B31 /* GODWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODWebViewController.h; sourceTree = "<group>"; };
+		752A1ABD224E8374004B4B31 /* TEMPAppDelegate+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TEMPAppDelegate+OpenURL.h"; sourceTree = "<group>"; };
+		752A1ABE224E8374004B4B31 /* TEMPAppDelegate+BackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TEMPAppDelegate+BackgroundTask.h"; sourceTree = "<group>"; };
+		752A1ABF224E8375004B4B31 /* TEMPAppDelegate+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TEMPAppDelegate+OpenURL.m"; sourceTree = "<group>"; };
+		752A1AC0224E8376004B4B31 /* TEMPAppDelegate+PushService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TEMPAppDelegate+PushService.h"; sourceTree = "<group>"; };
+		752A1AC1224E8376004B4B31 /* TEMPAppDelegate+PushService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TEMPAppDelegate+PushService.m"; sourceTree = "<group>"; };
+		752A1AC2224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TEMPAppDelegate+BackgroundTask.m"; sourceTree = "<group>"; };
+		752A1AC8224E83A7004B4B31 /* TEMPLaunchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPLaunchManager.h; sourceTree = "<group>"; };
+		752A1AC9224E83A8004B4B31 /* TEMPLaunchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPLaunchManager.m; sourceTree = "<group>"; };
+		752A1ACB224E83B5004B4B31 /* TEMPSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPSDKManager.h; sourceTree = "<group>"; };
+		752A1ACC224E83B5004B4B31 /* TEMPSDKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPSDKManager.m; sourceTree = "<group>"; };
+		752A1AD0224E83DA004B4B31 /* ZDDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDTabBarController.m; sourceTree = "<group>"; };
+		752A1AD1224E83DA004B4B31 /* ZDDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDTabBarController.h; sourceTree = "<group>"; };
+		752A1AD2224E83DB004B4B31 /* ZDDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDBaseViewController.h; sourceTree = "<group>"; };
+		752A1AD3224E83DB004B4B31 /* ZDDNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDNavController.m; sourceTree = "<group>"; };
+		752A1AD4224E83DB004B4B31 /* ZDDNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDNavController.h; sourceTree = "<group>"; };
+		752A1AD5224E83DC004B4B31 /* ZDDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDBaseViewController.m; sourceTree = "<group>"; };
+		752A1ADA224E83F6004B4B31 /* YMHLVideoFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoFlowViewController.h; sourceTree = "<group>"; };
+		752A1ADB224E83F6004B4B31 /* YMHLVideoFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoFlowViewController.m; sourceTree = "<group>"; };
+		752A1ADD224E83FD004B4B31 /* YMHLVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoModel.h; sourceTree = "<group>"; };
+		752A1ADE224E83FD004B4B31 /* YMHLVideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoCollectionViewCell.h; sourceTree = "<group>"; };
+		752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoCollectionViewCell.m; sourceTree = "<group>"; };
+		752A1AE0224E83FE004B4B31 /* YMHLVideoFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoFlowLayout.m; sourceTree = "<group>"; };
+		752A1AE1224E83FF004B4B31 /* YMHLVideoFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoFlowLayout.h; sourceTree = "<group>"; };
+		752A1AE2224E83FF004B4B31 /* YMHLVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoModel.m; sourceTree = "<group>"; };
+		752A1AE9224E8432004B4B31 /* ZDDThridController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDThridController.m; sourceTree = "<group>"; };
+		752A1AEA224E8433004B4B31 /* ZDDThridController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDThridController.h; sourceTree = "<group>"; };
+		752A1AEC224E8440004B4B31 /* ZDDSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDSecondController.m; sourceTree = "<group>"; };
+		752A1AED224E8441004B4B31 /* ZDDSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDSecondController.h; sourceTree = "<group>"; };
+		752A1AF3224E8461004B4B31 /* ZDDFirstController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDFirstController.m; sourceTree = "<group>"; };
+		752A1AF4224E8462004B4B31 /* ZDDFirstController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDFirstController.h; sourceTree = "<group>"; };
+		752A1AF6224E8471004B4B31 /* ZDDFileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDFileModel.m; sourceTree = "<group>"; };
+		752A1AF7224E8472004B4B31 /* ZDDFileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDFileModel.h; sourceTree = "<group>"; };
+		752A1AF9224E847A004B4B31 /* ZDDCommentLIstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDCommentLIstView.h; sourceTree = "<group>"; };
+		752A1AFA224E847A004B4B31 /* ZDDFistListCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDFistListCellNode.h; sourceTree = "<group>"; };
+		752A1AFB224E847B004B4B31 /* ZDDInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDInputView.m; sourceTree = "<group>"; };
+		752A1AFC224E847B004B4B31 /* ZDDFistListCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDFistListCellNode.m; sourceTree = "<group>"; };
+		752A1AFD224E847B004B4B31 /* ZDDInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDInputView.h; sourceTree = "<group>"; };
+		752A1AFE224E847C004B4B31 /* ZDDCommentLIstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentLIstView.m; sourceTree = "<group>"; };
 		753BD044224E6B64003C4424 /* HAHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		753BD047224E6B64003C4424 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		753BD048224E6B65003C4424 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		753BD04A224E6B65003C4424 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		753BD04B224E6B65003C4424 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		753BD04E224E6B65003C4424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		753BD047224E6B64003C4424 /* TEMPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEMPAppDelegate.h; sourceTree = "<group>"; };
+		753BD048224E6B65003C4424 /* TEMPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEMPAppDelegate.m; sourceTree = "<group>"; };
 		753BD050224E6B66003C4424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		753BD053224E6B66003C4424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		753BD055224E6B66003C4424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +159,248 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		752A1A75224E7F4A004B4B31 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AB5224E8016004B4B31 /* PB */,
+				752A1AA9224E8006004B4B31 /* UniLog */,
+				752A1A9C224E7FD6004B4B31 /* Theme */,
+				752A1A98224E7FC7004B4B31 /* Noti */,
+				752A1A94224E7FB6004B4B31 /* KeyConfig */,
+				752A1A92224E7F9B004B4B31 /* Macro */,
+				752A1A8E224E7F85004B4B31 /* Ges */,
+				752A1A78224E7F68004B4B31 /* Category */,
+				752A1A76224E7F5F004B4B31 /* mook.json */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		752A1A78224E7F68004B4B31 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				752A1ABE224E8374004B4B31 /* TEMPAppDelegate+BackgroundTask.h */,
+				752A1AC2224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m */,
+				752A1ABD224E8374004B4B31 /* TEMPAppDelegate+OpenURL.h */,
+				752A1ABF224E8375004B4B31 /* TEMPAppDelegate+OpenURL.m */,
+				752A1AC0224E8376004B4B31 /* TEMPAppDelegate+PushService.h */,
+				752A1AC1224E8376004B4B31 /* TEMPAppDelegate+PushService.m */,
+				752A1A82224E7F7D004B4B31 /* ASButtonNode+LHExtension.h */,
+				752A1A86224E7F7E004B4B31 /* ASButtonNode+LHExtension.m */,
+				752A1A79224E7F7A004B4B31 /* NSMutableAttributedString+Chain.h */,
+				752A1A83224E7F7E004B4B31 /* NSMutableAttributedString+Chain.m */,
+				752A1A84224E7F7E004B4B31 /* NSMutableDictionary+Attributes.h */,
+				752A1A7E224E7F7C004B4B31 /* NSMutableDictionary+Attributes.m */,
+				752A1A7C224E7F7B004B4B31 /* NSString+Regex.h */,
+				752A1A81224E7F7D004B4B31 /* NSString+Regex.m */,
+				752A1A7D224E7F7B004B4B31 /* UIColor+CustomColors.h */,
+				752A1A85224E7F7E004B4B31 /* UIColor+CustomColors.m */,
+				752A1A80224E7F7C004B4B31 /* UIView+LH.h */,
+				752A1A7A224E7F7A004B4B31 /* UIView+LH.m */,
+				752A1A7F224E7F7C004B4B31 /* UIView+ZDD.h */,
+				752A1A7B224E7F7A004B4B31 /* UIView+ZDD.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		752A1A8E224E7F85004B4B31 /* Ges */ = {
+			isa = PBXGroup;
+			children = (
+				752A1A8F224E7F92004B4B31 /* UINavigationController+FDFullscreenPopGesture.h */,
+				752A1A90224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = Ges;
+			sourceTree = "<group>";
+		};
+		752A1A92224E7F9B004B4B31 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AA4224E7FF6004B4B31 /* UIImage+Blur.h */,
+				752A1AA5224E7FF6004B4B31 /* UIImage+Blur.m */,
+				752A1AA6224E7FF6004B4B31 /* UIView+ZDD.h */,
+				752A1AA3224E7FF6004B4B31 /* UIView+ZDD.m */,
+				752A1A93224E7FAB004B4B31 /* TEMPMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		752A1A94224E7FB6004B4B31 /* KeyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				752A1A96224E7FC3004B4B31 /* TEMPKeyConfiguration.h */,
+				752A1A95224E7FC3004B4B31 /* TEMPKeyConfiguration.m */,
+			);
+			path = KeyConfig;
+			sourceTree = "<group>";
+		};
+		752A1A98224E7FC7004B4B31 /* Noti */ = {
+			isa = PBXGroup;
+			children = (
+				752A1A99224E7FD2004B4B31 /* ZDDNotificationName.h */,
+				752A1A9A224E7FD2004B4B31 /* ZDDNotificationName.m */,
+			);
+			path = Noti;
+			sourceTree = "<group>";
+		};
+		752A1A9C224E7FD6004B4B31 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AA0224E7FEB004B4B31 /* UIColor+ZDDColor.h */,
+				752A1AA1224E7FEC004B4B31 /* UIColor+ZDDColor.m */,
+				752A1A9D224E7FE0004B4B31 /* ZDDThemeConfiguration.h */,
+				752A1A9E224E7FE0004B4B31 /* ZDDThemeConfiguration.m */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		752A1AA9224E8006004B4B31 /* UniLog */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AAB224E800F004B4B31 /* Foundation+Log.m */,
+				752A1AAE224E8010004B4B31 /* NSArray+HYBUnicodeReadable.h */,
+				752A1AAF224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m */,
+				752A1AAC224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.h */,
+				752A1AAD224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.m */,
+				752A1AAA224E800F004B4B31 /* NSSet+HYBUnicodeReadable.h */,
+				752A1AB0224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m */,
+			);
+			path = UniLog;
+			sourceTree = "<group>";
+		};
+		752A1AB5224E8016004B4B31 /* PB */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AB7224E801F004B4B31 /* ZDDPhotoBrowseView.h */,
+				752A1AB6224E801F004B4B31 /* ZDDPhotoBrowseView.m */,
+			);
+			path = PB;
+			sourceTree = "<group>";
+		};
+		752A1AB9224E833D004B4B31 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				752A1ABB224E8358004B4B31 /* GODWebViewController.h */,
+				752A1ABA224E8358004B4B31 /* GODWebViewController.m */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		752A1AC6224E8388004B4B31 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AC8224E83A7004B4B31 /* TEMPLaunchManager.h */,
+				752A1AC9224E83A8004B4B31 /* TEMPLaunchManager.m */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		752A1AC7224E838E004B4B31 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				752A1ACB224E83B5004B4B31 /* TEMPSDKManager.h */,
+				752A1ACC224E83B5004B4B31 /* TEMPSDKManager.m */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		752A1ACE224E83C1004B4B31 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AE8224E8418004B4B31 /* Three */,
+				752A1AE7224E8413004B4B31 /* Two */,
+				752A1AE6224E840D004B4B31 /* One */,
+				752A1AD9224E83E8004B4B31 /* Video */,
+				752A1ACF224E83CB004B4B31 /* Base */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		752A1ACF224E83CB004B4B31 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AD2224E83DB004B4B31 /* ZDDBaseViewController.h */,
+				752A1AD5224E83DC004B4B31 /* ZDDBaseViewController.m */,
+				752A1AD4224E83DB004B4B31 /* ZDDNavController.h */,
+				752A1AD3224E83DB004B4B31 /* ZDDNavController.m */,
+				752A1AD1224E83DA004B4B31 /* ZDDTabBarController.h */,
+				752A1AD0224E83DA004B4B31 /* ZDDTabBarController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		752A1AD9224E83E8004B4B31 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				752A1ADE224E83FD004B4B31 /* YMHLVideoCollectionViewCell.h */,
+				752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */,
+				752A1AE1224E83FF004B4B31 /* YMHLVideoFlowLayout.h */,
+				752A1AE0224E83FE004B4B31 /* YMHLVideoFlowLayout.m */,
+				752A1ADD224E83FD004B4B31 /* YMHLVideoModel.h */,
+				752A1AE2224E83FF004B4B31 /* YMHLVideoModel.m */,
+				752A1ADA224E83F6004B4B31 /* YMHLVideoFlowViewController.h */,
+				752A1ADB224E83F6004B4B31 /* YMHLVideoFlowViewController.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		752A1AE6224E840D004B4B31 /* One */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AF2224E8453004B4B31 /* M */,
+				752A1AF1224E844F004B4B31 /* V */,
+				752A1AEF224E8444004B4B31 /* C */,
+			);
+			path = One;
+			sourceTree = "<group>";
+		};
+		752A1AE7224E8413004B4B31 /* Two */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AED224E8441004B4B31 /* ZDDSecondController.h */,
+				752A1AEC224E8440004B4B31 /* ZDDSecondController.m */,
+			);
+			path = Two;
+			sourceTree = "<group>";
+		};
+		752A1AE8224E8418004B4B31 /* Three */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AEA224E8433004B4B31 /* ZDDThridController.h */,
+				752A1AE9224E8432004B4B31 /* ZDDThridController.m */,
+			);
+			path = Three;
+			sourceTree = "<group>";
+		};
+		752A1AEF224E8444004B4B31 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AF4224E8462004B4B31 /* ZDDFirstController.h */,
+				752A1AF3224E8461004B4B31 /* ZDDFirstController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		752A1AF1224E844F004B4B31 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AF9224E847A004B4B31 /* ZDDCommentLIstView.h */,
+				752A1AFE224E847C004B4B31 /* ZDDCommentLIstView.m */,
+				752A1AFA224E847A004B4B31 /* ZDDFistListCellNode.h */,
+				752A1AFC224E847B004B4B31 /* ZDDFistListCellNode.m */,
+				752A1AFD224E847B004B4B31 /* ZDDInputView.h */,
+				752A1AFB224E847B004B4B31 /* ZDDInputView.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		752A1AF2224E8453004B4B31 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				752A1AF7224E8472004B4B31 /* ZDDFileModel.h */,
+				752A1AF6224E8471004B4B31 /* ZDDFileModel.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
 		753BD03B224E6B64003C4424 = {
 			isa = PBXGroup;
 			children = (
@@ -65,15 +422,18 @@
 		753BD046224E6B64003C4424 /* HAHA */ = {
 			isa = PBXGroup;
 			children = (
-				753BD047224E6B64003C4424 /* AppDelegate.h */,
-				753BD048224E6B65003C4424 /* AppDelegate.m */,
-				753BD04A224E6B65003C4424 /* ViewController.h */,
-				753BD04B224E6B65003C4424 /* ViewController.m */,
-				753BD04D224E6B65003C4424 /* Main.storyboard */,
+				752A1ACE224E83C1004B4B31 /* Business */,
+				752A1AC7224E838E004B4B31 /* SDK */,
+				752A1AC6224E8388004B4B31 /* Launch */,
+				752A1AB9224E833D004B4B31 /* WebView */,
+				752A1A75224E7F4A004B4B31 /* Utils */,
+				753BD047224E6B64003C4424 /* TEMPAppDelegate.h */,
+				753BD048224E6B65003C4424 /* TEMPAppDelegate.m */,
 				753BD050224E6B66003C4424 /* Assets.xcassets */,
 				753BD052224E6B66003C4424 /* LaunchScreen.storyboard */,
 				753BD055224E6B66003C4424 /* Info.plist */,
 				753BD056224E6B66003C4424 /* main.m */,
+				752A1A74224E7EF7004B4B31 /* PrefixHeader.pch */,
 			);
 			path = HAHA;
 			sourceTree = "<group>";
@@ -92,7 +452,6 @@
 				5E4B2110EE268EF4AA6ABCD8 /* Pods-HAHA.debug.xcconfig */,
 				7606C474EC02E36B64289221 /* Pods-HAHA.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -157,7 +516,7 @@
 			files = (
 				753BD054224E6B66003C4424 /* LaunchScreen.storyboard in Resources */,
 				753BD051224E6B66003C4424 /* Assets.xcassets in Resources */,
-				753BD04F224E6B65003C4424 /* Main.storyboard in Resources */,
+				752A1A77224E7F5F004B4B31 /* mook.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,23 +588,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				753BD04C224E6B65003C4424 /* ViewController.m in Sources */,
+				752A1AFF224E847C004B4B31 /* ZDDInputView.m in Sources */,
+				752A1A91224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				752A1B00224E847C004B4B31 /* ZDDFistListCellNode.m in Sources */,
+				752A1ADC224E83F7004B4B31 /* YMHLVideoFlowViewController.m in Sources */,
 				753BD057224E6B66003C4424 /* main.m in Sources */,
-				753BD049224E6B65003C4424 /* AppDelegate.m in Sources */,
+				752A1AC3224E8377004B4B31 /* TEMPAppDelegate+OpenURL.m in Sources */,
+				752A1AE4224E8400004B4B31 /* YMHLVideoFlowLayout.m in Sources */,
+				752A1AE5224E8400004B4B31 /* YMHLVideoModel.m in Sources */,
+				752A1AB8224E801F004B4B31 /* ZDDPhotoBrowseView.m in Sources */,
+				752A1A9B224E7FD2004B4B31 /* ZDDNotificationName.m in Sources */,
+				752A1A8A224E7F7F004B4B31 /* NSString+Regex.m in Sources */,
+				752A1ACD224E83B5004B4B31 /* TEMPSDKManager.m in Sources */,
+				752A1A88224E7F7F004B4B31 /* UIView+ZDD.m in Sources */,
+				752A1A8D224E7F7F004B4B31 /* ASButtonNode+LHExtension.m in Sources */,
+				752A1AC5224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
+				752A1AD8224E83DC004B4B31 /* ZDDBaseViewController.m in Sources */,
+				752A1AB1224E8011004B4B31 /* Foundation+Log.m in Sources */,
+				752A1AA2224E7FEC004B4B31 /* UIColor+ZDDColor.m in Sources */,
+				752A1A8B224E7F7F004B4B31 /* NSMutableAttributedString+Chain.m in Sources */,
+				752A1AEB224E8433004B4B31 /* ZDDThridController.m in Sources */,
+				752A1ABC224E8359004B4B31 /* GODWebViewController.m in Sources */,
+				752A1AE3224E8400004B4B31 /* YMHLVideoCollectionViewCell.m in Sources */,
+				752A1A97224E7FC3004B4B31 /* TEMPKeyConfiguration.m in Sources */,
+				752A1A89224E7F7F004B4B31 /* NSMutableDictionary+Attributes.m in Sources */,
+				752A1B01224E847C004B4B31 /* ZDDCommentLIstView.m in Sources */,
+				752A1AC4224E8377004B4B31 /* TEMPAppDelegate+PushService.m in Sources */,
+				752A1AB4224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m in Sources */,
+				752A1AB3224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m in Sources */,
+				752A1AA8224E7FF6004B4B31 /* UIImage+Blur.m in Sources */,
+				752A1AD7224E83DC004B4B31 /* ZDDNavController.m in Sources */,
+				752A1AA7224E7FF6004B4B31 /* UIView+ZDD.m in Sources */,
+				752A1AF8224E8472004B4B31 /* ZDDFileModel.m in Sources */,
+				752A1A9F224E7FE0004B4B31 /* ZDDThemeConfiguration.m in Sources */,
+				752A1AD6224E83DC004B4B31 /* ZDDTabBarController.m in Sources */,
+				752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */,
+				752A1A8C224E7F7F004B4B31 /* UIColor+CustomColors.m in Sources */,
+				752A1AB2224E8011004B4B31 /* NSDictionary+HYBUnicodeReadable.m in Sources */,
+				752A1ACA224E83A8004B4B31 /* TEMPLaunchManager.m in Sources */,
+				752A1AEE224E8441004B4B31 /* ZDDSecondController.m in Sources */,
+				752A1AF5224E8462004B4B31 /* ZDDFirstController.m in Sources */,
+				753BD049224E6B65003C4424 /* TEMPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		753BD04D224E6B65003C4424 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				753BD04E224E6B65003C4424 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		753BD052224E6B66003C4424 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -376,6 +765,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24V79B9824;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HAHA/PrefixHeader.pch";
 				INFOPLIST_FILE = HAHA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,6 +785,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24V79B9824;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HAHA/PrefixHeader.pch";
 				INFOPLIST_FILE = HAHA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
