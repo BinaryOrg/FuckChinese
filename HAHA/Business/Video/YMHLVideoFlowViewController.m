@@ -191,7 +191,7 @@ UICollectionViewDataSource
     
     cell.contentLabel.text = videoModel.content;
     [cell.imgButton setSelected:videoModel.is_star];
-    [cell.avatar yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://120.78.124.36:10010/%@", videoModel.user.avatar]] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
+    [cell.avatar yy_setImageWithURL:[NSURL URLWithString:videoModel.user.avatar] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
     [cell.imgButton addTarget:self action:@selector(handleCollectionEvent:) forControlEvents:UIControlEventTouchUpInside];
     cell.nickLabel.text = videoModel.user.user_name;
     return cell;
@@ -225,8 +225,6 @@ UICollectionViewDataSource
 
 #pragma mark - UICollectionView delegate flowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-//    UIImage *image = self.imgArr[indexPath.item];
-//    float height = [self imgHeight:image.size.height width:image.size.width];
     CGFloat width = (SCREENWIDTH-30)/2;
     CGFloat height = [self heightFromWidth:width atIndex:indexPath.row];
     return CGSizeMake(width, height);
