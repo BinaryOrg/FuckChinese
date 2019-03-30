@@ -53,26 +53,26 @@
             [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDDuanziModel.class json:result[@"data"]]];
             [self.tableNode reloadData];
         }else {
-            [MFHUDManager showSuccess:@"刷新失败请重试"];
+            [MFHUDManager showError:@"刷新失败请重试"];
         }
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
         [self endHeaderRefresh];
         [self endFooterRefresh];
-        [MFHUDManager showSuccess:@"刷新失败请重试"];
+        [MFHUDManager showError:@"刷新失败请重试"];
     }];
 }
 
-- (void)geitCommentListWithId:(NSString *)ID {
-    if (ID.length == 0) {
+- (void)geitCommentListWithModel:(ZDDDuanziModel *)model {
+    if (model.id.length == 0) {
         return;
     }
     [MFHUDManager showLoading:@"获取评论列表..."];
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"Comment/ListCommentByTargetid" params:@{@"targetId" : ID} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK post:@"Comment/ListCommentByTargetid" params:@{@"targetId" : model.id} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         if (statusCode == 200) {
             NSArray *tempArr = [NSArray yy_modelArrayWithClass:ZDDCommentModel.class json:result[@"data"]];
-            [self.commentListView showWithArray:tempArr duanziID:ID];
+            [self.commentListView showWithArray:tempArr duanzi:model];
         }else {
             [MFHUDManager showError:@"刷新失败请重试"];
         }
@@ -97,7 +97,7 @@
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([GODUserTool isLogin]) {
         ZDDDuanziModel *model = self.dataArr[indexPath.row];
-        [self geitCommentListWithId:model.id];
+        [self geitCommentListWithModel:model];
     }else {
         ZDDLogInController *vc = [ZDDLogInController new];
         [self.navigationController presentViewController:vc animated:YES completion:nil] ;

@@ -28,7 +28,7 @@
 
 @property (nonatomic, strong) NSArray *dataArr;
 
-@property (nonatomic, strong) NSString *duanziID;
+@property (nonatomic, strong) ZDDDuanziModel *model;
 
 
 @end
@@ -106,13 +106,14 @@
     }
     [MFHUDManager showLoading:@"评论一下..."];
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"Comment/Create" params:@{@"userId" : [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"", @"targetId" : self.duanziID, @"content" : self.inputView.textView.text} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK post:@"Comment/Create" params:@{@"userId" : [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"", @"targetId" : self.model.id, @"content" : self.inputView.textView.text} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         if (statusCode == 200) {
             ZDDCommentModel *addModel = [ZDDCommentModel yy_modelWithJSON:result[@"comment"]];
             NSMutableArray *tempArr = [NSMutableArray arrayWithArray:self.dataArr];
             [tempArr insertObject:addModel atIndex:0];
             self.dataArr = tempArr.copy;
+            self.model.comment_num += 1;
         }else {
             [MFHUDManager showError:@"评论失败请重试"];
         }
@@ -122,9 +123,9 @@
     }];
 }
 
-- (void)showWithArray:(NSArray <ZDDCommentModel *> *)array duanziID:(NSString *)duanziID {
+- (void)showWithArray:(NSArray <ZDDCommentModel *> *)array duanzi:(ZDDDuanziModel *)model {
 
-    self.duanziID = duanziID;
+    self.model = model;
     self.dataArr = array;
 
     [[[[UIApplication sharedApplication] delegate] window] addSubview:self];

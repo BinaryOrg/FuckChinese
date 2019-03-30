@@ -59,7 +59,7 @@
         }];
         
         self.imgButton = [TTAnimationButton buttonWithType:UIButtonTypeCustom];
-        [self.imgButton setImage:[UIImage imageNamed:@"ic_messages_like_20x20_"] forState:UIControlStateNormal];
+        [self.imgButton setImage:[UIImage imageNamed:@"disLike"] forState:UIControlStateNormal];
         self.imgButton.imageSelectedColor = [UIColor zdd_redColor];
         self.imgButton.explosionRate = 100;
         [container addSubview:self.imgButton];

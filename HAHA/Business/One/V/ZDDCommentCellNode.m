@@ -32,7 +32,8 @@
         [self addTimeNode];
         [self addIconNode];
         
-        self.iconNode.URL = [NSURL URLWithString:model.user.avater];
+        self.iconNode.defaultImage = [UIImage imageNamed:@"defaultImgae"];
+        self.iconNode.URL = [NSURL URLWithString:model.user.avatar];
         
         self.nameNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.user.user_name attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Medium" size:13]).lh_color([UIColor blackColor]);

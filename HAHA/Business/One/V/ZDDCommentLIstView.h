@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZDDDuanziModel.h"
 #import "ZDDCommentModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDCommentLIstView : UIView
 
-- (void)showWithArray:(NSArray <ZDDCommentModel *> *)array duanziID:(NSString *)duanziID;
+- (void)showWithArray:(NSArray <ZDDCommentModel *> *)array duanzi:(ZDDDuanziModel *)model;
 
 - (void)dismissAndRemove;
 

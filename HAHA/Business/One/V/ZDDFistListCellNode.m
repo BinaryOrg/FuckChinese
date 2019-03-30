@@ -9,37 +9,80 @@
 #import "ZDDFistListCellNode.h"
 #import <YYCGUtilities.h>
 //#import "POP.h"
+#import "ASButtonNode+LHExtension.h"
 
 @interface ZDDFistListCellNode ()
 
+@property (nonatomic, strong) ASNetworkImageNode *iconNode;
+@property (nonatomic, strong) ASTextNode *nameNode;
 @property (nonatomic, strong) ASDisplayNode *lineNode;
-@property (nonatomic, strong) ASImageNode *commentImgNode;
-@property (nonatomic, strong) ASTextNode *commentCountNode;
+@property (nonatomic, strong) ASButtonNode *thumbNode;
+@property (nonatomic, strong) ASButtonNode *commentNode;
+
 @property (nonatomic, strong) ASTextNode *titleNode;
+@property (nonatomic, strong) ASTextNode *timeNode;
 @property (nonatomic, strong) ASLayoutSpec *picturesLayout;
 @property (nonatomic, strong) NSMutableArray *picturesNodes;
 
+/** <#class#> */
+@property (nonatomic, strong) ZDDDuanziModel *model;
 @end
 
 @implementation ZDDFistListCellNode
 
 - (instancetype)initWithModel:(ZDDDuanziModel *)model {
     if (self = [super init]) {
-        
+        self.model = model;
+        if (model.content.length == 0) {
+            model.content = @"请看图片";
+        }
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
+        [self addIconNode];
+        [self addNameNode];
         [self addBackgroundNode];
-        [self addCommentCountNode];
-        [self addCommentImgNode];
         [self addTitleNode];
+        [self addTimeNode];
         [self addPicturesNodesWithModel:model];
+        
+        [model addObserver:self forKeyPath:@"star_num" options:NSKeyValueObservingOptionNew context:nil];
+        [model addObserver:self forKeyPath:@"comment_num" options:NSKeyValueObservingOptionNew context:nil];
+
+        self.iconNode.defaultImage = [UIImage imageNamed:@"defaultImgae"];
+        self.iconNode.URL = [NSURL URLWithString:model.user.avatar];
+        
+        NSMutableAttributedString *name = [[NSMutableAttributedString alloc] initWithString:model.user.user_name.length?model.user.user_name:@"" attributes:@{NSForegroundColorAttributeName : GODColor(53, 64, 72), NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Medium" size:14]}];
+        NSAttributedString *push = [[NSAttributedString alloc] initWithString:@"  发布" attributes:@{NSForegroundColorAttributeName : GODColor(146, 146, 146), NSFontAttributeName : [UIFont systemFontOfSize:13]}];
+        [name appendAttributedString:push];
+        self.nameNode.attributedText = name;
         
         self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.content attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:16]).lh_color(color(53, 64, 72, 1));
         }];
         
-        self.commentCountNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"%ld 评论  *  %ld 喜欢", model.comment_num, model.star_num] attributes:^(NSMutableDictionary *make) {
+        void(^attributes)(NSMutableDictionary *make) = ^(NSMutableDictionary *make) {
+            make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:12.0f]).lh_color([UIColor qmui_colorWithHexString:@"354048"]);
+        };
+        _thumbNode = [[ASButtonNode alloc] init];
+        [_thumbNode lh_setEnlargeEdgeWithTop:10.0f right:15.0f bottom:10.0f left:15.0f];
+        [_thumbNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"%ld", model.star_num] attributes:attributes] forState:UIControlStateNormal];
+        [_thumbNode setImage:[UIImage imageNamed:@"disLike"] forState:UIControlStateNormal];
+        [_thumbNode setImage:[UIImage imageNamed:@"like"] forState:UIControlStateSelected];
+        [_thumbNode addTarget:self action:@selector(onTouchThumbNode) forControlEvents:ASControlNodeEventTouchUpInside];
+        _thumbNode.selected = model.is_star;
+        
+        NSString *commentCount = [NSString stringWithFormat:@"%zd", model.comment_num];
+
+        _commentNode = [[ASButtonNode alloc] init];
+        [_thumbNode lh_setEnlargeEdgeWithTop:10.0f right:15.0f bottom:10.0f left:15.0f];
+        [_commentNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:commentCount attributes:attributes] forState:UIControlStateNormal];
+        [_commentNode setImage:[UIImage imageNamed:@"write"] forState:UIControlStateNormal];
+        
+        [self addSubnode:_thumbNode];
+        [self addSubnode:_commentNode];
+        
+        self.timeNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[self formatFromTS:model.create_date] attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:12]).lh_color(color(53, 64, 72, 1));
         }];
         
@@ -47,6 +90,33 @@
     return self;
 }
 
+- (void)dealloc {
+    [self.model removeObserver:self forKeyPath:@"star_num"];
+    [self.model removeObserver:self forKeyPath:@"comment_num"];
+
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+    _thumbNode.selected =  self.model.is_star;
+    void(^attributes)(NSMutableDictionary *make) = ^(NSMutableDictionary *make) {
+        make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:12.0f]).lh_color([UIColor qmui_colorWithHexString:@"354048"]);
+    };
+    [_thumbNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"%ld", self.model.star_num] attributes:attributes] forState:UIControlStateNormal];
+    
+    NSString *commentCount = [NSString stringWithFormat:@"%zd", self.model.comment_num];
+    
+    [_commentNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:commentCount attributes:attributes] forState:UIControlStateNormal];
+}
+
+- (NSString *)formatFromTS:(NSInteger)ts {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd MMM yyyy"];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    NSString *str = [NSString stringWithFormat:@"%@",
+                     [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:ts]]];
+    return str;
+}
 //- (void)setHighlighted:(BOOL)highlighted {
 //
 //    [super setHighlighted:highlighted];
@@ -72,6 +142,27 @@
     
 }
 
+//点赞
+- (void)onTouchThumbNode {
+    if ([GODUserTool shared].user.user_id.length == 0) {
+        [MFHUDManager showError:@"请先登录"];
+        return;
+    }
+    self.model.is_star = !self.model.is_star;
+    if (self.model.is_star) {
+        self.model.star_num += 1;
+    }else {
+        self.model.star_num -= 1;
+    }
+   
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK post:@"Star/AddOrCancel" params:@{@"targetId" : self.model.id, @"userId" : [GODUserTool shared].user.user_id} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+       
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        
+    }];
+}
+
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
     
@@ -81,19 +172,34 @@
         titleAndImgSpec.children = @[self.titleNode, self.picturesLayout];
     }
     
-    ASStackLayoutSpec *commentSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
-    commentSpec.spacing = 6;
-    commentSpec.alignItems = ASStackLayoutAlignItemsCenter;
-    commentSpec.children = @[self.commentImgNode, self.commentCountNode];
+    ASStackLayoutSpec *avatarLayout = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    avatarLayout.alignItems = ASStackLayoutAlignItemsCenter;
+    avatarLayout.justifyContent = ASStackLayoutJustifyContentStart;
+    avatarLayout.children = @[self.iconNode, self.nameNode];
+    avatarLayout.spacing = 8.0;
     
+    ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
+    contentSpec.spacing = 10;
+    if (self.picturesNodes.count) {
+        contentSpec.children = @[titleAndImgSpec, avatarLayout];
+    }else {
+        contentSpec.children = @[self.titleNode, avatarLayout];
+    }
+    
+    ASStackLayoutSpec *commentSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    commentSpec.spacing = 12;
+    commentSpec.alignItems = ASStackLayoutAlignItemsCenter;
+    commentSpec.children = @[self.commentNode, self.thumbNode];
+    
+    ASStackLayoutSpec *timeSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
+    timeSpec.spacing = 6;
+    timeSpec.justifyContent = ASStackLayoutJustifyContentSpaceBetween;
+    timeSpec.alignItems = ASStackLayoutAlignItemsEnd;
+    timeSpec.children = @[self.timeNode, commentSpec];
     
     ASStackLayoutSpec *titleAndCommentSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
-    titleAndCommentSpec.spacing = 20;
-    if (self.picturesNodes.count) {
-        titleAndCommentSpec.children = @[titleAndImgSpec, commentSpec];
-    }else {
-        titleAndCommentSpec.children = @[self.titleNode, commentSpec];
-    }
+    titleAndCommentSpec.spacing = 15;
+    titleAndCommentSpec.children = @[contentSpec, timeSpec];
     
     ASStackLayoutSpec *lineSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
     lineSpec.spacing = 15;
@@ -103,19 +209,6 @@
     
 }
 
-
-- (void)addCommentCountNode {
-    self.commentCountNode = [ASTextNode new];
-    [self addSubnode:self.commentCountNode];
-}
-
-- (void)addCommentImgNode {
-    self.commentImgNode = [ASImageNode new];
-    self.commentImgNode.image = [UIImage imageNamed:@"write"];
-    self.commentImgNode.style.preferredSize = CGSizeMake(15, 15);
-    self.commentCountNode.contentMode = UIViewContentModeScaleAspectFill;
-    [self addSubnode:self.commentImgNode];
-}
 
 - (void)addBackgroundNode {
     self.lineNode = [ASDisplayNode new];
@@ -129,6 +222,12 @@
     self.titleNode = [ASTextNode new];
     self.titleNode.style.maxWidth = ASDimensionMake(SCREENWIDTH - 60);
     [self addSubnode:self.titleNode];
+}
+
+- (void)addTimeNode {
+    self.timeNode = [ASTextNode new];
+    self.timeNode.style.maxWidth = ASDimensionMake(SCREENWIDTH - 60);
+    [self addSubnode:self.timeNode];
 }
 
 - (void)addPicturesNodesWithModel:(ZDDDuanziModel *)model {
@@ -146,6 +245,19 @@
         [self addSubnode:pictureNode];
         [self.picturesNodes addObject:pictureNode];
     }];
+}
+
+
+- (void)addIconNode {
+    self.iconNode = [ASNetworkImageNode new];
+    self.iconNode.style.preferredSize = CGSizeMake(24, 24);
+    self.iconNode.cornerRadius = 12;
+    [self addSubnode:self.iconNode];
+}
+
+- (void)addNameNode {
+    self.nameNode = [ASTextNode new];
+    [self addSubnode:self.nameNode];
 }
 
 - (CGSize)pictureSizeWithCount:(NSInteger)count imageSize:(CGSize)imageSize {
