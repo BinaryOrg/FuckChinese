@@ -57,19 +57,20 @@ UICollectionViewDataSource
 }
 
 - (void)sendRequest {
+    [SVProgressHUD show];
     [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
              params:@{
                       @"userId": @"",
                       @"category": @"video"
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-//                NSLog(@"%@", result);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                });
                 if ([result[@"resultCode"] isEqualToString:@"0"]) {
                     [self.list removeAllObjects];
                     for (NSDictionary *dic in result[@"data"]) {
-                        NSLog(@"%@", dic);
                         YMHLVideoModel *video = [YMHLVideoModel yy_modelWithJSON:dic];
-                        NSLog(@"%@", video);
                         if (video) {
                             [self.list addObject:video];
                         }
@@ -83,7 +84,9 @@ UICollectionViewDataSource
                 }
             }
             failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-                NSLog(@"%@", error.userInfo);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                });
             }];
     
     
