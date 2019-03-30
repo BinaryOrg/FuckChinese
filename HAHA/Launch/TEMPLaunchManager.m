@@ -39,12 +39,11 @@
     ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
 
 //    只需要在这里修改如下5个主题颜色即可，注意颜色搭配和理性:
-//    theme.naviTitleColor = [UIColor zdd_blueColor];
+    theme.naviTitleColor = [UIColor colorWithRed:51 green:51 blue:51];
 ////    theme.naviTintColor =
-//    theme.themeColor = [UIColor whiteColor];
-//    theme.normalTabColor = [UIColor zdd_blueColor];
-    //31,171,137
-    theme.selectTabColor = [UIColor colorWithRed:31 green:171 blue:137];
+    theme.themeColor = [UIColor colorWithRed:19 green:142 blue:158];
+    theme.normalTabColor = theme.naviTitleColor;
+    theme.selectTabColor = theme.naviTitleColor;
     theme.addButtonColor = [UIColor whiteColor];
     //NavigationBar 和 TabBar 偏好设置
     NSDictionary *dict = [NSDictionary dictionaryWithObject:theme.naviTitleColor forKey:NSForegroundColorAttributeName];
@@ -111,15 +110,14 @@
                 window.backgroundColor = [UIColor whiteColor];
                 [window makeKeyAndVisible];
             }else {
-                ZDDTabBarController *tabBarController = [[ZDDTabBarController alloc] initWithCenterButton:YES];
+                ZDDTabBarController *tabBarController = [[ZDDTabBarController alloc] initWithCenterButton:NO];
                 window.rootViewController = tabBarController;
                 window.backgroundColor = [UIColor whiteColor];
                 [window makeKeyAndVisible];
             }
         }else {
             ZDDTabBarController *tabBarController = [[ZDDTabBarController alloc] initWithCenterButton:YES];
-//            window.rootViewController = tabBarController;
-            window.rootViewController = [YMHLVideoFlowViewController new];
+            window.rootViewController = tabBarController;
             window.backgroundColor = [UIColor whiteColor];
             [window makeKeyAndVisible];
         }

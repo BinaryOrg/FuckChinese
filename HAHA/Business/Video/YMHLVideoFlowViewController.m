@@ -40,6 +40,7 @@ UICollectionViewDataSource
         _collectionView.dataSource = self;
         [_collectionView registerClass:[YMHLVideoCollectionViewCell class] forCellWithReuseIdentifier:@"video_cell"];
         _collectionView.backgroundColor = [UIColor whiteColor];
+//        _collectionView.prefetchingEnabled = NO;
     }
     return _collectionView;
 }
@@ -47,8 +48,12 @@ UICollectionViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-   
+    [self setNavi];
     [self sendRequest];
+}
+
+- (void)setNavi {
+    self.navigationItem.title = @"视频圈";
 }
 
 - (void)sendRequest {
@@ -70,9 +75,9 @@ UICollectionViewDataSource
 //            [self.list addObject:videoModel];
 //        }
         
-        for (NSInteger i = 0; i < 7; i++) {
-            [self.list addObjectsFromArray:self.list];
-        }
+//        for (NSInteger i = 0; i < 7; i++) {
+//            [self.list addObjectsFromArray:self.list];
+//        }
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"%@", @(self.list.count));
@@ -112,10 +117,23 @@ UICollectionViewDataSource
 - (void)handleCollectionEvent:(TTAnimationButton *)sender {
     YMHLVideoCollectionViewCell *cell = (YMHLVideoCollectionViewCell *)sender.superview.superview.superview;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+//    NSLog(@"%@", @(indexPath.row));
     YMHLVideoModel *videoModel = self.list[indexPath.row];
     videoModel.collection = !videoModel.collection;
-    cell.imgButton.selected = videoModel.collection;
+//    cell.imgButton.selected = videoModel.collection;
 //    [self.collectionView reloadData];
+//    [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    [self.collectionView performBatchUpdates:^{
+        [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    } completion:^(BOOL finished) {
+        NSInteger ind = 0;
+        for (YMHLVideoModel *m in self.list) {
+            if (m.collection) {
+                ind++;
+            }
+        }
+        NSLog(@"%@", @(ind));
+    }];
 }
 
 - (CGFloat)heightFromWidth:(CGFloat)width atIndex:(NSInteger)index {

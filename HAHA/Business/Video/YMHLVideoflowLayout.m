@@ -15,7 +15,7 @@
 - (void)prepareLayout{
     [super prepareLayout];
     
-    _colCount = 3;
+    _colCount = 2;
     _colArr = [NSMutableArray<NSNumber *> array];
     _attributeDict = [NSMutableDictionary<NSString *, NSIndexPath *> dictionary];
     self.delegate = (id<UICollectionViewDelegateFlowLayout>)self.collectionView.delegate;
