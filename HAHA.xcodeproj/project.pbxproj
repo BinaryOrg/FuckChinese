@@ -36,6 +36,7 @@
 		372025A9224F57E400E25AA4 /* ZDDLogInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A8224F57E400E25AA4 /* ZDDLogInController.m */; };
 		37A7D6F7224FB31C00DD1644 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A7D6F5224FB31C00DD1644 /* ASButtonNode+LHExtension.m */; };
 		7521BA1E224F0D7F00292099 /* YMHLUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA1D224F0D7F00292099 /* YMHLUserModel.m */; };
+		7521BA22224F994000292099 /* YMHLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA21224F994000292099 /* YMHLBaseViewController.m */; };
 		752A1A77224E7F5F004B4B31 /* mook.json in Resources */ = {isa = PBXBuildFile; fileRef = 752A1A76224E7F5F004B4B31 /* mook.json */; };
 		752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7A224E7F7A004B4B31 /* UIView+LH.m */; };
 		752A1A88224E7F7F004B4B31 /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7B224E7F7A004B4B31 /* UIView+ZDD.m */; };
@@ -156,6 +157,8 @@
 		5E4B2110EE268EF4AA6ABCD8 /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
 		7521BA1C224F0D7F00292099 /* YMHLUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLUserModel.h; sourceTree = "<group>"; };
 		7521BA1D224F0D7F00292099 /* YMHLUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLUserModel.m; sourceTree = "<group>"; };
+		7521BA20224F994000292099 /* YMHLBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLBaseViewController.h; sourceTree = "<group>"; };
+		7521BA21224F994000292099 /* YMHLBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLBaseViewController.m; sourceTree = "<group>"; };
 		752A1A74224E7EF7004B4B31 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		752A1A76224E7F5F004B4B31 /* mook.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mook.json; sourceTree = "<group>"; };
 		752A1A79224E7F7A004B4B31 /* NSMutableAttributedString+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Chain.h"; sourceTree = "<group>"; };
@@ -352,6 +355,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7521BA1F224F992300292099 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7521BA20224F994000292099 /* YMHLBaseViewController.h */,
+				7521BA21224F994000292099 /* YMHLBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		752A1A75224E7F4A004B4B31 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +539,7 @@
 		752A1AD9224E83E8004B4B31 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				7521BA1F224F992300292099 /* Base */,
 				7521BA1B224F0D5B00292099 /* Model */,
 				752A1ADE224E83FD004B4B31 /* YMHLVideoCollectionViewCell.h */,
 				752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */,
@@ -748,6 +761,7 @@
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_warnning.png",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/QMUIKit/QMUIKit/QMUIResources/QMUIResources.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/SuperPlayer/SuperPlayer/Resource/SuperPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -761,6 +775,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_warnning.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QMUIResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SuperPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -814,6 +829,7 @@
 				37202586224F225200E25AA4 /* POPMath.mm in Sources */,
 				37202587224F225200E25AA4 /* POPSpringAnimation.mm in Sources */,
 				752A1A8A224E7F7F004B4B31 /* NSString+Regex.m in Sources */,
+				7521BA22224F994000292099 /* YMHLBaseViewController.m in Sources */,
 				37202593224F225200E25AA4 /* POPAnimator.mm in Sources */,
 				752A1ACD224E83B5004B4B31 /* TEMPSDKManager.m in Sources */,
 				372025A4224F51DA00E25AA4 /* ZDDCommentModel.m in Sources */,
