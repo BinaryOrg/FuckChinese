@@ -29,6 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)headerRefresh;
 //上拉刷新
 - (void)footerRefresh;
+//结束下拉刷新
+- (void)endHeaderRefresh;
+//结束上拉刷新
+- (void)endFooterRefresh;
+
 //设置底部没有更多数据，不可以再刷新
 - (void)setNoMoreData;
 //设置底部可以再刷新

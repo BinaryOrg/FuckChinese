@@ -8,6 +8,7 @@
 
 #import "ZDDFistListCellNode.h"
 #import <YYCGUtilities.h>
+//#import "POP.h"
 
 @interface ZDDFistListCellNode ()
 
@@ -16,15 +17,15 @@
 @property (nonatomic, strong) ASTextNode *commentCountNode;
 @property (nonatomic, strong) ASTextNode *titleNode;
 @property (nonatomic, strong) ASLayoutSpec *picturesLayout;
-
 @property (nonatomic, strong) NSMutableArray *picturesNodes;
 
 @end
 
 @implementation ZDDFistListCellNode
 
-- (instancetype)init {
+- (instancetype)initWithModel:(ZDDDuanziModel *)model {
     if (self = [super init]) {
+        
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -32,13 +33,13 @@
         [self addCommentCountNode];
         [self addCommentImgNode];
         [self addTitleNode];
+        [self addPicturesNodesWithModel:model];
         
-        
-        self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"又被老妈唠叨我除了玩手机啥都不会干，，老妈唠叨够了转过头去看旁边偷笑的小侄女：“妞妞，你长大后可不能像你姑姑这样懒的讨人嫌。” 小侄女想都没想就说：“我真羡慕姑姑，跟猪似的，没心没肺活着不累。。 尼玛。。" attributes:^(NSMutableDictionary *make) {
+        self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.content attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:16]).lh_color(color(53, 64, 72, 1));
         }];
         
-        self.commentCountNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"1314520" attributes:^(NSMutableDictionary *make) {
+        self.commentCountNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"%ld 评论  *  %ld 喜欢", model.comment_num, model.star_num] attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:12]).lh_color(color(53, 64, 72, 1));
         }];
         
@@ -46,6 +47,23 @@
     return self;
 }
 
+//- (void)setHighlighted:(BOOL)highlighted {
+//
+//    [super setHighlighted:highlighted];
+//    if (self.highlighted) {
+//        POPBasicAnimation *scaleAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+//        scaleAnimation.duration = 0.1;
+//        scaleAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
+//        [self pop_addAnimation:scaleAnimation forKey:@"scalingUp"];
+//    } else {
+//        POPSpringAnimation *sprintAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+//        sprintAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(0.9, 0.9)];
+//        sprintAnimation.velocity = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
+//        sprintAnimation.springBounciness = 20.f;
+//        [self pop_addAnimation:sprintAnimation forKey:@"springAnimation"];
+//    }
+//
+//}
 
 //点击图片
 - (void)onTouchPictureNode:(ASNetworkImageNode *)imgNode {
@@ -59,7 +77,7 @@
     
     ASStackLayoutSpec *titleAndImgSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
     if (self.picturesNodes.count) {
-        titleAndImgSpec.spacing = 15;
+        titleAndImgSpec.spacing = 10;
         titleAndImgSpec.children = @[self.titleNode, self.picturesLayout];
     }
     
@@ -113,16 +131,17 @@
     [self addSubnode:self.titleNode];
 }
 
-- (void)addPicturesNodesWithFiles:(NSArray <ZDDFileModel *>*)files size:(CGSize)size {
-    CGSize itemSize = [self pictureSizeWithCount:files.count imageSize:size];
+- (void)addPicturesNodesWithModel:(ZDDDuanziModel *)model {
+    CGSize itemSize = [self pictureSizeWithCount:model.picture_path.count imageSize:CGSizeMake(ScreenWidth/3.0, ScreenWidth/3.0)];
     
-    [files enumerateObjectsUsingBlock:^(ZDDFileModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [model.picture_path enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ASNetworkImageNode *pictureNode = [ASNetworkImageNode new];
         pictureNode.style.preferredSize = itemSize;
         pictureNode.contentMode = UIViewContentModeScaleAspectFit;
         pictureNode.backgroundColor = [UIColor qmui_colorWithHexString:@"F8F8F8"];
         pictureNode.defaultImage = [self placeholderImage];
-        pictureNode.URL = [NSURL URLWithString:obj.fileUrl];
+        pictureNode.contentMode = UIViewContentModeScaleAspectFill;
+        pictureNode.URL = [NSURL URLWithString:obj];
         [pictureNode addTarget:self action:@selector(onTouchPictureNode:) forControlEvents:ASControlNodeEventTouchUpInside];
         [self addSubnode:pictureNode];
         [self.picturesNodes addObject:pictureNode];

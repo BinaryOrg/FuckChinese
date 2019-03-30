@@ -9,10 +9,12 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "GODUserTool.h"
+
+
 #import "MFNetworkManager.h"
 #import "MFHUDManager.h"
 #import "NSObject+YYModel.h"
-#import "ZDDFileModel.h"
 
 #import <YYModel/YYModel.h>
 #import <MFNetworkManager/MFNetworkManager.h>
@@ -32,7 +34,5 @@
 #import "ZDDThemeConfiguration.h"
 #import "UIView+ZDD.h"
 #import "ZDDBaseViewController.h"
-
-#import "ZDDFileModel.h"
 
 #endif /* PrefixHeader_pch */

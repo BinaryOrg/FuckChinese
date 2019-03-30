@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDInputView : UIView
 
+@property (nonatomic, strong, readonly) UITextView *textView;
+
 @property (nonatomic, copy) ZDDInputViewBlock inputViewBlock;
 - (void)show;
 - (void)dismissAndRemove;

@@ -7,7 +7,7 @@
 
 
 
-#define BASE_URL          @"http://120.78.124.36:10005/"
+#define BASE_URL          @"http://120.78.124.36:10010/MRYX/"
 
 
 

@@ -65,6 +65,14 @@
     
 }
 
+- (void)endHeaderRefresh {
+    [self.tableNode.view.mj_header endRefreshing];
+}
+
+- (void)endFooterRefresh {
+    [self.tableNode.view.mj_footer endRefreshing];
+}
+
 - (void)setHiddenNavBar:(BOOL)hiddenNavBar {
     self.fd_prefersNavigationBarHidden = hiddenNavBar;
 }
