@@ -20,8 +20,9 @@
     if (!_emptyView) {
         _emptyView = [[UIView alloc] initWithFrame:self.view.bounds];
         _emptyView.backgroundColor = [UIColor whiteColor];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-        imageView.image = [UIImage imageNamed:@""];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+        imageView.image = [UIImage imageNamed:@"empty_icon_150x150_"];
+        imageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-STATUSBARANDNAVIGATIONBARHEIGHT)/2);
         [_emptyView addSubview:imageView];
         
         UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -36,8 +37,9 @@
     if (!_netErrorView) {
         _netErrorView = [[UIView alloc] initWithFrame:self.view.bounds];
         _netErrorView.backgroundColor = [UIColor whiteColor];
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-        imageView.image = [UIImage imageNamed:@""];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+        imageView.image = [UIImage imageNamed:@"nonetwork_151x150_"];
+        imageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-STATUSBARANDNAVIGATIONBARHEIGHT)/2);
         [_netErrorView addSubview:imageView];
         
         UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];

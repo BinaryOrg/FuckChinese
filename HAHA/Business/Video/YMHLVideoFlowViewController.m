@@ -20,9 +20,82 @@ UICollectionViewDataSource
 >
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *list;
+@property (nonatomic, strong) UIView *refreshView;
 @end
 
 @implementation YMHLVideoFlowViewController
+
+- (UIView *)refreshView {
+    if (!_refreshView) {
+        _refreshView = [[UIView alloc] initWithFrame:CGRectMake(SCREENWIDTH - 60, SCREENHEIGHT - STATUSBARANDNAVIGATIONBARHEIGHT - 60 - TABBARHEIGHT, 40, 40)];
+        _refreshView.layer.cornerRadius = 15;
+        _refreshView.layer.masksToBounds = YES;
+        UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+        b.frame = _refreshView.bounds;
+        [b setImage:[UIImage imageNamed:@"icon_main_refresh_active"] forState:UIControlStateNormal];
+        [b setImage:[UIImage imageNamed:@"icon_main_refresh_active"] forState:UIControlStateHighlighted];
+        [b addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
+        [_refreshView addSubview:b];
+        _refreshView.backgroundColor = [UIColor whiteColor];
+    }
+    return _refreshView;
+}
+
+- (void)rotateView:(UIView *)view {
+    CABasicAnimation *rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat:M_PI*2.0];
+    rotationAnimation.duration = 0.5;
+    rotationAnimation.repeatCount = HUGE_VALF;
+    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
+
+- (void)stopRatateWithView:(UIView *)view {
+    [view.layer removeAllAnimations];
+}
+
+- (void)refresh:(UIButton *)sender {
+    [self rotateView:sender];
+    sender.userInteractionEnabled = NO;
+    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
+             params:@{
+                      @"userId": @"",
+                      @"category": @"video"
+                      }
+            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    sender.userInteractionEnabled = YES;
+                    [self stopRatateWithView:sender];
+                });
+                if ([result[@"resultCode"] isEqualToString:@"0"]) {
+                    NSMutableArray *inserts = @[].mutableCopy;
+                    for (NSDictionary *dic in result[@"data"]) {
+                        YMHLVideoModel *video = [YMHLVideoModel yy_modelWithJSON:dic];
+                        if (video) {
+                            [inserts addObject:video];
+                        }
+                    }
+                    [self.list insertObjects:inserts atIndex:0];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [MFHUDManager showSuccess:@"为您推荐200条新鲜视频～"];
+                        [self.collectionView reloadData];
+                        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:(UICollectionViewScrollPositionTop) animated:YES];
+                    });
+                }else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        sender.userInteractionEnabled = YES;
+                        [MFHUDManager showError:@"刷新失败，请检查网络"];
+                    });
+                }
+            }
+            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self stopRatateWithView:sender];
+                    sender.userInteractionEnabled = YES;
+                    [MFHUDManager showError:@"刷新失败，请检查网络"];
+                });
+            }];
+}
 
 - (NSMutableArray *)list {
     if (!_list) {
@@ -49,6 +122,11 @@ UICollectionViewDataSource
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self setNavi];
+    __weak __typeof(self)weakSelf = self;
+    self.errorViewClickBlock = ^{
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf sendRequest];
+    };
     [self sendRequest];
 }
 
@@ -57,6 +135,7 @@ UICollectionViewDataSource
 }
 
 - (void)sendRequest {
+    [self removeErrorView];
     [SVProgressHUD show];
     [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
              params:@{
@@ -76,16 +155,21 @@ UICollectionViewDataSource
                         }
                     }
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        [self removeErrorView];
                         [self.view addSubview:self.collectionView];
+                        [self.view addSubview:self.refreshView];
                         [self.collectionView reloadData];
                     });
                 }else {
-                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self addNetworkErrorView];
+                    });
                 }
             }
             failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [SVProgressHUD dismiss];
+                    [self addNetworkErrorView];
                 });
             }];
     
