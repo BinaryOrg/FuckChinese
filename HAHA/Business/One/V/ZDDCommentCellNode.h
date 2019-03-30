@@ -6,10 +6,13 @@
 //  Copyright © 2019 ZDD. All rights reserved.
 //
 
+#import "ZDDCommentModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDCommentCellNode : ASCellNode
+
+- (instancetype)initWithModel:(ZDDCommentModel *)model;
 
 @end
 

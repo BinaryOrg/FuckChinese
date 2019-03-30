@@ -6,11 +6,13 @@
 //  Copyright © 2019 MakerYang.com. All rights reserved.
 //
 
+#import "ZDDDuanziModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDFistListCellNode : ASCellNode
 
+- (instancetype)initWithModel:(ZDDDuanziModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

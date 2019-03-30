@@ -19,6 +19,10 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>MOBAppKey</key>
+	<string>29d8998862f44</string>
+	<key>MOBAppSecret</key>
+	<string>dab15e83311b6e53ee0a2c424ebf8d2a</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
