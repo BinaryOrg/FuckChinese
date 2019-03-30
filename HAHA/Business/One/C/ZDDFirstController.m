@@ -8,10 +8,11 @@
 
 #import "ZDDFirstController.h"
 #import "ZDDFistListCellNode.h"
+#import "ZDDCommentLIstView.h"
 
 @interface ZDDFirstController ()
 
-/** <#class#> */
+@property (nonatomic, strong) ZDDCommentLIstView *commentListView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 
 
@@ -48,11 +49,22 @@
     };
 }
 
+- (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.commentListView show];
+}
+
 - (NSMutableArray *)dataArr {
     if (!_dataArr) {
         _dataArr = [NSMutableArray array];
     }
     return _dataArr;
+}
+
+- (ZDDCommentLIstView *)commentListView {
+    if (!_commentListView) {
+        _commentListView = [[ZDDCommentLIstView alloc] init];
+    }
+    return _commentListView;
 }
 
 @end

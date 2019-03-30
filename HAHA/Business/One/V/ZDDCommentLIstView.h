@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDCommentLIstView : UIView
 
+- (void)show;
+- (void)dismissAndRemove;
+
 @end
 
 NS_ASSUME_NONNULL_END

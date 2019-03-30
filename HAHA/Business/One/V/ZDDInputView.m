@@ -72,6 +72,12 @@
     [self.textView becomeFirstResponder];
     
 }
+
+- (void)dismissAndRemove {
+    [self.textView resignFirstResponder];
+}
+
+
 #pragma mark - noti Action
 - (void)kbWillShow:(NSNotification *)noti {
     // 动画的持续时间
@@ -115,11 +121,6 @@
     
     [self.textView resignFirstResponder];
 }
-
-- (void)dismissAndRemove {
-    [self.textView resignFirstResponder];
-}
-
 
 #pragma mark - 添加子控件的约束
 - (void)makeSubViewsConstraints {

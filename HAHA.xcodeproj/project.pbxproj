@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3720254A224F0B1E00E25AA4 /* ZDDCommentCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37202548224F0B1D00E25AA4 /* ZDDCommentCellNode.m */; };
 		752A1A77224E7F5F004B4B31 /* mook.json in Resources */ = {isa = PBXBuildFile; fileRef = 752A1A76224E7F5F004B4B31 /* mook.json */; };
 		752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7A224E7F7A004B4B31 /* UIView+LH.m */; };
 		752A1A88224E7F7F004B4B31 /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7B224E7F7A004B4B31 /* UIView+ZDD.m */; };
@@ -56,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		0FC519B347F9056DD4EFD649 /* libPods-HAHA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HAHA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37202548224F0B1D00E25AA4 /* ZDDCommentCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentCellNode.m; sourceTree = "<group>"; };
+		37202549224F0B1E00E25AA4 /* ZDDCommentCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDCommentCellNode.h; sourceTree = "<group>"; };
 		5E4B2110EE268EF4AA6ABCD8 /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
 		752A1A74224E7EF7004B4B31 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		752A1A76224E7F5F004B4B31 /* mook.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mook.json; sourceTree = "<group>"; };
@@ -382,10 +385,12 @@
 		752A1AF1224E844F004B4B31 /* V */ = {
 			isa = PBXGroup;
 			children = (
-				752A1AF9224E847A004B4B31 /* ZDDCommentLIstView.h */,
-				752A1AFE224E847C004B4B31 /* ZDDCommentLIstView.m */,
 				752A1AFA224E847A004B4B31 /* ZDDFistListCellNode.h */,
 				752A1AFC224E847B004B4B31 /* ZDDFistListCellNode.m */,
+				752A1AF9224E847A004B4B31 /* ZDDCommentLIstView.h */,
+				752A1AFE224E847C004B4B31 /* ZDDCommentLIstView.m */,
+				37202549224F0B1E00E25AA4 /* ZDDCommentCellNode.h */,
+				37202548224F0B1D00E25AA4 /* ZDDCommentCellNode.m */,
 				752A1AFD224E847B004B4B31 /* ZDDInputView.h */,
 				752A1AFB224E847B004B4B31 /* ZDDInputView.m */,
 			);
@@ -618,6 +623,7 @@
 				752A1AB3224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m in Sources */,
 				752A1AA8224E7FF6004B4B31 /* UIImage+Blur.m in Sources */,
 				752A1AD7224E83DC004B4B31 /* ZDDNavController.m in Sources */,
+				3720254A224F0B1E00E25AA4 /* ZDDCommentCellNode.m in Sources */,
 				752A1AA7224E7FF6004B4B31 /* UIView+ZDD.m in Sources */,
 				752A1AF8224E8472004B4B31 /* ZDDFileModel.m in Sources */,
 				752A1A9F224E7FE0004B4B31 /* ZDDThemeConfiguration.m in Sources */,
@@ -764,7 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24V79B9824;
+				DEVELOPMENT_TEAM = 96NZDADFWS;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HAHA/PrefixHeader.pch";
 				INFOPLIST_FILE = HAHA/Info.plist;
@@ -784,7 +790,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24V79B9824;
+				DEVELOPMENT_TEAM = 96NZDADFWS;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HAHA/PrefixHeader.pch";
 				INFOPLIST_FILE = HAHA/Info.plist;

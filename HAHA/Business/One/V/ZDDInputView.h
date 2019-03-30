@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZDDInputView : UIView
 
 @property (nonatomic, copy) ZDDInputViewBlock inputViewBlock;
-
+- (void)show;
+- (void)dismissAndRemove;
 
 @end
 

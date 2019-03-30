@@ -118,8 +118,8 @@
             }
         }else {
             ZDDTabBarController *tabBarController = [[ZDDTabBarController alloc] initWithCenterButton:YES];
-//            window.rootViewController = tabBarController;
-            window.rootViewController = [YMHLVideoFlowViewController new];
+            window.rootViewController = tabBarController;
+//            window.rootViewController = [YMHLVideoFlowViewController new];
             window.backgroundColor = [UIColor whiteColor];
             [window makeKeyAndVisible];
         }
