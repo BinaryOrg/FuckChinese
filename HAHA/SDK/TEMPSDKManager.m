@@ -35,10 +35,10 @@ JPUSHRegisterDelegate
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
-    [JPUSHService setupWithOption:launchOptions appKey:JPUSH_KEY
-                          channel:JPUSH_CHANNEL
-                 apsForProduction:NO
-            advertisingIdentifier:nil];
+//    [JPUSHService setupWithOption:launchOptions appKey:JPUSH_KEY
+//                          channel:JPUSH_CHANNEL
+//                 apsForProduction:NO
+//            advertisingIdentifier:nil];
     
     [MFHUDManager setHUDType:MFHUDTypeNormal];
     [MFNETWROK startMonitorNetworkType];
