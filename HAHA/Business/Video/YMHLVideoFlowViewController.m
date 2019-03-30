@@ -35,11 +35,12 @@ UICollectionViewDataSource
     if (!_collectionView) {
         
         YMHLVideoflowLayout *layout = [[YMHLVideoflowLayout alloc] init];
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) collectionViewLayout:layout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - STATUSBARANDNAVIGATIONBARHEIGHT) collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         [_collectionView registerClass:[YMHLVideoCollectionViewCell class] forCellWithReuseIdentifier:@"video_cell"];
         _collectionView.backgroundColor = [UIColor whiteColor];
+//        _collectionView.prefetchingEnabled = NO;
     }
     return _collectionView;
 }
@@ -47,40 +48,45 @@ UICollectionViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-   
+    [self setNavi];
     [self sendRequest];
 }
 
+- (void)setNavi {
+    self.navigationItem.title = @"视频圈";
+}
+
 - (void)sendRequest {
-//    [MFNETWROK post:@""
-//             params:@{}
-//            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-//
-//            }
-//            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-//
-//            }];
+    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
+             params:@{
+                      @"userId": @"",
+                      @"category": @"video"
+                      }
+            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+//                NSLog(@"%@", result);
+                if ([result[@"resultCode"] isEqualToString:@"0"]) {
+                    [self.list removeAllObjects];
+                    for (NSDictionary *dic in result[@"data"]) {
+                        NSLog(@"%@", dic);
+                        YMHLVideoModel *video = [YMHLVideoModel yy_modelWithJSON:dic];
+                        NSLog(@"%@", video);
+                        if (video) {
+                            [self.list addObject:video];
+                        }
+                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.view addSubview:self.collectionView];
+                        [self.collectionView reloadData];
+                    });
+                }else {
+                    
+                }
+            }
+            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                NSLog(@"%@", error.userInfo);
+            }];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataNamed:@"mook.json"];
-        self.list = [NSArray yy_modelArrayWithClass:[YMHLVideoModel class] json:data].mutableCopy;
-//        NSLog(@"%@", videos);
-//        for (NSDictionary *dic in videoArr) {
-//            YMHLVideoModel *videoModel = [YMHLVideoModel yy_modelWithJSON:dic];
-//            [self.list addObject:videoModel];
-//        }
-        
-        for (NSInteger i = 0; i < 7; i++) {
-            [self.list addObjectsFromArray:self.list];
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"%@", @(self.list.count));
-            
-             [self.view addSubview:self.collectionView];
-            [self.collectionView reloadData];
-        });
-    });
+    
 }
 
 #pragma mark - UICollectionViewDataSources
@@ -93,19 +99,14 @@ UICollectionViewDataSource
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     YMHLVideoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"video_cell" forIndexPath:indexPath];
-    /*
-     @property (nonatomic, strong) YYAnimatedImageView *coverImageView;
-     @property (nonatomic, strong) UILabel *contentLabel;
-     @property (nonatomic, strong) UIImageView *avatar;
-     @property (nonatomic, strong) UILabel *nickLabel;
-     */
     YMHLVideoModel *videoModel = self.list[indexPath.row];
-    [cell.coverImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://blog.godzzzzz.club/blogImg/Blog%@.jpg", @((indexPath.row)%100+1)]] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
+    [cell.coverImageView yy_setImageWithURL:[NSURL URLWithString:videoModel.picture_path] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
+    
     cell.contentLabel.text = videoModel.content;
-    [cell.imgButton setSelected:videoModel.collection];
-    [cell.avatar yy_setImageWithURL:[NSURL URLWithString:videoModel.avatar] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
+    [cell.imgButton setSelected:videoModel.is_star];
+    [cell.avatar yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://120.78.124.36:10010/%@", videoModel.user.avatar]] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
     [cell.imgButton addTarget:self action:@selector(handleCollectionEvent:) forControlEvents:UIControlEventTouchUpInside];
-    cell.nickLabel.text = videoModel.nick;
+    cell.nickLabel.text = videoModel.user.user_name;
     return cell;
 }
 
@@ -113,9 +114,10 @@ UICollectionViewDataSource
     YMHLVideoCollectionViewCell *cell = (YMHLVideoCollectionViewCell *)sender.superview.superview.superview;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
     YMHLVideoModel *videoModel = self.list[indexPath.row];
-    videoModel.collection = !videoModel.collection;
-    cell.imgButton.selected = videoModel.collection;
-//    [self.collectionView reloadData];
+    videoModel.is_star = !videoModel.is_star;
+    [self.collectionView performBatchUpdates:^{
+        [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    } completion:nil];
 }
 
 - (CGFloat)heightFromWidth:(CGFloat)width atIndex:(NSInteger)index {

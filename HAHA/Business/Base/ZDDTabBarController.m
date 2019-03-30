@@ -16,6 +16,7 @@
 #import "ZDDSecondController.h"
 #import "ZDDFirstController.h"
 
+#import "YMHLVideoFlowViewController.h"
 
 @interface ZDDTabBarController ()
 <
@@ -66,8 +67,8 @@ UITabBarControllerDelegate
 
     [self addChileVcWithTitle:@"菜谱大全" vc:one imageName:@"tab_now_nor" selImageName:@"tab_now_press"];
     
-    ZDDSecondController *second = [[ZDDSecondController alloc] init];
-    [self addChileVcWithTitle:@"笔记圈" vc:second imageName:@"tab_qworld_nor" selImageName:@"tab_qworld_press"];
+    YMHLVideoFlowViewController *second = [[YMHLVideoFlowViewController alloc] init];
+    [self addChileVcWithTitle:@"视频圈" vc:second imageName:@"tab_qworld_nor" selImageName:@"tab_qworld_press"];
     
     
     ZDDFirstController *three = [[ZDDFirstController alloc] init];

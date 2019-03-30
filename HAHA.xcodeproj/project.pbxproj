@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3720254A224F0B1E00E25AA4 /* ZDDCommentCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37202548224F0B1D00E25AA4 /* ZDDCommentCellNode.m */; };
+		7521BA1E224F0D7F00292099 /* YMHLUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA1D224F0D7F00292099 /* YMHLUserModel.m */; };
 		752A1A77224E7F5F004B4B31 /* mook.json in Resources */ = {isa = PBXBuildFile; fileRef = 752A1A76224E7F5F004B4B31 /* mook.json */; };
 		752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7A224E7F7A004B4B31 /* UIView+LH.m */; };
 		752A1A88224E7F7F004B4B31 /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7B224E7F7A004B4B31 /* UIView+ZDD.m */; };
@@ -39,7 +40,7 @@
 		752A1AD8224E83DC004B4B31 /* ZDDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD5224E83DC004B4B31 /* ZDDBaseViewController.m */; };
 		752A1ADC224E83F7004B4B31 /* YMHLVideoFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ADB224E83F6004B4B31 /* YMHLVideoFlowViewController.m */; };
 		752A1AE3224E8400004B4B31 /* YMHLVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */; };
-		752A1AE4224E8400004B4B31 /* YMHLVideoFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE0224E83FE004B4B31 /* YMHLVideoFlowLayout.m */; };
+		752A1AE4224E8400004B4B31 /* YMHLVideoflowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE0224E83FE004B4B31 /* YMHLVideoflowLayout.m */; };
 		752A1AE5224E8400004B4B31 /* YMHLVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE2224E83FF004B4B31 /* YMHLVideoModel.m */; };
 		752A1AEB224E8433004B4B31 /* ZDDThridController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE9224E8432004B4B31 /* ZDDThridController.m */; };
 		752A1AEE224E8441004B4B31 /* ZDDSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AEC224E8440004B4B31 /* ZDDSecondController.m */; };
@@ -60,6 +61,8 @@
 		37202548224F0B1D00E25AA4 /* ZDDCommentCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentCellNode.m; sourceTree = "<group>"; };
 		37202549224F0B1E00E25AA4 /* ZDDCommentCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDCommentCellNode.h; sourceTree = "<group>"; };
 		5E4B2110EE268EF4AA6ABCD8 /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
+		7521BA1C224F0D7F00292099 /* YMHLUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLUserModel.h; sourceTree = "<group>"; };
+		7521BA1D224F0D7F00292099 /* YMHLUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLUserModel.m; sourceTree = "<group>"; };
 		752A1A74224E7EF7004B4B31 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		752A1A76224E7F5F004B4B31 /* mook.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mook.json; sourceTree = "<group>"; };
 		752A1A79224E7F7A004B4B31 /* NSMutableAttributedString+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Chain.h"; sourceTree = "<group>"; };
@@ -123,8 +126,8 @@
 		752A1ADD224E83FD004B4B31 /* YMHLVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoModel.h; sourceTree = "<group>"; };
 		752A1ADE224E83FD004B4B31 /* YMHLVideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoCollectionViewCell.h; sourceTree = "<group>"; };
 		752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoCollectionViewCell.m; sourceTree = "<group>"; };
-		752A1AE0224E83FE004B4B31 /* YMHLVideoFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoFlowLayout.m; sourceTree = "<group>"; };
-		752A1AE1224E83FF004B4B31 /* YMHLVideoFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoFlowLayout.h; sourceTree = "<group>"; };
+		752A1AE0224E83FE004B4B31 /* YMHLVideoflowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoflowLayout.m; sourceTree = "<group>"; };
+		752A1AE1224E83FF004B4B31 /* YMHLVideoflowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoflowLayout.h; sourceTree = "<group>"; };
 		752A1AE2224E83FF004B4B31 /* YMHLVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoModel.m; sourceTree = "<group>"; };
 		752A1AE9224E8432004B4B31 /* ZDDThridController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDThridController.m; sourceTree = "<group>"; };
 		752A1AEA224E8433004B4B31 /* ZDDThridController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDThridController.h; sourceTree = "<group>"; };
@@ -162,6 +165,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7521BA1B224F0D5B00292099 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7521BA1C224F0D7F00292099 /* YMHLUserModel.h */,
+				7521BA1D224F0D7F00292099 /* YMHLUserModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		752A1A75224E7F4A004B4B31 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,10 +345,11 @@
 		752A1AD9224E83E8004B4B31 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				7521BA1B224F0D5B00292099 /* Model */,
 				752A1ADE224E83FD004B4B31 /* YMHLVideoCollectionViewCell.h */,
 				752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */,
-				752A1AE1224E83FF004B4B31 /* YMHLVideoFlowLayout.h */,
-				752A1AE0224E83FE004B4B31 /* YMHLVideoFlowLayout.m */,
+				752A1AE1224E83FF004B4B31 /* YMHLVideoflowLayout.h */,
+				752A1AE0224E83FE004B4B31 /* YMHLVideoflowLayout.m */,
 				752A1ADD224E83FD004B4B31 /* YMHLVideoModel.h */,
 				752A1AE2224E83FF004B4B31 /* YMHLVideoModel.m */,
 				752A1ADA224E83F6004B4B31 /* YMHLVideoFlowViewController.h */,
@@ -599,7 +612,7 @@
 				752A1ADC224E83F7004B4B31 /* YMHLVideoFlowViewController.m in Sources */,
 				753BD057224E6B66003C4424 /* main.m in Sources */,
 				752A1AC3224E8377004B4B31 /* TEMPAppDelegate+OpenURL.m in Sources */,
-				752A1AE4224E8400004B4B31 /* YMHLVideoFlowLayout.m in Sources */,
+				752A1AE4224E8400004B4B31 /* YMHLVideoflowLayout.m in Sources */,
 				752A1AE5224E8400004B4B31 /* YMHLVideoModel.m in Sources */,
 				752A1AB8224E801F004B4B31 /* ZDDPhotoBrowseView.m in Sources */,
 				752A1A9B224E7FD2004B4B31 /* ZDDNotificationName.m in Sources */,
@@ -621,6 +634,7 @@
 				752A1AC4224E8377004B4B31 /* TEMPAppDelegate+PushService.m in Sources */,
 				752A1AB4224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m in Sources */,
 				752A1AB3224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m in Sources */,
+				7521BA1E224F0D7F00292099 /* YMHLUserModel.m in Sources */,
 				752A1AA8224E7FF6004B4B31 /* UIImage+Blur.m in Sources */,
 				752A1AD7224E83DC004B4B31 /* ZDDNavController.m in Sources */,
 				3720254A224F0B1E00E25AA4 /* ZDDCommentCellNode.m in Sources */,

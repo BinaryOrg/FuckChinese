@@ -23,6 +23,7 @@
         
         self.coverImageView = [[YYAnimatedImageView alloc] init];
         self.coverImageView.layer.masksToBounds = YES;
+        self.coverImageView.layer.cornerRadius = 5;
         [container addSubview:self.coverImageView];
         [self.coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.mas_equalTo(5);

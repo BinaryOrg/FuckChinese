@@ -9,5 +9,7 @@
 #import "YMHLVideoModel.h"
 
 @implementation YMHLVideoModel
-
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"user" : [YMHLUserModel class]};
+}
 @end
