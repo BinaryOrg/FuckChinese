@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "YMHLSubCommentsModel.h"
+#import <YYModel/YYModel.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDCommentModel : NSObject
@@ -18,7 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *create_date;
 @property (nonatomic, strong) GODUserModel *user;
 
-
+@property (nonatomic, strong) NSArray<YMHLSubCommentsModel *> *subcomments;
+@property (nonatomic, assign) CGFloat content_height;
 @end
 
 NS_ASSUME_NONNULL_END

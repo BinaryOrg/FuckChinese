@@ -34,9 +34,12 @@
 		372025A1224F49AF00E25AA4 /* ZDDDuanziModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A0224F49AF00E25AA4 /* ZDDDuanziModel.m */; };
 		372025A4224F51DA00E25AA4 /* ZDDCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A3224F51DA00E25AA4 /* ZDDCommentModel.m */; };
 		372025A9224F57E400E25AA4 /* ZDDLogInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A8224F57E400E25AA4 /* ZDDLogInController.m */; };
-		37A7D6F7224FB31C00DD1644 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A7D6F5224FB31C00DD1644 /* ASButtonNode+LHExtension.m */; };
 		7521BA1E224F0D7F00292099 /* YMHLUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA1D224F0D7F00292099 /* YMHLUserModel.m */; };
 		7521BA22224F994000292099 /* YMHLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA21224F994000292099 /* YMHLBaseViewController.m */; };
+		7521BA2522505AA000292099 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA2422505AA000292099 /* ASButtonNode+LHExtension.m */; };
+		7521BA2922505FCA00292099 /* YMHLVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA2822505FCA00292099 /* YMHLVideoDetailViewController.m */; };
+		7521BA2E2250714E00292099 /* YMHLSubCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA2D2250714E00292099 /* YMHLSubCommentsModel.m */; };
+		7521BA31225074F200292099 /* YMHLCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA30225074F200292099 /* YMHLCommentTableViewCell.m */; };
 		752A1A77224E7F5F004B4B31 /* mook.json in Resources */ = {isa = PBXBuildFile; fileRef = 752A1A76224E7F5F004B4B31 /* mook.json */; };
 		752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7A224E7F7A004B4B31 /* UIView+LH.m */; };
 		752A1A88224E7F7F004B4B31 /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7B224E7F7A004B4B31 /* UIView+ZDD.m */; };
@@ -44,7 +47,6 @@
 		752A1A8A224E7F7F004B4B31 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A81224E7F7D004B4B31 /* NSString+Regex.m */; };
 		752A1A8B224E7F7F004B4B31 /* NSMutableAttributedString+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A83224E7F7E004B4B31 /* NSMutableAttributedString+Chain.m */; };
 		752A1A8C224E7F7F004B4B31 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A85224E7F7E004B4B31 /* UIColor+CustomColors.m */; };
-		752A1A8D224E7F7F004B4B31 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A86224E7F7E004B4B31 /* ASButtonNode+LHExtension.m */; };
 		752A1A91224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A90224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		752A1A97224E7FC3004B4B31 /* TEMPKeyConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A95224E7FC3004B4B31 /* TEMPKeyConfiguration.m */; };
 		752A1A9B224E7FD2004B4B31 /* ZDDNotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A9A224E7FD2004B4B31 /* ZDDNotificationName.m */; };
@@ -80,6 +82,8 @@
 		753BD051224E6B66003C4424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753BD050224E6B66003C4424 /* Assets.xcassets */; };
 		753BD054224E6B66003C4424 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753BD052224E6B66003C4424 /* LaunchScreen.storyboard */; };
 		753BD057224E6B66003C4424 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BD056224E6B66003C4424 /* main.m */; };
+		755AEA3922507680008E0F33 /* YMHLSubcommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA3822507680008E0F33 /* YMHLSubcommentTableViewCell.m */; };
+		755AEA3C22509A1A008E0F33 /* NSString+YMHLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA3B22509A1A008E0F33 /* NSString+YMHLAdditions.m */; };
 		B281997060E7376A8BA1C87E /* libPods-HAHA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC519B347F9056DD4EFD649 /* libPods-HAHA.a */; };
 /* End PBXBuildFile section */
 
@@ -152,13 +156,19 @@
 		372025A3224F51DA00E25AA4 /* ZDDCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentModel.m; sourceTree = "<group>"; };
 		372025A7224F57E400E25AA4 /* ZDDLogInController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDLogInController.h; sourceTree = "<group>"; };
 		372025A8224F57E400E25AA4 /* ZDDLogInController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDLogInController.m; sourceTree = "<group>"; };
-		37A7D6F5224FB31C00DD1644 /* ASButtonNode+LHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ASButtonNode+LHExtension.m"; path = "../../../../ASButtonNode+LHExtension.m"; sourceTree = "<group>"; };
-		37A7D6F6224FB31C00DD1644 /* ASButtonNode+LHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ASButtonNode+LHExtension.h"; path = "../../../../ASButtonNode+LHExtension.h"; sourceTree = "<group>"; };
 		5E4B2110EE268EF4AA6ABCD8 /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
 		7521BA1C224F0D7F00292099 /* YMHLUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLUserModel.h; sourceTree = "<group>"; };
 		7521BA1D224F0D7F00292099 /* YMHLUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLUserModel.m; sourceTree = "<group>"; };
 		7521BA20224F994000292099 /* YMHLBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLBaseViewController.h; sourceTree = "<group>"; };
 		7521BA21224F994000292099 /* YMHLBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLBaseViewController.m; sourceTree = "<group>"; };
+		7521BA2322505AA000292099 /* ASButtonNode+LHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASButtonNode+LHExtension.h"; sourceTree = "<group>"; };
+		7521BA2422505AA000292099 /* ASButtonNode+LHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASButtonNode+LHExtension.m"; sourceTree = "<group>"; };
+		7521BA2722505FCA00292099 /* YMHLVideoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLVideoDetailViewController.h; sourceTree = "<group>"; };
+		7521BA2822505FCA00292099 /* YMHLVideoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoDetailViewController.m; sourceTree = "<group>"; };
+		7521BA2C2250714E00292099 /* YMHLSubCommentsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLSubCommentsModel.h; sourceTree = "<group>"; };
+		7521BA2D2250714E00292099 /* YMHLSubCommentsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLSubCommentsModel.m; sourceTree = "<group>"; };
+		7521BA2F225074F200292099 /* YMHLCommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLCommentTableViewCell.h; sourceTree = "<group>"; };
+		7521BA30225074F200292099 /* YMHLCommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLCommentTableViewCell.m; sourceTree = "<group>"; };
 		752A1A74224E7EF7004B4B31 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		752A1A76224E7F5F004B4B31 /* mook.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mook.json; sourceTree = "<group>"; };
 		752A1A79224E7F7A004B4B31 /* NSMutableAttributedString+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Chain.h"; sourceTree = "<group>"; };
@@ -170,11 +180,9 @@
 		752A1A7F224E7F7C004B4B31 /* UIView+ZDD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
 		752A1A80224E7F7C004B4B31 /* UIView+LH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LH.h"; sourceTree = "<group>"; };
 		752A1A81224E7F7D004B4B31 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
-		752A1A82224E7F7D004B4B31 /* ASButtonNode+LHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASButtonNode+LHExtension.h"; sourceTree = "<group>"; };
 		752A1A83224E7F7E004B4B31 /* NSMutableAttributedString+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Chain.m"; sourceTree = "<group>"; };
 		752A1A84224E7F7E004B4B31 /* NSMutableDictionary+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Attributes.h"; sourceTree = "<group>"; };
 		752A1A85224E7F7E004B4B31 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
-		752A1A86224E7F7E004B4B31 /* ASButtonNode+LHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASButtonNode+LHExtension.m"; sourceTree = "<group>"; };
 		752A1A8F224E7F92004B4B31 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		752A1A90224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		752A1A93224E7FAB004B4B31 /* TEMPMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPMacro.h; sourceTree = "<group>"; };
@@ -244,6 +252,10 @@
 		753BD053224E6B66003C4424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		753BD055224E6B66003C4424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753BD056224E6B66003C4424 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		755AEA3722507680008E0F33 /* YMHLSubcommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLSubcommentTableViewCell.h; sourceTree = "<group>"; };
+		755AEA3822507680008E0F33 /* YMHLSubcommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLSubcommentTableViewCell.m; sourceTree = "<group>"; };
+		755AEA3A22509A1A008E0F33 /* NSString+YMHLAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YMHLAdditions.h"; sourceTree = "<group>"; };
+		755AEA3B22509A1A008E0F33 /* NSString+YMHLAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YMHLAdditions.m"; sourceTree = "<group>"; };
 		7606C474EC02E36B64289221 /* Pods-HAHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.release.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -364,6 +376,37 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		7521BA2622505F9E00292099 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7521BA2B2250713000292099 /* Model */,
+				7521BA2A22506EF000292099 /* Cell */,
+				7521BA2722505FCA00292099 /* YMHLVideoDetailViewController.h */,
+				7521BA2822505FCA00292099 /* YMHLVideoDetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		7521BA2A22506EF000292099 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7521BA2F225074F200292099 /* YMHLCommentTableViewCell.h */,
+				7521BA30225074F200292099 /* YMHLCommentTableViewCell.m */,
+				755AEA3722507680008E0F33 /* YMHLSubcommentTableViewCell.h */,
+				755AEA3822507680008E0F33 /* YMHLSubcommentTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7521BA2B2250713000292099 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7521BA2C2250714E00292099 /* YMHLSubCommentsModel.h */,
+				7521BA2D2250714E00292099 /* YMHLSubCommentsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		752A1A75224E7F4A004B4B31 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,16 +427,14 @@
 		752A1A78224E7F68004B4B31 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				37A7D6F6224FB31C00DD1644 /* ASButtonNode+LHExtension.h */,
-				37A7D6F5224FB31C00DD1644 /* ASButtonNode+LHExtension.m */,
+				7521BA2322505AA000292099 /* ASButtonNode+LHExtension.h */,
+				7521BA2422505AA000292099 /* ASButtonNode+LHExtension.m */,
 				752A1ABE224E8374004B4B31 /* TEMPAppDelegate+BackgroundTask.h */,
 				752A1AC2224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m */,
 				752A1ABD224E8374004B4B31 /* TEMPAppDelegate+OpenURL.h */,
 				752A1ABF224E8375004B4B31 /* TEMPAppDelegate+OpenURL.m */,
 				752A1AC0224E8376004B4B31 /* TEMPAppDelegate+PushService.h */,
 				752A1AC1224E8376004B4B31 /* TEMPAppDelegate+PushService.m */,
-				752A1A82224E7F7D004B4B31 /* ASButtonNode+LHExtension.h */,
-				752A1A86224E7F7E004B4B31 /* ASButtonNode+LHExtension.m */,
 				752A1A79224E7F7A004B4B31 /* NSMutableAttributedString+Chain.h */,
 				752A1A83224E7F7E004B4B31 /* NSMutableAttributedString+Chain.m */,
 				752A1A84224E7F7E004B4B31 /* NSMutableDictionary+Attributes.h */,
@@ -406,6 +447,8 @@
 				752A1A7A224E7F7A004B4B31 /* UIView+LH.m */,
 				752A1A7F224E7F7C004B4B31 /* UIView+ZDD.h */,
 				752A1A7B224E7F7A004B4B31 /* UIView+ZDD.m */,
+				755AEA3A22509A1A008E0F33 /* NSString+YMHLAdditions.h */,
+				755AEA3B22509A1A008E0F33 /* NSString+YMHLAdditions.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -539,6 +582,7 @@
 		752A1AD9224E83E8004B4B31 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				7521BA2622505F9E00292099 /* Detail */,
 				7521BA1F224F992300292099 /* Base */,
 				7521BA1B224F0D5B00292099 /* Model */,
 				752A1ADE224E83FD004B4B31 /* YMHLVideoCollectionViewCell.h */,
@@ -828,6 +872,7 @@
 				752A1A9B224E7FD2004B4B31 /* ZDDNotificationName.m in Sources */,
 				37202586224F225200E25AA4 /* POPMath.mm in Sources */,
 				37202587224F225200E25AA4 /* POPSpringAnimation.mm in Sources */,
+				755AEA3C22509A1A008E0F33 /* NSString+YMHLAdditions.m in Sources */,
 				752A1A8A224E7F7F004B4B31 /* NSString+Regex.m in Sources */,
 				7521BA22224F994000292099 /* YMHLBaseViewController.m in Sources */,
 				37202593224F225200E25AA4 /* POPAnimator.mm in Sources */,
@@ -839,7 +884,6 @@
 				37202594224F225200E25AA4 /* POPAnimatableProperty.mm in Sources */,
 				752A1A88224E7F7F004B4B31 /* UIView+ZDD.m in Sources */,
 				3720259D224F491900E25AA4 /* GODUserModel.m in Sources */,
-				752A1A8D224E7F7F004B4B31 /* ASButtonNode+LHExtension.m in Sources */,
 				37202595224F225200E25AA4 /* POPAnimationRuntime.mm in Sources */,
 				752A1AC5224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
 				37202584224F225200E25AA4 /* POPCGUtils.mm in Sources */,
@@ -851,10 +895,13 @@
 				752A1AEB224E8433004B4B31 /* ZDDThridController.m in Sources */,
 				3720259E224F491900E25AA4 /* GODUserTool.m in Sources */,
 				3720258A224F225200E25AA4 /* POPAnimationExtras.mm in Sources */,
+				755AEA3922507680008E0F33 /* YMHLSubcommentTableViewCell.m in Sources */,
 				752A1ABC224E8359004B4B31 /* GODWebViewController.m in Sources */,
 				752A1AE3224E8400004B4B31 /* YMHLVideoCollectionViewCell.m in Sources */,
 				752A1A97224E7FC3004B4B31 /* TEMPKeyConfiguration.m in Sources */,
 				752A1A89224E7F7F004B4B31 /* NSMutableDictionary+Attributes.m in Sources */,
+				7521BA2922505FCA00292099 /* YMHLVideoDetailViewController.m in Sources */,
+				7521BA31225074F200292099 /* YMHLCommentTableViewCell.m in Sources */,
 				752A1B01224E847C004B4B31 /* ZDDCommentLIstView.m in Sources */,
 				372025A1224F49AF00E25AA4 /* ZDDDuanziModel.m in Sources */,
 				752A1AC4224E8377004B4B31 /* TEMPAppDelegate+PushService.m in Sources */,
@@ -868,9 +915,10 @@
 				37202591224F225200E25AA4 /* POPBasicAnimation.mm in Sources */,
 				752A1A9F224E7FE0004B4B31 /* ZDDThemeConfiguration.m in Sources */,
 				752A1AD6224E83DC004B4B31 /* ZDDTabBarController.m in Sources */,
+				7521BA2E2250714E00292099 /* YMHLSubCommentsModel.m in Sources */,
 				752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */,
 				752A1A8C224E7F7F004B4B31 /* UIColor+CustomColors.m in Sources */,
-				37A7D6F7224FB31C00DD1644 /* ASButtonNode+LHExtension.m in Sources */,
+				7521BA2522505AA000292099 /* ASButtonNode+LHExtension.m in Sources */,
 				37202597224F225200E25AA4 /* POPLayerExtras.mm in Sources */,
 				752A1AB2224E8011004B4B31 /* NSDictionary+HYBUnicodeReadable.m in Sources */,
 				37202590224F225200E25AA4 /* POPGeometry.mm in Sources */,

@@ -9,5 +9,12 @@
 #import "ZDDCommentModel.h"
 
 @implementation ZDDCommentModel
+- (void)setContent:(NSString *)content {
+    _content = content;
+    self.content_height = [content heightWithLabelFont:[UIFont systemFontOfSize:14] withLabelWidth:SCREENWIDTH - 100];
+}
 
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"subcomments" : [YMHLSubCommentsModel class]};
+}
 @end

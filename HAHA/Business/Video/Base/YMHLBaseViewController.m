@@ -12,9 +12,42 @@
 @property (nonatomic, strong) UIView *emptyView;
 @property (nonatomic, strong) UIView *netErrorView;
 
+@property (nonatomic, strong) UIView *bottomErrorView;
+
 @end
 
 @implementation YMHLBaseViewController
+
+- (UIView *)bottomErrorView {
+    if (!_bottomErrorView) {
+        _bottomErrorView = [[UIView alloc] initWithFrame:CGRectMake(0, SCREENWIDTH*3/4, SCREENWIDTH,  (SCREENHEIGHT-SCREENWIDTH*3/4))];
+        _bottomErrorView.backgroundColor = [UIColor whiteColor];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+        imageView.image = [UIImage imageNamed:@"empty_icon_150x150_"];
+        imageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-SCREENWIDTH*3/4)/2);
+        [_bottomErrorView addSubview:imageView];
+        
+        UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+        b.frame = _emptyView.bounds;
+        [b addTarget:self action:@selector(bottomErrorClick) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomErrorView addSubview:b];
+    }
+    return _bottomErrorView;
+}
+
+- (void)bottomErrorClick {
+    if (self.bottomErrorViewClickBlock) {
+        self.bottomErrorViewClickBlock();
+    }
+}
+
+- (void)addBottomErrorView {
+    [self.view addSubview:self.bottomErrorView];
+}
+
+- (void)removeBottomErrorView {
+    [self.bottomErrorView removeFromSuperview];
+}
 
 - (UIView *)emptyView {
     if (!_emptyView) {
@@ -70,6 +103,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
 

@@ -10,12 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^ErrorViewClickBlock)(void);
+typedef void(^BottomErrorViewClickBlock)(void);
 @interface YMHLBaseViewController : UIViewController
 - (void)addEmptyView;
 - (void)addNetworkErrorView;
 - (void)removeErrorView;
 
+- (void)addBottomErrorView;
+- (void)removeBottomErrorView;
 @property (nonatomic, copy) ErrorViewClickBlock errorViewClickBlock;
+@property (nonatomic, copy) BottomErrorViewClickBlock bottomErrorViewClickBlock;
 @end
 
 NS_ASSUME_NONNULL_END

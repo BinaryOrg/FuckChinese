@@ -12,6 +12,7 @@
 #import <YYCategories/YYCategories.h>
 #import "YMHLVideoModel.h"
 #import <YYModel/NSObject+YYModel.h>
+#import "YMHLVideoDetailViewController.h"
 
 @interface YMHLVideoFlowViewController ()
 <
@@ -59,7 +60,7 @@ UICollectionViewDataSource
     sender.userInteractionEnabled = NO;
     [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
              params:@{
-                      @"userId": @"",
+                      @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
                       @"category": @"video"
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
@@ -139,7 +140,7 @@ UICollectionViewDataSource
     [SVProgressHUD show];
     [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
              params:@{
-                      @"userId": @"",
+                      @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
                       @"category": @"video"
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
@@ -198,13 +199,33 @@ UICollectionViewDataSource
 }
 
 - (void)handleCollectionEvent:(TTAnimationButton *)sender {
-    YMHLVideoCollectionViewCell *cell = (YMHLVideoCollectionViewCell *)sender.superview.superview.superview;
-    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
-    YMHLVideoModel *videoModel = self.list[indexPath.row];
-    videoModel.is_star = !videoModel.is_star;
-    [self.collectionView performBatchUpdates:^{
-        [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
-    } completion:nil];
+    if ([GODUserTool isLogin]) {
+        YMHLVideoCollectionViewCell *cell = (YMHLVideoCollectionViewCell *)sender.superview.superview.superview;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+        YMHLVideoModel *videoModel = self.list[indexPath.row];
+        videoModel.is_star = !videoModel.is_star;
+        [self star:videoModel.id];
+        [self.collectionView performBatchUpdates:^{
+            [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+        } completion:nil];
+    }else {
+        ZDDLogInController *vc = [ZDDLogInController new];
+        [self.navigationController presentViewController:vc animated:YES completion:nil] ;
+    }
+}
+
+- (void)star:(NSString *)targetId {
+    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Star/AddOrCancel"
+             params:@{
+                      @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
+                      @"targetId": targetId
+                      }
+            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                
+            }
+            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                
+            }];
 }
 
 - (CGFloat)heightFromWidth:(CGFloat)width atIndex:(NSInteger)index {
@@ -236,38 +257,18 @@ UICollectionViewDataSource
     return edgeInsets;
 }
 
-#pragma mark - YMHLFlowLayout
-//返回每个cell的高度
-//- (CGFloat)waterflowLayout:(XMGWaterflowLayout *)waterflowLayout heightForItemAtIndex:(NSUInteger)index itemWidth:(CGFloat)itemWidth
-//{
-//    XMGShop *shop = self.shops[index];
-//    return itemWidth * shop.h / shop.w;
-//}
 
-//- (CGFloat)videoflowLayout:(YMHLVideoFlowLayout *)videoflowLayout heightForItemAtIndex:(NSUInteger)index itemWidth:(CGFloat)itemWidth {
-//    NSInteger i = index%2;
-//    if (!i) {
-//        return itemWidth*3/2;
-//    }else {
-//        return itemWidth*2;
-//    }
-//}
-//
-////每行的最小距离
-//- (CGFloat)rowMarginInVideoflowLayout:(YMHLVideoFlowLayout *)videoflowLayout
-//{
-//    return 10;
-//}
-////有多少列
-//- (CGFloat)columnCountInVideoflowLayout:(YMHLVideoFlowLayout *)videoflowLayout
-//{
-//    return 2;
-//}
-//
-////内边距
-//- (UIEdgeInsets)edgeInsetsInVideoflowLayout:(YMHLVideoFlowLayout *)videoflowLayout
-//{
-//    return UIEdgeInsetsMake(10, 10, 10, 10);
-//}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    if ([GODUserTool isLogin]) {
+        YMHLVideoModel *videoModel = self.list[indexPath.row];
+        YMHLVideoDetailViewController *detail = [[YMHLVideoDetailViewController alloc] init];
+        detail.videoModel = videoModel;
+        [self.navigationController pushViewController:detail animated:YES];
+    }else {
+        ZDDLogInController *vc = [ZDDLogInController new];
+        [self.navigationController presentViewController:vc animated:YES completion:nil] ;
+    }
+}
 
 @end
