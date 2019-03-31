@@ -24,9 +24,28 @@ UITableViewDataSource
 @property (nonatomic, strong) SuperPlayerView *playerView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray<ZDDCommentModel *> *list;
+@property (nonatomic, strong) UIView *refreshView;
 @end
 
 @implementation YMHLVideoDetailViewController
+
+- (UIView *)refreshView {
+    if (!_refreshView) {
+        _refreshView = [[UIView alloc] initWithFrame:CGRectMake(SCREENWIDTH - 60, SCREENHEIGHT - 60, 40, 40)];
+        _refreshView.layer.cornerRadius = 15;
+        _refreshView.layer.masksToBounds = YES;
+        UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+        b.frame = _refreshView.bounds;
+        [b setImage:[UIImage imageNamed:@"SpotBugFeedBackPen"] forState:UIControlStateNormal];
+        [b setImage:[UIImage imageNamed:@"SpotBugFeedBackPen"] forState:UIControlStateHighlighted];
+        [b addTarget:self action:@selector(comment) forControlEvents:UIControlEventTouchUpInside];
+        [_refreshView addSubview:b];
+        _refreshView.backgroundColor = [UIColor whiteColor];
+    }
+    return _refreshView;
+}
+
+
 - (NSMutableArray *)list {
     if (!_list) {
         _list = @[].mutableCopy;
@@ -42,6 +61,7 @@ UITableViewDataSource
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.tableFooterView = [UIView new];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }
@@ -78,8 +98,6 @@ UITableViewDataSource
     SPDefaultControlView *controlView = (SPDefaultControlView *)self.playerView.controlView;
     ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
     [controlView.videoSlider setMinimumTrackTintColor:theme.themeColor];
-    controlView.backBtn.hidden = YES;
-    controlView.disableBackBtn = YES;
     [self sendRequest];
     __weak __typeof(self)weakSelf = self;
     self.bottomErrorViewClickBlock = ^{
@@ -141,6 +159,9 @@ UITableViewDataSource
                       @"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"",
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                });
                 if ([result[@"resultCode"] isEqualToString:@"0"]) {
                     [self.list removeAllObjects];
                     for (NSDictionary *dic in result[@"data"]) {
@@ -153,15 +174,20 @@ UITableViewDataSource
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [self.view addSubview:self.tableView];
                             [self.tableView reloadData];
+                            [self.view addSubview:self.refreshView];
                         });
                     }else {
                         [self addBottomErrorView];
+                        [self.view addSubview:self.refreshView];
                     }
                 }else {
                     [self addBottomErrorView];
                 }
             }
             failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                });
                 [self addBottomErrorView];
             }];
 }
@@ -190,6 +216,16 @@ UITableViewDataSource
         cell.dateLabel.text = [self formatFromTS:comment.create_date];
         [cell.commentButton setQmui_top:MaxY(cell.commentLabel)+5];
         [cell.commentButton addTarget:self action:@selector(commentButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.starButton setQmui_top:MaxY(cell.commentLabel)+5];
+        [cell.starButton addTarget:self action:@selector(starButtonClick:)
+         forControlEvents:UIControlEventTouchUpInside];
+        [cell.line setQmui_top:MaxY(cell.starButton) + 20];
+        if (comment.is_star) {
+            cell.starButton.tintColor = [UIColor zdd_redColor];
+        }else {
+            cell.starButton.tintColor = [UIColor zdd_colorWithRed:120 green:120 blue:120];
+        }
+//        cell.line.alpha = 1;
         return cell;
     }else {
         YMHLSubCommentsModel *subcomment = comment.subcomments[indexPath.row-1];
@@ -207,18 +243,106 @@ UITableViewDataSource
         cell.dateLabel.text = [self formatFromTS:subcomment.create_date];
         [cell.commentButton setQmui_top:MaxY(cell.commentLabel)+5];
         [cell.commentButton addTarget:self action:@selector(subcommentButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.line setQmui_top:MaxY(cell.commentButton) + 20];
+//        if (indexPath.row == comment.subcomments.count + 1) {
+//            cell.line.alpha = 0;
+//        }else {
+//            cell.line.alpha = 1;
+//        }
         return cell;
     }
 }
 
-
+- (void)starButtonClick:(UIButton *)sender {
+    YMHLCommentTableViewCell *cell = (YMHLCommentTableViewCell *)sender.superview.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    ZDDCommentModel *comment = self.list[indexPath.section];
+    comment.is_star = !comment.is_star;
+    if (comment.is_star) {
+        sender.tintColor = [UIColor zdd_redColor];
+    }else {
+        sender.tintColor = [UIColor zdd_colorWithRed:120 green:120 blue:120];
+    }
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Star/AddOrCancel"
+             params:@{
+                      @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
+                      @"targetId": comment.id
+                      }
+            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                NSLog(@"%@", result);
+            }
+            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                NSLog(@"%@", error);
+            }];
+}
 
 - (void)subcommentButtonClick:(UIButton *)sender {
-    
+    YMHLSubcommentTableViewCell *cell = (YMHLSubcommentTableViewCell *)sender.superview.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    ZDDCommentModel *comment = self.list[indexPath.section];
+    YMHLSubCommentsModel *subcomment = comment.subcomments[indexPath.row - 1];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入评论内容" preferredStyle:(UIAlertControllerStyleAlert)];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入评论内容";
+    }];__weak __typeof(self)weakSelf = self;
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf commentTargetId:subcomment.src_user.user_id commentId:comment.id content:alert.textFields[0].text];
+    }];
+    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:a1];
+    [alert addAction:a2];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)commentButtonClick:(UIButton *)sender {
-    
+    YMHLCommentTableViewCell *cell = (YMHLCommentTableViewCell *)sender.superview.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    ZDDCommentModel *comment = self.list[indexPath.section];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入评论内容" preferredStyle:(UIAlertControllerStyleAlert)];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入评论内容";
+    }];__weak __typeof(self)weakSelf = self;
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf commentTargetId:comment.user.user_id commentId:comment.id content:alert.textFields[0].text];
+    }];
+    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:a1];
+    [alert addAction:a2];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)commentTargetId:(NSString *)targetId commentId:(NSString *)parentId content:(NSString *)content {
+    [SVProgressHUD show];
+    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Comment/CreateSubcomment"
+             params:@{
+                      @"parentId":parentId,
+                      @"srcId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"",
+                      @"tarId":targetId,
+                      @"content": content
+                      }
+            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                if ([result[@"resultCode"] isEqualToString:@"0"]) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self sendRequest];
+                    });
+                }else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [SVProgressHUD showErrorWithStatus:@"评论失败"];
+                    });
+                }
+            }
+            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD showErrorWithStatus:@"评论失败"];
+                });
+            }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

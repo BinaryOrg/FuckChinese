@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *commentLabel;
 @property (nonatomic, strong) UILabel *dateLabel;
 @property (nonatomic, strong) UIButton *commentButton;
+@property (nonatomic, strong) UILabel *line;
 @end
 
 NS_ASSUME_NONNULL_END

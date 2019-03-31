@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZTWButton.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YMHLCommentTableViewCell : UITableViewCell
@@ -15,7 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *nickLabel;
 @property (nonatomic, strong) UILabel *commentLabel;
 @property (nonatomic, strong) UILabel *dateLabel;
-@property (nonatomic, strong) UIButton *commentButton;
+
+@property (nonatomic, strong) ZTWButton *starButton;
+@property (nonatomic, strong) ZTWButton *commentButton;
+@property (nonatomic, strong) UILabel *line;
 @end
 
 NS_ASSUME_NONNULL_END

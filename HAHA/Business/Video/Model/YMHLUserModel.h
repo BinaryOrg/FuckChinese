@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  "last_login_date": 1553870826
  */
 @interface YMHLUserModel : NSObject
+@property (nonatomic, strong) NSString *user_id;
 @property (nonatomic, strong) NSString *user_name;
 @property (nonatomic, strong) NSString *avatar;
 @property (nonatomic, strong) NSString *create_date;

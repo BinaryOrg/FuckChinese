@@ -64,6 +64,7 @@ UICollectionViewDataSource
                       @"category": @"video"
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                NSLog(@"%@", result);
                 dispatch_async(dispatch_get_main_queue(), ^{
                     sender.userInteractionEnabled = YES;
                     [self stopRatateWithView:sender];
@@ -78,7 +79,7 @@ UICollectionViewDataSource
                     }
                     [self.list insertObjects:inserts atIndex:0];
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [MFHUDManager showSuccess:@"为您推荐200条新鲜视频～"];
+                        [MFHUDManager showSuccess:@"为您推荐40条新鲜视频～"];
                         [self.collectionView reloadData];
                         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:(UICollectionViewScrollPositionTop) animated:YES];
                     });

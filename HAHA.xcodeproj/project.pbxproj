@@ -97,6 +97,7 @@
 		755AEA602250E45B008E0F33 /* expression.plist in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA5B2250E45A008E0F33 /* expression.plist */; };
 		755AEA612250E45B008E0F33 /* XJInputView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA5C2250E45B008E0F33 /* XJInputView.bundle */; };
 		755AEA622250E45B008E0F33 /* UIColor+ZS.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */; };
+		755AEA662250F28E008E0F33 /* ZTWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA642250F28D008E0F33 /* ZTWButton.m */; };
 		B281997060E7376A8BA1C87E /* libPods-HAHA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC519B347F9056DD4EFD649 /* libPods-HAHA.a */; };
 /* End PBXBuildFile section */
 
@@ -293,6 +294,8 @@
 		755AEA5B2250E45A008E0F33 /* expression.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = expression.plist; sourceTree = "<group>"; };
 		755AEA5C2250E45B008E0F33 /* XJInputView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XJInputView.bundle; sourceTree = "<group>"; };
 		755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZS.m"; sourceTree = "<group>"; };
+		755AEA642250F28D008E0F33 /* ZTWButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTWButton.m; sourceTree = "<group>"; };
+		755AEA652250F28D008E0F33 /* ZTWButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTWButton.h; sourceTree = "<group>"; };
 		7606C474EC02E36B64289221 /* Pods-HAHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.release.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -447,6 +450,7 @@
 		752A1A75224E7F4A004B4B31 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				755AEA632250F265008E0F33 /* YMHLButton */,
 				755AEA3D2250E3C8008E0F33 /* InputView */,
 				3720254B224F225100E25AA4 /* pop */,
 				752A1AB5224E8016004B4B31 /* PB */,
@@ -771,6 +775,15 @@
 			path = "New Groupiew";
 			sourceTree = "<group>";
 		};
+		755AEA632250F265008E0F33 /* YMHLButton */ = {
+			isa = PBXGroup;
+			children = (
+				755AEA652250F28D008E0F33 /* ZTWButton.h */,
+				755AEA642250F28D008E0F33 /* ZTWButton.m */,
+			);
+			path = YMHLButton;
+			sourceTree = "<group>";
+		};
 		E131989F0D313136377B77C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -966,6 +979,7 @@
 				752A1A88224E7F7F004B4B31 /* UIView+ZDD.m in Sources */,
 				3720259D224F491900E25AA4 /* GODUserModel.m in Sources */,
 				755AEA512250E404008E0F33 /* XJMulitFuctionView.m in Sources */,
+				755AEA662250F28E008E0F33 /* ZTWButton.m in Sources */,
 				37202595224F225200E25AA4 /* POPAnimationRuntime.mm in Sources */,
 				752A1AC5224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
 				37202584224F225200E25AA4 /* POPCGUtils.mm in Sources */,

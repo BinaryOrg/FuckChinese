@@ -55,6 +55,10 @@
         self.commentButton.frame = CGRectMake(SCREENWIDTH - 20 - 20, 0, 20, 20);
         [self.contentView addSubview:self.commentButton];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+//        self.line = [[UILabel alloc] initWithFrame:CGRectMake(MinX(self.avatar), 0, SCREENWIDTH - MinX(self.avatar), 1)];
+//        self.line.backgroundColor = [UIColor zdd_colorWithRed:238 green:238 blue:238];
+//        [self.contentView addSubview:self.line];
     }
     return self;
 }

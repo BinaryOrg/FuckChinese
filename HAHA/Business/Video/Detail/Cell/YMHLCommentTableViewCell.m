@@ -37,13 +37,26 @@
         self.dateLabel.font = [UIFont systemFontOfSize:13];
         [self.contentView addSubview:self.dateLabel];
         
-        self.commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.starButton = [ZTWButton buttonWithType:UIButtonTypeCustom];
+        UIImage *il = [[UIImage imageNamed:@"ZHDB_Badge_Comment_Like"] imageWithRenderingMode:(UIImageRenderingModeAlwaysTemplate)];
+        self.starButton.tintColor = [UIColor zdd_colorWithRed:120 green:120 blue:120];
+        [self.starButton setImage:il forState:UIControlStateNormal];
+        self.starButton.frame = CGRectMake(SCREENWIDTH - 20 - 20 - 10 - 20, 0, 20, 20);
+        self.starButton.eventFrame = CGSizeMake(44, 44);
+        [self.contentView addSubview:self.starButton];
+        
+        self.commentButton = [ZTWButton buttonWithType:UIButtonTypeCustom];
         UIImage *i = [[UIImage imageNamed:@"ZHDB_Badge_Comment"] imageWithRenderingMode:(UIImageRenderingModeAlwaysTemplate)];
         self.commentButton.tintColor = [UIColor zdd_colorWithRed:120 green:120 blue:120];
         [self.commentButton setImage:i forState:UIControlStateNormal];
         self.commentButton.frame = CGRectMake(SCREENWIDTH - 20 - 20, 0, 20, 20);
+        self.commentButton.eventFrame = CGSizeMake(44, 44);
         [self.contentView addSubview:self.commentButton];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+//        self.line = [[UILabel alloc] initWithFrame:CGRectMake(MinX(self.avatar), 0, SCREENWIDTH - MinX(self.avatar), 1)];
+//        self.line.backgroundColor = [UIColor zdd_colorWithRed:238 green:238 blue:238];
+//        [self.contentView addSubview:self.line];
     }
     return self;
 }
