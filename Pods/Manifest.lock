@@ -368,6 +368,8 @@ PODS:
   - Texture/Video (2.8):
     - Texture/Core
   - TTAnimationButton (0.1.1)
+  - TZImagePickerController (3.2.0)
+  - "UITextView+Placeholder (1.2.1)"
   - XHLaunchAd (3.9.8):
     - FLAnimatedImage (~> 1.0.12)
   - YYCache (1.0.4)
@@ -400,10 +402,13 @@ DEPENDENCIES:
   - MJRefresh
   - mob_smssdk
   - QMUIKit
+  - SDWebImage
   - SuperPlayer
   - SVProgressHUD
   - Texture
   - TTAnimationButton
+  - TZImagePickerController
+  - "UITextView+Placeholder"
   - XHLaunchAd
   - YYCategories
   - YYModel
@@ -442,6 +447,8 @@ SPEC REPOS:
     - SVProgressHUD
     - Texture
     - TTAnimationButton
+    - TZImagePickerController
+    - "UITextView+Placeholder"
     - XHLaunchAd
     - YYCache
     - YYCategories
@@ -481,6 +488,8 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Texture: fc6e0157201f3a6e503d364c147b1872e365cef4
   TTAnimationButton: 8a6d3633db911d619aba8c73905c0d174c2b2828
+  TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
   XHLaunchAd: 45048592af01aa501c9d2d0c45e95ca74c4d0596
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
@@ -488,6 +497,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: d44ba827acd6087273a2f0f34d9612020c010c72
+PODFILE CHECKSUM: 3f7d1ee0d39dfc19ce7db693ac11150e37d7dd51
 
 COCOAPODS: 1.6.1

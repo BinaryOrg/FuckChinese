@@ -31,5 +31,7 @@ pod 'AVOSCloudIM'
 pod 'TTAnimationButton'
 pod 'SVProgressHUD'
   # Pods for HAHA
-
+  pod 'SDWebImage'
+  pod 'TZImagePickerController'
+  pod 'UITextView+Placeholder',:inhibit_warnings => true
 end

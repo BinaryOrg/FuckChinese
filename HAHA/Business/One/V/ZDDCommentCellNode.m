@@ -43,7 +43,7 @@
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:16]).lh_color(color(53, 64, 72, 1));
         }];
         
-        self.timeNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[self formatFromTS:[model.create_date integerValue]] attributes:^(NSMutableDictionary *make) {
+        self.timeNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[self formatFromTS:model.create_date] attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Regular" size:12]).lh_color(color(137, 137, 137, 1));
         }];
     }

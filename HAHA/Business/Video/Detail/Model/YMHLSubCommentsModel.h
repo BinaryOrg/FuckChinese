@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YMHLSubCommentsModel : NSObject
 @property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSString *content;
-@property (nonatomic, strong) NSString *create_date;
+@property (nonatomic, assign) NSInteger create_date;
 @property (nonatomic, strong) YMHLUserModel *src_user;
 @property (nonatomic, strong) YMHLUserModel *tar_user;
 @property (nonatomic, assign) CGFloat content_height;

@@ -16,11 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSString *target_id;
 @property (nonatomic, strong) NSString *content;
-@property (nonatomic, strong) NSString *create_date;
+@property (nonatomic, assign) NSInteger create_date;
 @property (nonatomic, strong) GODUserModel *user;
 
 @property (nonatomic, strong) NSArray<YMHLSubCommentsModel *> *subcomments;
 @property (nonatomic, assign) CGFloat content_height;
+@property (nonatomic, assign) BOOL is_star;
 @end
 
 NS_ASSUME_NONNULL_END

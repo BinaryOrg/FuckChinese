@@ -43,7 +43,7 @@
         self.commentLabel.font = [UIFont systemFontOfSize:14];
         [self.contentView addSubview:self.commentLabel];
         
-        self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(MinX(self.commentLabel), 0, 100, 20)];
+        self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(MinX(self.commentLabel), 0, 150, 20)];
         self.dateLabel.textColor = [UIColor zdd_colorWithRed:180 green:180 blue:180];
         self.dateLabel.font = [UIFont systemFontOfSize:13];
         [self.contentView addSubview:self.dateLabel];

@@ -188,11 +188,11 @@ UICollectionViewDataSource
     
     YMHLVideoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"video_cell" forIndexPath:indexPath];
     YMHLVideoModel *videoModel = self.list[indexPath.row];
-    [cell.coverImageView yy_setImageWithURL:[NSURL URLWithString:videoModel.picture_path] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
+    [cell.coverImageView yy_setImageWithURL:[NSURL URLWithString:videoModel.picture_path] placeholder:nil options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
     
     cell.contentLabel.text = videoModel.content;
     [cell.imgButton setSelected:videoModel.is_star];
-    [cell.avatar yy_setImageWithURL:[NSURL URLWithString:videoModel.user.avatar] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
+    [cell.avatar yy_setImageWithURL:[NSURL URLWithString:videoModel.user.avatar] placeholder:[UIImage imageNamed:@"sex_boy_110x110_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
     [cell.imgButton addTarget:self action:@selector(handleCollectionEvent:) forControlEvents:UIControlEventTouchUpInside];
     cell.nickLabel.text = videoModel.user.user_name;
     return cell;

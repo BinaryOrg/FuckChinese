@@ -12,6 +12,7 @@
 #import "ZDDCommentModel.h"
 #import "YMHLCommentTableViewCell.h"
 #import "YMHLSubcommentTableViewCell.h"
+#import <UITextView+Placeholder/UITextView+Placeholder.h>
 
 @interface YMHLVideoDetailViewController ()
 <
@@ -68,7 +69,7 @@ UITableViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.holderView];
-//    self.fd_prefersNavigationBarHidden = YES;
+    self.fd_prefersNavigationBarHidden = YES;
     SuperPlayerModel *playerModel = [[SuperPlayerModel alloc] init];
     playerModel.videoURL = self.videoModel.video;
     [self.playerView.coverImageView yy_setImageWithURL:[NSURL URLWithString:self.videoModel.picture_path] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
@@ -87,7 +88,8 @@ UITableViewDataSource
         [strongSelf sendRequest];
     };
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"评论" style:UIBarButtonItemStylePlain target:self action:@selector(comment)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"评论" style:UIBarButtonItemStylePlain target:self action:@selector(comment)];
+    
 }
 
 - (void)comment {
@@ -135,7 +137,8 @@ UITableViewDataSource
     [self removeErrorView];
     [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Comment/ListCommentByTargetid"
              params:@{
-                      @"targetId": self.videoModel.id
+                      @"targetId": self.videoModel.id,
+                      @"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"",
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 if ([result[@"resultCode"] isEqualToString:@"0"]) {
@@ -179,11 +182,12 @@ UITableViewDataSource
             cell = [[YMHLCommentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"comment_cell"];
         }
         
-        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:comment.user.avatar] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
+        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:comment.user.avatar] placeholder:[UIImage imageNamed:@"sex_boy_110x110_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         cell.nickLabel.text = comment.user.user_name;
         cell.commentLabel.text = comment.content;
         [cell.commentLabel setQmui_height:comment.content_height];
         [cell.dateLabel setQmui_top:MaxY(cell.commentLabel)+5];
+        cell.dateLabel.text = [self formatFromTS:comment.create_date];
         [cell.commentButton setQmui_top:MaxY(cell.commentLabel)+5];
         [cell.commentButton addTarget:self action:@selector(commentButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
@@ -194,17 +198,20 @@ UITableViewDataSource
             cell = [[YMHLSubcommentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sub_comment_cell"];
         }
         
-        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:subcomment.src_user.avatar] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive)];
+        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:subcomment.src_user.avatar] placeholder:[UIImage imageNamed:@"sex_boy_110x110_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         cell.src_nickLabel.text = subcomment.src_user.user_name;
         cell.tar_nickLabel.text = subcomment.tar_user.user_name;
         cell.commentLabel.text = subcomment.content;
         [cell.commentLabel setQmui_height:subcomment.content_height];
         [cell.dateLabel setQmui_top:MaxY(cell.commentLabel)+5];
+        cell.dateLabel.text = [self formatFromTS:subcomment.create_date];
         [cell.commentButton setQmui_top:MaxY(cell.commentLabel)+5];
         [cell.commentButton addTarget:self action:@selector(subcommentButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         return cell;
     }
 }
+
+
 
 - (void)subcommentButtonClick:(UIButton *)sender {
     
@@ -238,5 +245,18 @@ UITableViewDataSource
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+- (NSString *)formatFromTS:(NSInteger)ts {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd MMM yyyy HH:mm"];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    NSString *str = [NSString stringWithFormat:@"%@",
+                     [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:ts]]];
+    return str;
 }
 @end

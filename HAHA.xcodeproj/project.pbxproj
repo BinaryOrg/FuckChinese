@@ -84,6 +84,19 @@
 		753BD057224E6B66003C4424 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BD056224E6B66003C4424 /* main.m */; };
 		755AEA3922507680008E0F33 /* YMHLSubcommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA3822507680008E0F33 /* YMHLSubcommentTableViewCell.m */; };
 		755AEA3C22509A1A008E0F33 /* NSString+YMHLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA3B22509A1A008E0F33 /* NSString+YMHLAdditions.m */; };
+		755AEA4F2250E404008E0F33 /* XJEmojePreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA3E2250E3FE008E0F33 /* XJEmojePreView.m */; };
+		755AEA502250E404008E0F33 /* XJItemSelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA412250E3FF008E0F33 /* XJItemSelView.m */; };
+		755AEA512250E404008E0F33 /* XJMulitFuctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA422250E3FF008E0F33 /* XJMulitFuctionView.m */; };
+		755AEA522250E404008E0F33 /* XJChatInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA492250E401008E0F33 /* XJChatInputView.m */; };
+		755AEA532250E404008E0F33 /* XJToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA4A2250E402008E0F33 /* XJToolBarView.m */; };
+		755AEA542250E404008E0F33 /* XJFaceEmojeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA4B2250E402008E0F33 /* XJFaceEmojeView.m */; };
+		755AEA552250E404008E0F33 /* XJFaceInputHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA4C2250E403008E0F33 /* XJFaceInputHelper.m */; };
+		755AEA562250E404008E0F33 /* XJInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA4E2250E404008E0F33 /* XJInputView.m */; };
+		755AEA5E2250E45B008E0F33 /* xjemoje1.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA572250E458008E0F33 /* xjemoje1.bundle */; };
+		755AEA5F2250E45B008E0F33 /* UIView+FrameUtilty.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA582250E459008E0F33 /* UIView+FrameUtilty.m */; };
+		755AEA602250E45B008E0F33 /* expression.plist in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA5B2250E45A008E0F33 /* expression.plist */; };
+		755AEA612250E45B008E0F33 /* XJInputView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA5C2250E45B008E0F33 /* XJInputView.bundle */; };
+		755AEA622250E45B008E0F33 /* UIColor+ZS.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */; };
 		B281997060E7376A8BA1C87E /* libPods-HAHA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC519B347F9056DD4EFD649 /* libPods-HAHA.a */; };
 /* End PBXBuildFile section */
 
@@ -256,6 +269,30 @@
 		755AEA3822507680008E0F33 /* YMHLSubcommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLSubcommentTableViewCell.m; sourceTree = "<group>"; };
 		755AEA3A22509A1A008E0F33 /* NSString+YMHLAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YMHLAdditions.h"; sourceTree = "<group>"; };
 		755AEA3B22509A1A008E0F33 /* NSString+YMHLAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YMHLAdditions.m"; sourceTree = "<group>"; };
+		755AEA3E2250E3FE008E0F33 /* XJEmojePreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJEmojePreView.m; sourceTree = "<group>"; };
+		755AEA3F2250E3FE008E0F33 /* XJEmojePreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJEmojePreView.h; sourceTree = "<group>"; };
+		755AEA402250E3FF008E0F33 /* XJItemSelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJItemSelView.h; sourceTree = "<group>"; };
+		755AEA412250E3FF008E0F33 /* XJItemSelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJItemSelView.m; sourceTree = "<group>"; };
+		755AEA422250E3FF008E0F33 /* XJMulitFuctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMulitFuctionView.m; sourceTree = "<group>"; };
+		755AEA432250E400008E0F33 /* XJToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJToolBarView.h; sourceTree = "<group>"; };
+		755AEA442250E400008E0F33 /* XJMulitFuctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMulitFuctionView.h; sourceTree = "<group>"; };
+		755AEA452250E400008E0F33 /* XJInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJInputView.h; sourceTree = "<group>"; };
+		755AEA462250E401008E0F33 /* XJChatInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJChatInputView.h; sourceTree = "<group>"; };
+		755AEA472250E401008E0F33 /* XJFaceEmojeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJFaceEmojeView.h; sourceTree = "<group>"; };
+		755AEA482250E401008E0F33 /* XJFaceInputHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJFaceInputHelper.h; sourceTree = "<group>"; };
+		755AEA492250E401008E0F33 /* XJChatInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJChatInputView.m; sourceTree = "<group>"; };
+		755AEA4A2250E402008E0F33 /* XJToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJToolBarView.m; sourceTree = "<group>"; };
+		755AEA4B2250E402008E0F33 /* XJFaceEmojeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJFaceEmojeView.m; sourceTree = "<group>"; };
+		755AEA4C2250E403008E0F33 /* XJFaceInputHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJFaceInputHelper.m; sourceTree = "<group>"; };
+		755AEA4D2250E404008E0F33 /* XJInputDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJInputDefine.h; sourceTree = "<group>"; };
+		755AEA4E2250E404008E0F33 /* XJInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJInputView.m; sourceTree = "<group>"; };
+		755AEA572250E458008E0F33 /* xjemoje1.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = xjemoje1.bundle; sourceTree = "<group>"; };
+		755AEA582250E459008E0F33 /* UIView+FrameUtilty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameUtilty.m"; sourceTree = "<group>"; };
+		755AEA592250E459008E0F33 /* UIView+FrameUtilty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameUtilty.h"; sourceTree = "<group>"; };
+		755AEA5A2250E459008E0F33 /* UIColor+ZS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZS.h"; sourceTree = "<group>"; };
+		755AEA5B2250E45A008E0F33 /* expression.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = expression.plist; sourceTree = "<group>"; };
+		755AEA5C2250E45B008E0F33 /* XJInputView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XJInputView.bundle; sourceTree = "<group>"; };
+		755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZS.m"; sourceTree = "<group>"; };
 		7606C474EC02E36B64289221 /* Pods-HAHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.release.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -410,6 +447,7 @@
 		752A1A75224E7F4A004B4B31 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				755AEA3D2250E3C8008E0F33 /* InputView */,
 				3720254B224F225100E25AA4 /* pop */,
 				752A1AB5224E8016004B4B31 /* PB */,
 				752A1AA9224E8006004B4B31 /* UniLog */,
@@ -701,6 +739,38 @@
 			path = HAHA;
 			sourceTree = "<group>";
 		};
+		755AEA3D2250E3C8008E0F33 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				755AEA5B2250E45A008E0F33 /* expression.plist */,
+				755AEA5A2250E459008E0F33 /* UIColor+ZS.h */,
+				755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */,
+				755AEA592250E459008E0F33 /* UIView+FrameUtilty.h */,
+				755AEA582250E459008E0F33 /* UIView+FrameUtilty.m */,
+				755AEA572250E458008E0F33 /* xjemoje1.bundle */,
+				755AEA5C2250E45B008E0F33 /* XJInputView.bundle */,
+				755AEA462250E401008E0F33 /* XJChatInputView.h */,
+				755AEA492250E401008E0F33 /* XJChatInputView.m */,
+				755AEA3F2250E3FE008E0F33 /* XJEmojePreView.h */,
+				755AEA3E2250E3FE008E0F33 /* XJEmojePreView.m */,
+				755AEA472250E401008E0F33 /* XJFaceEmojeView.h */,
+				755AEA4B2250E402008E0F33 /* XJFaceEmojeView.m */,
+				755AEA482250E401008E0F33 /* XJFaceInputHelper.h */,
+				755AEA4C2250E403008E0F33 /* XJFaceInputHelper.m */,
+				755AEA4D2250E404008E0F33 /* XJInputDefine.h */,
+				755AEA452250E400008E0F33 /* XJInputView.h */,
+				755AEA4E2250E404008E0F33 /* XJInputView.m */,
+				755AEA402250E3FF008E0F33 /* XJItemSelView.h */,
+				755AEA412250E3FF008E0F33 /* XJItemSelView.m */,
+				755AEA442250E400008E0F33 /* XJMulitFuctionView.h */,
+				755AEA422250E3FF008E0F33 /* XJMulitFuctionView.m */,
+				755AEA432250E400008E0F33 /* XJToolBarView.h */,
+				755AEA4A2250E402008E0F33 /* XJToolBarView.m */,
+			);
+			name = InputView;
+			path = "New Groupiew";
+			sourceTree = "<group>";
+		};
 		E131989F0D313136377B77C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,6 +848,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				37202585224F225200E25AA4 /* pop-ios-Info.plist in Resources */,
+				755AEA612250E45B008E0F33 /* XJInputView.bundle in Resources */,
+				755AEA5E2250E45B008E0F33 /* xjemoje1.bundle in Resources */,
+				755AEA602250E45B008E0F33 /* expression.plist in Resources */,
 				3720258D224F225200E25AA4 /* pop-osx-Info.plist in Resources */,
 				753BD054224E6B66003C4424 /* LaunchScreen.storyboard in Resources */,
 				3720258B224F225200E25AA4 /* pop-tvos-Info.plist in Resources */,
@@ -807,6 +880,7 @@
 				"${PODS_ROOT}/QMUIKit/QMUIKit/QMUIResources/QMUIResources.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/SuperPlayer/SuperPlayer/Resource/SuperPlayer.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -821,6 +895,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QMUIResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SuperPlayer.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -856,9 +931,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				755AEA562250E404008E0F33 /* XJInputView.m in Sources */,
 				752A1AFF224E847C004B4B31 /* ZDDInputView.m in Sources */,
+				755AEA502250E404008E0F33 /* XJItemSelView.m in Sources */,
 				752A1A91224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				3720258F224F225200E25AA4 /* POPAnimation.mm in Sources */,
+				755AEA522250E404008E0F33 /* XJChatInputView.m in Sources */,
+				755AEA552250E404008E0F33 /* XJFaceInputHelper.m in Sources */,
 				3720258E224F225200E25AA4 /* POPPropertyAnimation.mm in Sources */,
 				752A1B00224E847C004B4B31 /* ZDDFistListCellNode.m in Sources */,
 				752A1ADC224E83F7004B4B31 /* YMHLVideoFlowViewController.m in Sources */,
@@ -872,10 +951,12 @@
 				752A1A9B224E7FD2004B4B31 /* ZDDNotificationName.m in Sources */,
 				37202586224F225200E25AA4 /* POPMath.mm in Sources */,
 				37202587224F225200E25AA4 /* POPSpringAnimation.mm in Sources */,
+				755AEA532250E404008E0F33 /* XJToolBarView.m in Sources */,
 				755AEA3C22509A1A008E0F33 /* NSString+YMHLAdditions.m in Sources */,
 				752A1A8A224E7F7F004B4B31 /* NSString+Regex.m in Sources */,
 				7521BA22224F994000292099 /* YMHLBaseViewController.m in Sources */,
 				37202593224F225200E25AA4 /* POPAnimator.mm in Sources */,
+				755AEA5F2250E45B008E0F33 /* UIView+FrameUtilty.m in Sources */,
 				752A1ACD224E83B5004B4B31 /* TEMPSDKManager.m in Sources */,
 				372025A4224F51DA00E25AA4 /* ZDDCommentModel.m in Sources */,
 				37202598224F225200E25AA4 /* POPVector.mm in Sources */,
@@ -884,6 +965,7 @@
 				37202594224F225200E25AA4 /* POPAnimatableProperty.mm in Sources */,
 				752A1A88224E7F7F004B4B31 /* UIView+ZDD.m in Sources */,
 				3720259D224F491900E25AA4 /* GODUserModel.m in Sources */,
+				755AEA512250E404008E0F33 /* XJMulitFuctionView.m in Sources */,
 				37202595224F225200E25AA4 /* POPAnimationRuntime.mm in Sources */,
 				752A1AC5224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
 				37202584224F225200E25AA4 /* POPCGUtils.mm in Sources */,
@@ -895,6 +977,7 @@
 				752A1AEB224E8433004B4B31 /* ZDDThridController.m in Sources */,
 				3720259E224F491900E25AA4 /* GODUserTool.m in Sources */,
 				3720258A224F225200E25AA4 /* POPAnimationExtras.mm in Sources */,
+				755AEA4F2250E404008E0F33 /* XJEmojePreView.m in Sources */,
 				755AEA3922507680008E0F33 /* YMHLSubcommentTableViewCell.m in Sources */,
 				752A1ABC224E8359004B4B31 /* GODWebViewController.m in Sources */,
 				752A1AE3224E8400004B4B31 /* YMHLVideoCollectionViewCell.m in Sources */,
@@ -914,9 +997,11 @@
 				752A1AA7224E7FF6004B4B31 /* UIView+ZDD.m in Sources */,
 				37202591224F225200E25AA4 /* POPBasicAnimation.mm in Sources */,
 				752A1A9F224E7FE0004B4B31 /* ZDDThemeConfiguration.m in Sources */,
+				755AEA542250E404008E0F33 /* XJFaceEmojeView.m in Sources */,
 				752A1AD6224E83DC004B4B31 /* ZDDTabBarController.m in Sources */,
 				7521BA2E2250714E00292099 /* YMHLSubCommentsModel.m in Sources */,
 				752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */,
+				755AEA622250E45B008E0F33 /* UIColor+ZS.m in Sources */,
 				752A1A8C224E7F7F004B4B31 /* UIColor+CustomColors.m in Sources */,
 				7521BA2522505AA000292099 /* ASButtonNode+LHExtension.m in Sources */,
 				37202597224F225200E25AA4 /* POPLayerExtras.mm in Sources */,

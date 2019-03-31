@@ -26,7 +26,7 @@
 /** 顶部导航栏高度 */
 #define NavBarHeight (ScreenHeight >= 812.0 ? 88 : 64)
 /** 顶部电源栏高度 */
-#define StatusBarHeight (ScreenHeight >= 812.0 ? 44 : 20)
+//#define StatusBarHeight (ScreenHeight >= 812.0 ? 44 : 20)
 /** 底部安全距离高度[适配PhoneX底部] */
 #define SafeAreaBottomHeight (ScreenHeight >= 812.0 ? 34 : 0)
 /** 顶部安全距离高度[适配PhoneX底部] */
