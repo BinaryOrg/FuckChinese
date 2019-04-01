@@ -24,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"笑笑";
     [self addTableNode];
     self.showRefrehHeader = YES;
     self.showRefrehFooter = YES;

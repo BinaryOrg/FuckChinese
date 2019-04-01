@@ -70,7 +70,7 @@ UITabBarControllerDelegate
     YMHLVideoFlowViewController *second = [[YMHLVideoFlowViewController alloc] init];
     [self addChileVcWithTitle:@"视频圈" vc:second imageName:@"video_unSelected" selImageName:@"video_selected"];
     
-    ZDDFirstController *three = [[ZDDFirstController alloc] init];
+    ZDDSecondController *three = [[ZDDSecondController alloc] init];
     [self addChileVcWithTitle:@"动态" vc:three imageName:@"dynamic_unSelected" selImageName:@"dynamic_selected"];
     
     

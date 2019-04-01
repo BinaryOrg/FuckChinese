@@ -39,8 +39,6 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-//        [self addIconNode];
-//        [self addNameNode];
         [self addBackgroundNode];
         [self addTitleNode];
         [self addTimeNode];
@@ -48,14 +46,6 @@
         
         [model addObserver:self forKeyPath:@"star_num" options:NSKeyValueObservingOptionNew context:nil];
         [model addObserver:self forKeyPath:@"comment_num" options:NSKeyValueObservingOptionNew context:nil];
-
-//        self.iconNode.defaultImage = [UIImage imageNamed:@"defaultImgae"];
-//        self.iconNode.URL = [NSURL URLWithString:model.user.avatar];
-//
-//        NSMutableAttributedString *name = [[NSMutableAttributedString alloc] initWithString:model.user.user_name.length?model.user.user_name:@"" attributes:@{NSForegroundColorAttributeName : GODColor(53, 64, 72), NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Medium" size:14]}];
-//        NSAttributedString *push = [[NSAttributedString alloc] initWithString:@"  发布" attributes:@{NSForegroundColorAttributeName : GODColor(146, 146, 146), NSFontAttributeName : [UIFont systemFontOfSize:13]}];
-//        [name appendAttributedString:push];
-//        self.nameNode.attributedText = name;
         
         self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.content attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:16]).lh_color(color(53, 64, 72, 1));
@@ -77,7 +67,7 @@
         _commentNode = [[ASButtonNode alloc] init];
         [_thumbNode lh_setEnlargeEdgeWithTop:10.0f right:15.0f bottom:10.0f left:15.0f];
         [_commentNode setAttributedTitle:[NSMutableAttributedString lh_makeAttributedString:commentCount attributes:attributes] forState:UIControlStateNormal];
-        [_commentNode setImage:[UIImage imageNamed:@"write"] forState:UIControlStateNormal];
+        [_commentNode setImage:[UIImage imageNamed:@"comment"] forState:UIControlStateNormal];
         
         [self addSubnode:_thumbNode];
         [self addSubnode:_commentNode];
@@ -117,23 +107,6 @@
                      [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:ts]]];
     return str;
 }
-//- (void)setHighlighted:(BOOL)highlighted {
-//
-//    [super setHighlighted:highlighted];
-//    if (self.highlighted) {
-//        POPBasicAnimation *scaleAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPViewScaleXY];
-//        scaleAnimation.duration = 0.1;
-//        scaleAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(1, 1)];
-//        [self pop_addAnimation:scaleAnimation forKey:@"scalingUp"];
-//    } else {
-//        POPSpringAnimation *sprintAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
-//        sprintAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(0.9, 0.9)];
-//        sprintAnimation.velocity = [NSValue valueWithCGPoint:CGPointMake(2, 2)];
-//        sprintAnimation.springBounciness = 20.f;
-//        [self pop_addAnimation:sprintAnimation forKey:@"springAnimation"];
-//    }
-//
-//}
 
 //点击图片
 - (void)onTouchPictureNode:(ASNetworkImageNode *)imgNode {
@@ -171,21 +144,6 @@
         titleAndImgSpec.spacing = 10;
         titleAndImgSpec.children = @[self.titleNode, self.picturesLayout];
     }
-    
-//    ASStackLayoutSpec *avatarLayout = [ASStackLayoutSpec horizontalStackLayoutSpec];
-//    avatarLayout.alignItems = ASStackLayoutAlignItemsCenter;
-//    avatarLayout.justifyContent = ASStackLayoutJustifyContentStart;
-//    avatarLayout.children = @[self.iconNode, self.nameNode];
-//    avatarLayout.spacing = 8.0;
-    
-//    ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
-//    contentSpec.spacing = 10;
-//    if (self.picturesNodes.count) {
-//        contentSpec.children = @[titleAndImgSpec, avatarLayout];
-//    }else {
-//        contentSpec.children = @[self.titleNode, avatarLayout];
-//    }
-    
     ASStackLayoutSpec *commentSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
     commentSpec.spacing = 12;
     commentSpec.alignItems = ASStackLayoutAlignItemsCenter;
@@ -212,7 +170,6 @@
     return [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(20, 20, 0, 20) child:lineSpec];
     
 }
-
 
 - (void)addBackgroundNode {
     self.lineNode = [ASDisplayNode new];
@@ -251,19 +208,6 @@
     }];
 }
 
-
-- (void)addIconNode {
-    self.iconNode = [ASNetworkImageNode new];
-    self.iconNode.style.preferredSize = CGSizeMake(24, 24);
-    self.iconNode.cornerRadius = 12;
-    [self addSubnode:self.iconNode];
-}
-
-- (void)addNameNode {
-    self.nameNode = [ASTextNode new];
-    [self addSubnode:self.nameNode];
-}
-
 - (CGSize)pictureSizeWithCount:(NSInteger)count imageSize:(CGSize)imageSize {
     CGSize itemSize = CGSizeZero;
     CGFloat len1_3 = (ScreenWidth - 50.0f) / 3;
@@ -283,22 +227,7 @@
                 }
                 break;
             }
-            //        case 2:
-            //        case 3: {
-            //            itemSize = CGSizeMake(len1_3, len1_3);
-            //            break;
-            //        }
-            //        case 4: {
-            //            itemSize = CGSizeMake(len1_3, len1_3);
-            //            break;
-            //        }
-            //        case 5:
-            //        case 6: {
-            //            itemSize = CGSizeMake(len1_3, len1_3);
-            //            break;
-            //        }
         default: {
-            // 7, 8, 9
             itemSize = CGSizeMake(len1_3, len1_3);
             break;
         }
