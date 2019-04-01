@@ -98,6 +98,7 @@ UITableViewDataSource
     SPDefaultControlView *controlView = (SPDefaultControlView *)self.playerView.controlView;
     ZDDThemeConfiguration *theme = [ZDDThemeConfiguration defaultConfiguration];
     [controlView.videoSlider setMinimumTrackTintColor:theme.themeColor];
+
     [self sendRequest];
     __weak __typeof(self)weakSelf = self;
     self.bottomErrorViewClickBlock = ^{
@@ -360,6 +361,10 @@ UITableViewDataSource
         controlView.danmakuBtn.hidden = YES;
         controlView.captureBtn.hidden = YES;
     }
+}
+
+- (void)superPlayerBackAction:(SuperPlayerView *)player {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
