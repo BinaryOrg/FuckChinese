@@ -27,6 +27,10 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>为了可以修改头像，请允许使用相册功能</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>为了可以修改头像，请允许使用相机功能</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

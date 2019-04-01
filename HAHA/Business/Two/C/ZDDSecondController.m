@@ -9,6 +9,7 @@
 #import "ZDDSecondController.h"
 #import "ZDDSecondListCellNode.h"
 #import "ZDDCommentListController.h"
+#import "ZDDPostDyController.h"
 
 @interface ZDDSecondController ()
 
@@ -34,10 +35,17 @@
     [nextButton sizeToFit];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:nextButton];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(headerRefresh) name:@"shouldReloadDy" object:nil ];
+    
 }
 
-- (void)clickPostDyBtn {
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
     
+- (void)clickPostDyBtn {
+    ZDDPostDyController *vc = [ZDDPostDyController new];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
