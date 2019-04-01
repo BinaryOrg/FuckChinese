@@ -19,6 +19,10 @@
         self.bgImageView.layer.masksToBounds = YES;
         [self.contentView addSubview:self.bgImageView];
         
+        UIView *bgView = [[UIView alloc] initWithFrame:self.bgImageView.bounds];
+        bgView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.3];
+        [self.bgImageView addSubview:bgView];
+        
         self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 75, 60, 60)];
         self.avatarImageView.layer.cornerRadius = 30;
         self.avatarImageView.layer.masksToBounds = YES;

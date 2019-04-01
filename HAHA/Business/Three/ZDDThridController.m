@@ -143,4 +143,8 @@ UITableViewDataSource
     return str;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 @end
