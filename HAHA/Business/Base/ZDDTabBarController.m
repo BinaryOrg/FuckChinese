@@ -74,7 +74,7 @@ UITabBarControllerDelegate
     [self addChileVcWithTitle:@"动态" vc:three imageName:@"dynamic_unSelected" selImageName:@"dynamic_selected"];
     
     
-    ZDDFirstController *four = [[ZDDFirstController alloc] init];
+    ZDDThridController *four = [[ZDDThridController alloc] init];
     [self addChileVcWithTitle:@"我的" vc:four imageName:@"mine_unSelected" selImageName:@"mine_selected"];
     
 }

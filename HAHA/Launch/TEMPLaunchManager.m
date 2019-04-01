@@ -53,9 +53,12 @@
     [[UITabBar appearance] setBarTintColor:theme.themeColor];
     
     [[UITabBar appearance] setTintColor:theme.selectTabColor];
-    [[UITabBar appearance] setUnselectedItemTintColor:theme.normalTabColor];
-    BOOL isDark = [theme.themeColor isDarkColor];
-    [UIApplication sharedApplication].statusBarStyle = isDark ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+    if (@available(iOS 10.0, *)) {
+        [[UITabBar appearance] setUnselectedItemTintColor:theme.normalTabColor];
+    } else {
+        // Fallback on earlier versions
+    }
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
     
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchScreen];
