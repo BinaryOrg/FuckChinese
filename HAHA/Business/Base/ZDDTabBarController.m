@@ -63,24 +63,26 @@ UITabBarControllerDelegate
 }
 
 - (void)setupChildViewControllers {
+    
     ZDDFirstController *one = [[ZDDFirstController alloc] init];
-
-    [self addChileVcWithTitle:@"菜谱大全" vc:one imageName:@"tab_now_nor" selImageName:@"tab_now_press"];
+    [self addChileVcWithTitle:@"笑笑" vc:one imageName:@"lauth_unSelected" selImageName:@"lauth_selected"];
     
     YMHLVideoFlowViewController *second = [[YMHLVideoFlowViewController alloc] init];
-    [self addChileVcWithTitle:@"视频圈" vc:second imageName:@"tab_qworld_nor" selImageName:@"tab_qworld_press"];
-    
+    [self addChileVcWithTitle:@"视频圈" vc:second imageName:@"video_unSelected" selImageName:@"video_selected"];
     
     ZDDFirstController *three = [[ZDDFirstController alloc] init];
-    [self addChileVcWithTitle:@"个人中心" vc:three imageName:@"tab_recent_nor" selImageName:@"tab_recent_press"];
+    [self addChileVcWithTitle:@"动态" vc:three imageName:@"dynamic_unSelected" selImageName:@"dynamic_selected"];
     
     
+    ZDDFirstController *four = [[ZDDFirstController alloc] init];
+    [self addChileVcWithTitle:@"我的" vc:four imageName:@"mine_unSelected" selImageName:@"mine_selected"];
     
 }
 
 - (void)addChileVcWithTitle:(NSString *)title vc:(UIViewController *)vc imageName:(NSString *)imageName selImageName:(NSString *)selImageName {
     [vc.tabBarItem setTitle:title];
     if (title.length) {
+        vc.title = title;
         [vc.tabBarItem setImage:[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         [vc.tabBarItem setSelectedImage:[[UIImage imageNamed:selImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     }
