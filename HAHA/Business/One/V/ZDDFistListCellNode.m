@@ -39,8 +39,8 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        [self addIconNode];
-        [self addNameNode];
+//        [self addIconNode];
+//        [self addNameNode];
         [self addBackgroundNode];
         [self addTitleNode];
         [self addTimeNode];
@@ -49,13 +49,13 @@
         [model addObserver:self forKeyPath:@"star_num" options:NSKeyValueObservingOptionNew context:nil];
         [model addObserver:self forKeyPath:@"comment_num" options:NSKeyValueObservingOptionNew context:nil];
 
-        self.iconNode.defaultImage = [UIImage imageNamed:@"defaultImgae"];
-        self.iconNode.URL = [NSURL URLWithString:model.user.avatar];
-        
-        NSMutableAttributedString *name = [[NSMutableAttributedString alloc] initWithString:model.user.user_name.length?model.user.user_name:@"" attributes:@{NSForegroundColorAttributeName : GODColor(53, 64, 72), NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Medium" size:14]}];
-        NSAttributedString *push = [[NSAttributedString alloc] initWithString:@"  发布" attributes:@{NSForegroundColorAttributeName : GODColor(146, 146, 146), NSFontAttributeName : [UIFont systemFontOfSize:13]}];
-        [name appendAttributedString:push];
-        self.nameNode.attributedText = name;
+//        self.iconNode.defaultImage = [UIImage imageNamed:@"defaultImgae"];
+//        self.iconNode.URL = [NSURL URLWithString:model.user.avatar];
+//
+//        NSMutableAttributedString *name = [[NSMutableAttributedString alloc] initWithString:model.user.user_name.length?model.user.user_name:@"" attributes:@{NSForegroundColorAttributeName : GODColor(53, 64, 72), NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Medium" size:14]}];
+//        NSAttributedString *push = [[NSAttributedString alloc] initWithString:@"  发布" attributes:@{NSForegroundColorAttributeName : GODColor(146, 146, 146), NSFontAttributeName : [UIFont systemFontOfSize:13]}];
+//        [name appendAttributedString:push];
+//        self.nameNode.attributedText = name;
         
         self.titleNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.content attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:16]).lh_color(color(53, 64, 72, 1));
@@ -172,19 +172,19 @@
         titleAndImgSpec.children = @[self.titleNode, self.picturesLayout];
     }
     
-    ASStackLayoutSpec *avatarLayout = [ASStackLayoutSpec horizontalStackLayoutSpec];
-    avatarLayout.alignItems = ASStackLayoutAlignItemsCenter;
-    avatarLayout.justifyContent = ASStackLayoutJustifyContentStart;
-    avatarLayout.children = @[self.iconNode, self.nameNode];
-    avatarLayout.spacing = 8.0;
+//    ASStackLayoutSpec *avatarLayout = [ASStackLayoutSpec horizontalStackLayoutSpec];
+//    avatarLayout.alignItems = ASStackLayoutAlignItemsCenter;
+//    avatarLayout.justifyContent = ASStackLayoutJustifyContentStart;
+//    avatarLayout.children = @[self.iconNode, self.nameNode];
+//    avatarLayout.spacing = 8.0;
     
-    ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
-    contentSpec.spacing = 10;
-    if (self.picturesNodes.count) {
-        contentSpec.children = @[titleAndImgSpec, avatarLayout];
-    }else {
-        contentSpec.children = @[self.titleNode, avatarLayout];
-    }
+//    ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
+//    contentSpec.spacing = 10;
+//    if (self.picturesNodes.count) {
+//        contentSpec.children = @[titleAndImgSpec, avatarLayout];
+//    }else {
+//        contentSpec.children = @[self.titleNode, avatarLayout];
+//    }
     
     ASStackLayoutSpec *commentSpec = [ASStackLayoutSpec horizontalStackLayoutSpec];
     commentSpec.spacing = 12;
@@ -199,7 +199,11 @@
     
     ASStackLayoutSpec *titleAndCommentSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
     titleAndCommentSpec.spacing = 15;
-    titleAndCommentSpec.children = @[contentSpec, timeSpec];
+    if (self.picturesNodes.count) {
+        titleAndCommentSpec.children = @[titleAndImgSpec, timeSpec];
+    }else {
+        titleAndCommentSpec.children = @[self.titleNode, timeSpec];
+    }
     
     ASStackLayoutSpec *lineSpec = [ASStackLayoutSpec verticalStackLayoutSpec];
     lineSpec.spacing = 15;
