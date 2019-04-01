@@ -39,7 +39,7 @@
     self.title = @"发布动态";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 180, ScreenWidth, ScreenHeight - 200)];
     scrollView.alwaysBounceVertical = YES;
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
@@ -78,7 +78,7 @@
     __weak typeof(self)weakSelf = self;
     NSMutableArray *tempArr = [NSMutableArray array];
     [self.manager.afterSelectedArray enumerateObjectsUsingBlock:^(HXPhotoModel *selectedModel, NSUInteger idx, BOOL * _Nonnull stop) {
-        __strong typeof(self)strongSelf = self;
+        __strong typeof(weakSelf)strongSelf = weakSelf;
         if (selectedModel.asset) {
             PHImageRequestOptions*options = [[PHImageRequestOptions alloc]init];
             options.deliveryMode=PHImageRequestOptionsDeliveryModeHighQualityFormat;
@@ -108,44 +108,44 @@
     
 }
 
-    - (void)postWithImages:(NSArray *)images {
-        [MFNETWROK upload:@"Duanzi/CreateGT"
-                   params:@{
-                            @"userId": [GODUserTool shared].user.user_id,
-                            @"content": self.contentTextView.text,
-                            }
-                     name:@"pictures"
-                   images:images
-               imageScale:0.1
-                imageType:MFImageTypePNG
-                 progress:nil
-                  success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-                      NSLog(@"%@", result);
-                      if ([result[@"resultCode"] isEqualToString:@"0"]) {
-                          dispatch_async(dispatch_get_main_queue(), ^{
-                              [MFHUDManager dismiss];
-                              [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldReloadDy" object:nil];
-                          });
-                          [self.navigationController popViewControllerAnimated:YES];
-                      }else {
-                          dispatch_async(dispatch_get_main_queue(), ^{
-                              [MFHUDManager showError:@"发布失败！"];
-                          });
-                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                              [MFHUDManager dismiss];
-                          });
-                      }
-                  }
-                  failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-                      NSLog(@"%@", error.userInfo);
+- (void)postWithImages:(NSArray *)images {
+    [MFNETWROK upload:@"Duanzi/CreateGT"
+               params:@{
+                        @"userId": [GODUserTool shared].user.user_id,
+                        @"content": self.contentTextView.text,
+                        }
+                 name:@"pictures"
+               images:images
+           imageScale:0.1
+            imageType:MFImageTypePNG
+             progress:nil
+              success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                  NSLog(@"%@", result);
+                  if ([result[@"resultCode"] isEqualToString:@"0"]) {
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          [MFHUDManager dismiss];
+                          [[NSNotificationCenter defaultCenter] postNotificationName:@"shouldReloadDy" object:nil];
+                      });
+                      [self.navigationController popViewControllerAnimated:YES];
+                  }else {
                       dispatch_async(dispatch_get_main_queue(), ^{
                           [MFHUDManager showError:@"发布失败！"];
                       });
                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                           [MFHUDManager dismiss];
                       });
-                  }];
-    }
+                  }
+              }
+              failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                  NSLog(@"%@", error.userInfo);
+                  dispatch_async(dispatch_get_main_queue(), ^{
+                      [MFHUDManager showError:@"发布失败！"];
+                  });
+                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                      [MFHUDManager dismiss];
+                  });
+              }];
+}
 
 - (HXPhotoManager *)manager {
     if (!_manager) {
