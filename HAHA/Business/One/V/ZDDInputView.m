@@ -24,7 +24,6 @@
 @implementation ZDDInputView
 
 - (void)dealloc {
-    [self.textView removeObserver:self forKeyPath:@"text"];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

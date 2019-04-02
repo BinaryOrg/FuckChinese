@@ -61,6 +61,7 @@
             [tempArr insertObject:addModel atIndex:0];
             self.dataArr = tempArr.copy;
             self.model.comment_num += 1;
+            [self.tableNode reloadData];
         }else {
             [MFHUDManager showError:@"评论失败请重试"];
         }
@@ -120,6 +121,7 @@
         return nil;
     }
     UILabel *lb = [UILabel new];
+    lb.backgroundColor = [UIColor whiteColor];
     lb.frame = CGRectMake(0, 0, ScreenWidth, 60);
     UIView *lineView = [UIView new];
     lineView.backgroundColor = GODColor(237,237, 237);
