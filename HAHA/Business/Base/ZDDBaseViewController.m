@@ -125,10 +125,10 @@
     if (self.tableNode) {
         if (showRefrehFooter) {
             __weak typeof(self) weakSelf = self;
-            MJRefreshFooter *gifFooter = [MJRefreshFooter footerWithRefreshingBlock:^{
+            MJRefreshAutoFooter *footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
                 [weakSelf footerRefresh];
             }];
-            _tableNode.view.mj_footer = gifFooter;
+            _tableNode.view.mj_footer = footer;
         }else {
             _tableNode.view.mj_footer = nil;
         }

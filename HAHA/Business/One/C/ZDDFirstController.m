@@ -37,12 +37,19 @@
 }
 
 - (void)footerRefresh {
+    
     [self loadData:YES];
 }
 
 - (void)loadData:(BOOL)isAdd {
+    
+    NSInteger page = 1;
+    if (isAdd) {
+        page += self.dataArr.count/20;
+    }
+    
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"Duanzi/ListRecommendDuanzi" params:@{@"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"", @"category" : @"graph_text"} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK post:@"Duanzi/ListRecommendDuanzi" params:@{@"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"", @"category" : @"graph_text", @"page" : @(page)} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [self endHeaderRefresh];
         [self endFooterRefresh];
         if (statusCode == 200) {
