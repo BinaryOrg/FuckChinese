@@ -33,13 +33,15 @@
     
     self.contentTextView = [[UITextView alloc] init];
     self.contentTextView.font = [UIFont systemFontOfSize:18];
-    self.contentTextView.frame = CGRectMake(kPhotoViewMargin, 10, ScreenWidth - kPhotoViewMargin * 2, 150);
+    self.contentTextView.frame = CGRectMake(kPhotoViewMargin, 20, ScreenWidth - kPhotoViewMargin * 2, 150);
+    self.contentTextView.text = @"这是一条很有意思的动态~";
+    
     [self.view addSubview:self.contentTextView];
     
     self.title = @"发布动态";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 180, ScreenWidth, ScreenHeight - 200)];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 200, ScreenWidth, ScreenHeight - 200)];
     scrollView.alwaysBounceVertical = YES;
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
@@ -70,6 +72,7 @@
     [nextButton sizeToFit];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:nextButton];
     
+    [self.contentTextView becomeFirstResponder];
 }
     
 - (void)clickPostDyBtn {

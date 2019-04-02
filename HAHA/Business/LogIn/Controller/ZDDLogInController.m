@@ -34,6 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.second = 60;
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupUI];
 }
@@ -82,29 +83,29 @@
         return;
     }
     
-//    //不带自定义模版
-//    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.phoneTf.text zone:@"86"  result:^(NSError *error) {
-//
-//        if (!error)
-//        {
-//            // 请求成功
+    //不带自定义模版
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.phoneTf.text zone:@"86"  result:^(NSError *error) {
+
+        if (!error)
+        {
+            // 请求成功
             [MFHUDManager showSuccess:@"验证码发送成功，请留意短信"];
             // 请求成功,才倒计时
             [button setEnabled:NO];
             
             self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
             [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
-//        }
-//        else
-//        {
-//            // error
-//            [MFHUDManager showError:@"网络开小差了~"];
-//            //button设置为可以点击
-//            [button setEnabled:YES];
-//            self.second = 60;
-//            [self.timer invalidate];
-//        }
-//    }];
+        }
+        else
+        {
+            // error
+            [MFHUDManager showError:@"网络开小差了~"];
+            //button设置为可以点击
+            [button setEnabled:YES];
+            self.second = 60;
+            [self.timer invalidate];
+        }
+    }];
 }
 
 - (void)countDown {
@@ -132,8 +133,7 @@
         // 存储用户信息
         [GODUserTool shared].user = userModel;
         [GODUserTool shared].mobile_number = phoneNum;
-        [[TEMPLaunchManager defaultManager] launchInWindow:[UIApplication sharedApplication].keyWindow];
-        
+        [self clickBackBtn];
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager showError:@"登录失败"];
     }];

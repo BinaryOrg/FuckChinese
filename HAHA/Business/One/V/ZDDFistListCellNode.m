@@ -10,6 +10,7 @@
 #import <YYCGUtilities.h>
 //#import "POP.h"
 #import "ASButtonNode+LHExtension.h"
+#import "ZDDPhotoBrowseView.h"
 
 @interface ZDDFistListCellNode ()
 
@@ -111,7 +112,32 @@
 //点击图片
 - (void)onTouchPictureNode:(ASNetworkImageNode *)imgNode {
     
+    __block NSInteger currentIndex = 0;
     
+    NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:self.picturesNodes.count];
+    [self.picturesNodes enumerateObjectsUsingBlock:^(ASNetworkImageNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        LHPhotoGroupItem *item = [[LHPhotoGroupItem alloc]init];
+        YYAnimatedImageView * animatedIV = [[YYAnimatedImageView alloc] init];
+        animatedIV.image = obj.image;
+        item.thumbView = animatedIV;
+        item.largeImageURL = obj.URL;
+        [tempArr addObject:item];
+        if (obj == imgNode) {
+            currentIndex = idx;
+        }
+    }];
+    
+    UIView *fromView = [imgNode view];
+    
+    
+    ZDDPhotoBrowseView *photoGroupView = [[ZDDPhotoBrowseView alloc] initWithGroupItems:tempArr.copy];
+    [photoGroupView.pager removeFromSuperview];
+    photoGroupView.fromItemIndex = currentIndex;
+    photoGroupView.backtrack = YES;
+    [photoGroupView presentFromImageView:fromView
+                             toContainer:[UIApplication sharedApplication].keyWindow
+                                animated:YES
+                              completion:nil];
     
 }
 
@@ -197,6 +223,7 @@
     [model.picture_path enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ASNetworkImageNode *pictureNode = [ASNetworkImageNode new];
         pictureNode.style.preferredSize = itemSize;
+        pictureNode.cornerRadius = 6;
         pictureNode.contentMode = UIViewContentModeScaleAspectFit;
         pictureNode.backgroundColor = [UIColor qmui_colorWithHexString:@"F8F8F8"];
         pictureNode.defaultImage = [self placeholderImage];

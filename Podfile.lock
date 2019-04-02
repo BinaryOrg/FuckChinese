@@ -373,7 +373,6 @@ DEPENDENCIES:
   - FreeStreamer (~> 3.8.2)
   - JPush
   - JXCategoryView
-  - Masonry
   - MFExtractColor
   - MFHUDManager
   - MFNetworkManager
@@ -475,6 +474,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: e269ca156ab4e2773aa762b5fa1bfc0d5d1de0b3
+PODFILE CHECKSUM: 9f18ccf7c81280ae814efbaa3ba93a8e3e12acb7
 
 COCOAPODS: 1.6.1

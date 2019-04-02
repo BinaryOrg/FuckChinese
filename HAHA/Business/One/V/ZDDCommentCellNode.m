@@ -64,11 +64,16 @@
     timeSpec.spacing = 20;
     timeSpec.children = @[contentSpec, self.timeNode];
     
-    ASInsetLayoutSpec *bgvSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(-20, -20, -20, -20) child:self.bgvNode];
+    ASInsetLayoutSpec *bgvSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:(self.bgvEdge.top != 0)?self.bgvEdge:UIEdgeInsetsMake(-20, -20, -20, -20) child:self.bgvNode];
     ASOverlayLayoutSpec *overLay = [ASOverlayLayoutSpec overlayLayoutSpecWithChild:timeSpec overlay:bgvSpec];
     
     return [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(30, 20, 40, 20) child:overLay];
 }
+
+- (void)setBgvEdge:(UIEdgeInsets)bgvEdge {
+    _bgvEdge = bgvEdge;
+}
+
 
 - (NSString *)formatFromTS:(NSInteger)ts {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

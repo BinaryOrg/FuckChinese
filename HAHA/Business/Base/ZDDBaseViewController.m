@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 
@@ -44,7 +44,7 @@
     [self.view addSubview:_tableNode.view];
     
     CGFloat bottomH = SafeAreaBottomHeight;
-    if (!self.tabBarController.hidesBottomBarWhenPushed) {
+    if (self.navigationController.childViewControllers.firstObject == self) {
         bottomH = SafeTabBarHeight;
     }
     [_tableNode.view mas_makeConstraints:^(MASConstraintMaker *make) {

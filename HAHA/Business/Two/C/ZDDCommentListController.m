@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"评论列表";
     [self addTableNode];
     [self.view addSubview:self.writeBtn];
     [self.writeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,11 +109,32 @@
             return node;
         }
         ZDDCommentCellNode *node = [[ZDDCommentCellNode alloc] initWithModel:self.dataArr[indexPath.row]];
-        
+        node.bgvEdge = UIEdgeInsetsMake(-20, -10, -30, -10);
+        node.backgroundColor = color(237, 237, 237, 0.5);
         return node;
     };
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return nil;
+    }
+    UILabel *lb = [UILabel new];
+    lb.frame = CGRectMake(0, 0, ScreenWidth, 60);
+    UIView *lineView = [UIView new];
+    lineView.backgroundColor = GODColor(237,237, 237);
+    lb.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"    精彩评论 (%ld)", self.dataArr.count] attributes:^(NSMutableDictionary *make) {
+        make.lh_font([UIFont systemFontOfSize:18]).lh_color([UIColor blackColor]);
+    }];
+    return lb;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return 0.05;
+    }
+    return 60;
+}
 
 #pragma mark - 懒加载
 - (ZDDInputView *)inputView {

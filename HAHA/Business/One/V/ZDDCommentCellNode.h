@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithModel:(ZDDCommentModel *)model;
 
+@property (nonatomic, assign) UIEdgeInsets bgvEdge;
+
 @end
 
 NS_ASSUME_NONNULL_END

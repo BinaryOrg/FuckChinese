@@ -12,8 +12,6 @@
 #import <YYCategories.h>
 #import <UIImageView+WebCache.h>
 
-#import "UIView+LH.h"
-
 #define kPadding 20
 #define kHiColor [UIColor colorWithRGBHex:0x2dd6b8]
 #define SAFE_BLOCK(BlockName, ...) ({ !BlockName ? nil : BlockName(__VA_ARGS__); })
