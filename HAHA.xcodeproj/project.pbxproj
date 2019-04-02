@@ -149,6 +149,7 @@
 		755AEA622250E45B008E0F33 /* UIColor+ZS.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */; };
 		755AEA662250F28E008E0F33 /* ZTWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA642250F28D008E0F33 /* ZTWButton.m */; };
 		755AEA6A225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA69225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m */; };
+		755AEA6C22537BF6008E0F33 /* gg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA6B22537BF5008E0F33 /* gg.jpg */; };
 		B281997060E7376A8BA1C87E /* libPods-HAHA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC519B347F9056DD4EFD649 /* libPods-HAHA.a */; };
 /* End PBXBuildFile section */
 
@@ -451,6 +452,7 @@
 		755AEA652250F28D008E0F33 /* ZTWButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTWButton.h; sourceTree = "<group>"; };
 		755AEA68225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLPeronHeaderTableViewCell.h; sourceTree = "<group>"; };
 		755AEA69225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLPeronHeaderTableViewCell.m; sourceTree = "<group>"; };
+		755AEA6B22537BF5008E0F33 /* gg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gg.jpg; sourceTree = "<group>"; };
 		7606C474EC02E36B64289221 /* Pods-HAHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.release.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.release.xcconfig"; sourceTree = "<group>"; };
 		7743CABEB5DEBF347F67798C /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -770,6 +772,7 @@
 		752A1A75224E7F4A004B4B31 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				755AEA6B22537BF5008E0F33 /* gg.jpg */,
 				370F19542252FCA4000850BF /* ZDDPhotoBrowse */,
 				372AF31122522E590023EFAB /* HXPhotoPicker */,
 				755AEA632250F265008E0F33 /* YMHLButton */,
@@ -1197,6 +1200,7 @@
 				755AEA612250E45B008E0F33 /* XJInputView.bundle in Resources */,
 				372AF39E22522E590023EFAB /* HXPhotoPicker.bundle in Resources */,
 				755AEA5E2250E45B008E0F33 /* xjemoje1.bundle in Resources */,
+				755AEA6C22537BF6008E0F33 /* gg.jpg in Resources */,
 				755AEA602250E45B008E0F33 /* expression.plist in Resources */,
 				3720258D224F225200E25AA4 /* pop-osx-Info.plist in Resources */,
 				753BD054224E6B66003C4424 /* LaunchScreen.storyboard in Resources */,

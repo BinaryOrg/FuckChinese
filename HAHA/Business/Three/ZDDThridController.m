@@ -29,7 +29,8 @@ UITableViewDataSource
 - (NSArray *)titles {
     if (!_titles) {
         _titles = @[
-                    
+                    @"的动态",
+                    @"的点赞"
                     ];
     }
     return _titles;
@@ -38,7 +39,8 @@ UITableViewDataSource
 - (NSArray *)images {
     if (!_images) {
         _images = @[
-                    
+                    @"",
+                    @""
                     ];
     }
     return _images;
@@ -46,20 +48,21 @@ UITableViewDataSource
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -STATUSBARHEIGHT, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -STATUSBARHEIGHT, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.estimatedRowHeight = 0;
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.tableFooterView = [UIView new];
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload0) name:@"reloadTTT" object:nil];
     self.fd_prefersNavigationBarHidden = YES;
     if (self.type) {
         [self sendRequest];
@@ -74,6 +77,12 @@ UITableViewDataSource
     }
     
 }
+
+- (void)reload0 {
+    [self.tableView reloadData];
+}
+
+
 
 //获取用户信息
 - (void)sendRequest {
@@ -96,7 +105,7 @@ UITableViewDataSource
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+//    return 1;
     if (!self.type) {
         return 3;
     }
@@ -108,7 +117,7 @@ UITableViewDataSource
         if (!section) {
             return 1;
         }else if (section == 1) {
-            return 3;
+            return 2;
         }else {
             return 1;
         }
@@ -116,7 +125,7 @@ UITableViewDataSource
         if (!section) {
             return 1;
         }else {
-            return 3;
+            return 2;
         }
     }
 }
@@ -127,15 +136,18 @@ UITableViewDataSource
         if (!cell) {
             cell = [[YMHLPeronHeaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"header_cell"];
         }
-        [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
-        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+        
         if ([GODUserTool isLogin] || self.type) {
+            [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+            [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
             cell.nickLabel.text = self.user.user_name;
             cell.dateLabel.text = [NSString stringWithFormat:@"Join in %@", [self formatFromTS:self.user.create_date]];
             cell.loginButton.alpha = 0;
             cell.nickLabel.alpha = 1;
             cell.dateLabel.alpha = 1;
         }else {
+            cell.bgImageView.image = [UIImage imageNamed:@"bg"];
+            cell.avatarImageView.image = [UIImage imageNamed:@"bg"];
             cell.nickLabel.alpha = 0;
             cell.dateLabel.alpha = 0;
             cell.loginButton.alpha = 1;
@@ -146,6 +158,11 @@ UITableViewDataSource
         YMHLSecondTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"sec_cell"];
         if (!cell) {
             cell = [[YMHLSecondTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sec_cell"];
+        }
+        if (self.type) {
+            cell.nameLabel.text = [NSString stringWithFormat:@"她%@", self.titles[indexPath.row]];
+        }else {
+            cell.nameLabel.text = [NSString stringWithFormat:@"我%@", self.titles[indexPath.row]];
         }
         
         return cell;
@@ -162,9 +179,16 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 2) {
-        //logout
+        if ([GODUserTool isLogin]) {
+            [[GODUserTool shared] clearUserInfo];
+            [self.tableView reloadData];
+        }
     }else if (indexPath.section == 1) {
-        
+        if (!indexPath.row) {
+            
+        }else {
+            
+        }
     }
 }
 
@@ -179,6 +203,17 @@ UITableViewDataSource
     }else {
         return 50;
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (!section) {
+        return CGFLOAT_MIN;
+    }
+    return 20;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
 }
 
 - (NSString *)formatFromTS:(NSInteger)ts {

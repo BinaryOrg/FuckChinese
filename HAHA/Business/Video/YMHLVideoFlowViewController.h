@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YMHLVideoFlowViewController : YMHLBaseViewController
-
+@property (nonatomic, assign) NSInteger type;
+@property (nonatomic, strong) NSString *user_id;
 @end
 
 NS_ASSUME_NONNULL_END

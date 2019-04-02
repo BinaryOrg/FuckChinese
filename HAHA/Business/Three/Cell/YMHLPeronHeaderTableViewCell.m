@@ -42,8 +42,8 @@
         [self.contentView addSubview:self.dateLabel];
         
         self.loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.loginButton.frame = CGRectMake(SCREENWIDTH - 90, 45, 70, 30);
-        [self.loginButton setTitle:@"" forState:UIControlStateNormal];
+        self.loginButton.frame = CGRectMake(SCREENWIDTH - 90, 90, 70, 30);
+        [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
         self.loginButton.layer.cornerRadius = 5;
         self.loginButton.layer.masksToBounds = YES;
         self.loginButton.layer.borderColor = [UIColor whiteColor].CGColor;

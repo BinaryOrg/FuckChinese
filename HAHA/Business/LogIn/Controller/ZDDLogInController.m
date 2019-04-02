@@ -62,6 +62,7 @@
 
 
 - (void)clickBackBtn {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadTTT" object:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

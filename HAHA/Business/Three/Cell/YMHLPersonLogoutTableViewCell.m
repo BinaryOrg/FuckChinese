@@ -17,6 +17,7 @@
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 50)];
         self.nameLabel.textColor = [UIColor zdd_redColor];
         self.nameLabel.textAlignment = NSTextAlignmentCenter;
+        self.nameLabel.text = @"退出登录";
         [self.contentView addSubview:self.nameLabel];
     }
     return self;

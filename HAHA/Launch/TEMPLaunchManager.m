@@ -64,34 +64,9 @@
     [XHLaunchAd setLaunchSourceType:SourceTypeLaunchScreen];
     [XHLaunchAd setWaitDataDuration:5];
     
-//    [MFNETWROK get:@"advertisement" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-//        NSLog(@"%@", result);
-//        if (![result[@"code"] integerValue]) {
-//            GODAdModel *model = [GODAdModel yy_modelWithJSON:result];
-//            //配置广告数据
-//            XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration new];
-//            imageAdconfiguration.duration = 5;
-//            imageAdconfiguration.frame = [UIScreen mainScreen].bounds;
-//            imageAdconfiguration.imageNameOrURLString = [NSString stringWithFormat:@"%@%@",BASE_AVATAR_URL, model.urlString];
-//            imageAdconfiguration.GIFImageCycleOnce = NO;
-//            imageAdconfiguration.imageOption = XHLaunchAdImageCacheInBackground;
-//            imageAdconfiguration.contentMode = UIViewContentModeScaleAspectFill;
-//            imageAdconfiguration.showFinishAnimate = ShowFinishAnimateLite;
-//            imageAdconfiguration.showFinishAnimateTime = 0.8;
-//            imageAdconfiguration.skipButtonType = SkipTypeTimeText;
-//            imageAdconfiguration.showEnterForeground = NO;
-//            //显示开屏广告
-//            [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
-//        }else {
-//            XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
-//            imageAdconfiguration.imageNameOrURLString = @"ad.jpg";
-//            [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
-//        }
-//    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-//        XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
-//        imageAdconfiguration.imageNameOrURLString = @"ad.jpg";
-//        [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
-//    }];
+    XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
+    imageAdconfiguration.imageNameOrURLString = @"gg.jpg";
+    [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
     
     
     AVQuery *query = [AVQuery queryWithClassName:@"userInfo"];
