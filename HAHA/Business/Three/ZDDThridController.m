@@ -12,11 +12,14 @@
 #import "ZDDLogInController.h"
 #import "YMHLSecondTableViewCell.h"
 #import "YMHLPersonLogoutTableViewCell.h"
+#import <QMUIKit/QMUIKit.h>
 
 @interface ZDDThridController ()
 <
 UITableViewDelegate,
-UITableViewDataSource
+UITableViewDataSource,
+QMUIAlbumViewControllerDelegate,
+QMUIImagePickerViewControllerDelegate
 >
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) GODUserModel *user;
@@ -48,7 +51,7 @@ UITableViewDataSource
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -STATUSBARHEIGHT, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, -STATUSBARHEIGHT, SCREENWIDTH, SCREENHEIGHT + STATUSBARHEIGHT) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.estimatedRowHeight = 0;
@@ -137,7 +140,16 @@ UITableViewDataSource
             cell = [[YMHLPeronHeaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"header_cell"];
         }
         
-        if ([GODUserTool isLogin] || self.type) {
+        if ([GODUserTool isLogin] && !self.type) {
+            [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+            [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+            cell.nickLabel.text = self.user.user_name;
+            cell.dateLabel.text = [NSString stringWithFormat:@"Join in %@", [self formatFromTS:self.user.create_date]];
+            cell.loginButton.alpha = 0;
+            cell.nickLabel.alpha = 1;
+            cell.dateLabel.alpha = 1;
+            
+        }else if (self.type) {
             [cell.bgImageView yy_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
             [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:self.user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
             cell.nickLabel.text = self.user.user_name;
@@ -152,6 +164,10 @@ UITableViewDataSource
             cell.dateLabel.alpha = 0;
             cell.loginButton.alpha = 1;
             [cell.loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+        }
+        if (!self.type) {
+            [cell.avatarButton addTarget:self action:@selector(avatarClick) forControlEvents:UIControlEventTouchUpInside];
+            [cell.nickButton addTarget:self action:@selector(nickClick) forControlEvents:UIControlEventTouchUpInside];
         }
         return cell;
     }else if (indexPath.section == 1) {
@@ -176,6 +192,170 @@ UITableViewDataSource
     
 }
 
+- (void)avatarClick {
+    [self presentAlbumViewControllerWithTitle:@"请选择头像"];
+}
+
+- (void)presentAlbumViewControllerWithTitle:(NSString *)title {
+    
+    // 创建一个 QMUIAlbumViewController 实例用于呈现相簿列表
+    QMUIAlbumViewController *albumViewController = [[QMUIAlbumViewController alloc] init];
+    albumViewController.albumViewControllerDelegate = self;
+    albumViewController.contentType = QMUIAlbumContentTypeOnlyPhoto;
+    albumViewController.title = title;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:albumViewController];
+    
+    // 获取最近发送图片时使用过的相簿，如果有则直接进入该相簿
+    [albumViewController pickLastAlbumGroupDirectlyIfCan];
+    
+    [self presentViewController:navigationController animated:YES completion:NULL];
+}
+
+- (QMUIImagePickerViewController *)imagePickerViewControllerForAlbumViewController:(QMUIAlbumViewController *)albumViewController {
+    QMUIImagePickerViewController *imagePickerViewController = [[QMUIImagePickerViewController alloc] init];
+    imagePickerViewController.imagePickerViewControllerDelegate = self;
+    imagePickerViewController.maximumSelectImageCount = 1;
+    imagePickerViewController.allowsMultipleSelection = NO;
+    return imagePickerViewController;
+}
+
+#pragma mark - <QMUIImagePickerViewControllerDelegate>
+
+- (void)imagePickerViewController:(QMUIImagePickerViewController *)imagePickerViewController didSelectImageWithImagesAsset:(QMUIAsset *)imageAsset afterImagePickerPreviewViewControllerUpdate:(QMUIImagePickerPreviewViewController *)imagePickerPreviewViewController {
+    [imagePickerViewController dismissViewControllerAnimated:YES completion:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self startLoadingWithText:@"上传图片..."];
+    });
+    [MFNETWROK upload:@"http://120.78.124.36:10010/MRYX/User/ChangeUserAvatar" params:@{@"userId": [GODUserTool shared].user.user_id} name:@"pictures" images:@[imageAsset.previewImage] imageScale:0.1 imageType:MFImageTypePNG progress:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        if ([result[@"resultCode"] isEqualToString:@"0"]) {
+            GODUserModel *user = [GODUserModel yy_modelWithJSON:result[@"user"]];
+            [GODUserTool shared].user = user;
+            self.user = user;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self stopLoading];
+                [self.tableView reloadData];
+            });
+        }else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showErrorWithText:@"上传失败！"];
+            });
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self stopLoading];
+            });
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showErrorWithText:@"上传失败！"];
+        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self stopLoading];
+        });
+    }];
+    //    [imageAsset requestImageData:^(NSData *imageData, NSDictionary<NSString *,id> *info, BOOL isGIF, BOOL isHEIC) {
+    //        [MFNETWROK upload:@"User/ChangeUserAvater"
+    //                   params:@{
+    //                            @"userId": [ZDDUserTool shared].user.user_id
+    //                            }
+    //                     name:@"pictures"
+    //               imageDatas:@[imageData]
+    //                 progress:nil
+    //                  success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    //                      NSLog(@"%@", result);
+    //                      if ([result[@"resultCode"] isEqualToString:@"0"]) {
+    //                          ZDDUserModel *user = [ZDDUserModel yy_modelWithJSON:result[@"user"]];
+    //                          [ZDDUserTool shared].user = user;
+    //                          dispatch_async(dispatch_get_main_queue(), ^{
+    //                              [self stopLoading];
+    //                              [self reloadCustomInfo];
+    //                          });
+    //                      }else {
+    //                          dispatch_async(dispatch_get_main_queue(), ^{
+    //                              [self showErrorWithText:@"上传失败！"];
+    //                          });
+    //                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //                              [self stopLoading];
+    //                          });
+    //                      }
+    //                  }
+    //                  failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+    //                    dispatch_async(dispatch_get_main_queue(), ^{
+    //                        [self showErrorWithText:@"上传失败！"];
+    //                    });
+    //                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //                        [self stopLoading];
+    //                    });
+    //                  }];
+    //    }];
+}
+
+- (void)startLoadingWithText:(NSString *)text {
+    //    [QMUITips showLoading:text inView:self.view];
+    //    [self.tips showLoading:text];
+    [MFHUDManager showLoading:text];
+}
+
+- (void)showErrorWithText:(NSString *)text {
+    //    [self.tips showError:text];
+    [MFHUDManager showError:text];
+}
+
+- (void)showSuccessWithText:(NSString *)text {
+    //    [self.tips showSucceed:text];
+    [MFHUDManager showSuccess:text];
+    
+}
+
+- (void)stopLoading {
+    //    [QMUITips hideAllToastInView:self.view animated:YES];
+    //    [self.tips hideAnimated:YES];
+    [MFHUDManager dismiss];
+}
+
+- (void)nickClick {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入用户昵称" preferredStyle:(UIAlertControllerStyleAlert)];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入用户昵称";
+    }];
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [SVProgressHUD show];
+        [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/User/ChangeUserInfo"
+                 params:@{
+                          @"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"",
+                          @"gender": @"m",
+                          @"userName": alert.textFields[0].text
+                          }
+                success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+                    
+                    if ([result[@"resultCode"] isEqualToString:@"0"]) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [SVProgressHUD dismiss];
+                        });
+                        GODUserModel *userModel = [GODUserModel yy_modelWithJSON:result[@"user"]];
+                        // 存储用户信息
+                        [GODUserTool shared].user = userModel;
+                        self.user = userModel;
+                        [self.tableView reloadData];
+                    }else {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [SVProgressHUD showErrorWithStatus:@"修改失败"];
+                        });
+                    }
+                }
+                failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [SVProgressHUD showSuccessWithStatus:@"修改失败"];
+                    });
+                }];
+    }];
+    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:a1];
+    [alert addAction:a2];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 2) {
@@ -185,9 +365,17 @@ UITableViewDataSource
         }
     }else if (indexPath.section == 1) {
         if (!indexPath.row) {
-            
+            if ([GODUserTool isLogin]) {
+                
+            }else {
+                [self login];
+            }
         }else {
-            
+            if ([GODUserTool isLogin]) {
+                
+            }else {
+                [self login];
+            }
         }
     }
 }

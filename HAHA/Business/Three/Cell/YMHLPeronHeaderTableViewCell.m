@@ -13,6 +13,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 300)];
         self.bgImageView.contentMode = UIViewContentModeScaleAspectFill;
         self.bgImageView.userInteractionEnabled = YES;
@@ -27,13 +28,23 @@
         self.avatarImageView.layer.cornerRadius = 30;
         self.avatarImageView.layer.masksToBounds = YES;
         self.avatarImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.avatarImageView.userInteractionEnabled = YES;
         
+        self.avatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.avatarButton.frame = self.avatarImageView.bounds;
+        [self.avatarImageView addSubview:self.avatarButton];
         [self.contentView addSubview:self.avatarImageView];
         
         self.nickLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, MaxY(self.avatarImageView) + 15, 150, 30)];
         self.nickLabel.font = [UIFont systemFontOfSize:20];
+        self.nickLabel.userInteractionEnabled = YES;
         self.nickLabel.textColor = [UIColor whiteColor];
+//        self.nickLabel.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:self.nickLabel];
+        
+        self.nickButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.nickButton.frame = self.nickLabel.bounds;
+        [self.nickLabel addSubview:self.nickButton];
         
         self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, MaxY(self.nickLabel) + 15, 150, 30)];
         self.dateLabel.font = [UIFont systemFontOfSize:15];

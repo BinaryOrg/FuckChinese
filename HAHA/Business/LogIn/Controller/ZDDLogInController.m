@@ -129,7 +129,7 @@
     NSString *phoneNum = self.phoneTf.text;
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;;
     [MFNETWROK post:@"User/login" params:@{@"mobileNumber": phoneNum} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-        
+        NSLog(@"%@", result);
         GODUserModel *userModel = [GODUserModel yy_modelWithJSON:result[@"user"]];
         // 存储用户信息
         [GODUserTool shared].user = userModel;

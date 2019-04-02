@@ -163,7 +163,7 @@
 
 - (ZDDRetryView *)emptyView {
     if (!_emptyView) {
-        _emptyView = [[ZDDRetryView alloc] initWithFrame:CGRectMake(0, -TabBarHeight, ScreenWidth, ScreenHeight - TabBarHeight)];
+        _emptyView = [[ZDDRetryView alloc] initWithFrame:CGRectMake(0, -TabBarHeight, ScreenWidth, ScreenHeight)];
         _emptyView.backgroundColor = [UIColor whiteColor];
         __weak typeof(self)weakSelf = self;
         _emptyView.block = ^{

@@ -13,7 +13,7 @@
 #import "YMHLCommentTableViewCell.h"
 #import "YMHLSubcommentTableViewCell.h"
 #import <UITextView+Placeholder/UITextView+Placeholder.h>
-
+#import "ZDDThridController.h"
 @interface YMHLVideoDetailViewController ()
 <
 SuperPlayerDelegate,
@@ -210,6 +210,7 @@ UITableViewDataSource
         }
         
         [cell.avatar yy_setImageWithURL:[NSURL URLWithString:comment.user.avatar] placeholder:[UIImage imageNamed:@"sex_boy_110x110_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+        [cell.avatarButton addTarget:self action:@selector(avatarClick:) forControlEvents:UIControlEventTouchUpInside];
         cell.nickLabel.text = comment.user.user_name;
         cell.commentLabel.text = comment.content;
         [cell.commentLabel setQmui_height:comment.content_height];
@@ -236,6 +237,7 @@ UITableViewDataSource
         }
         
         [cell.avatar yy_setImageWithURL:[NSURL URLWithString:subcomment.src_user.avatar] placeholder:[UIImage imageNamed:@"sex_boy_110x110_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+        [cell.avatarButton addTarget:self action:@selector(avatarClick2:) forControlEvents:UIControlEventTouchUpInside];
         cell.src_nickLabel.text = subcomment.src_user.user_name;
         cell.tar_nickLabel.text = subcomment.tar_user.user_name;
         cell.commentLabel.text = subcomment.content;
@@ -252,6 +254,28 @@ UITableViewDataSource
 //        }
         return cell;
     }
+}
+
+- (void)avatarClick:(UIButton *)sender {
+    YMHLCommentTableViewCell *cell = (YMHLCommentTableViewCell *)sender.superview.superview.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    ZDDCommentModel *comment = self.list[indexPath.section];
+    ZDDThridController *t = [ZDDThridController new];
+    t.type = 1;
+    t.user_id = comment.user.user_id;
+    [self.navigationController pushViewController:t animated:YES];
+}
+
+- (void)avatarClick2:(UIButton *)sender {
+    YMHLSubcommentTableViewCell *cell = (YMHLSubcommentTableViewCell *)sender.superview.superview.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    ZDDCommentModel *comment = self.list[indexPath.section];
+    YMHLSubCommentsModel *subcomment = comment.subcomments[indexPath.row - 1];
+    ZDDThridController *t = [ZDDThridController new];
+    t.type = 1;
+    t.user_id = subcomment.src_user.user_id;
+    [self.navigationController pushViewController:t animated:YES];
+    
 }
 
 - (void)starButtonClick:(UIButton *)sender {

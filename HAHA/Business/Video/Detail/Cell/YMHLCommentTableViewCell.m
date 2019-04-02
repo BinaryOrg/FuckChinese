@@ -21,6 +21,11 @@
         
         [self.contentView addSubview:self.avatar];
         
+        self.avatar.userInteractionEnabled = YES;
+        self.avatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.avatarButton.frame = self.avatar.bounds;
+        [self.avatar addSubview:self.avatarButton];
+        
         self.nickLabel = [[UILabel alloc] initWithFrame:CGRectMake(MaxX(self.avatar) + 20, 20, 150, 20)];
         self.nickLabel.textColor = [UIColor zdd_colorWithRed:51 green:51 blue:51];
         self.nickLabel.font  = [UIFont systemFontOfSize:16];

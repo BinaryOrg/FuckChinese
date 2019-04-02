@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YMHLSubcommentTableViewCell : UITableViewCell
 @property (nonatomic, strong) UIImageView *avatar;
+@property (nonatomic, strong) UIButton *avatarButton;
+
 @property (nonatomic, strong) UILabel *src_nickLabel;
 @property (nonatomic, strong) UILabel *tar_nickLabel;
 @property (nonatomic, strong) UILabel *commentLabel;

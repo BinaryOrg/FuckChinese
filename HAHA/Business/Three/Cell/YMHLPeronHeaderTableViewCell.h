@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) UILabel *nickLabel;
 @property (nonatomic, strong) UILabel *dateLabel;
-
+@property (nonatomic, strong) UIButton *nickButton;
+@property (nonatomic, strong) UIButton *avatarButton;
 @property (nonatomic, strong) UIButton *loginButton;
 @end
 
