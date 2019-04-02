@@ -93,7 +93,7 @@
 - (void)dealloc {
     [self.model removeObserver:self forKeyPath:@"star_num"];
     [self.model removeObserver:self forKeyPath:@"comment_num"];
-    
+    self.delegate = nil;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
@@ -172,6 +172,12 @@
     }];
 }
 
+//点击头像
+- (void)clickIcon {
+    if ([self.delegate respondsToSelector:@selector(clickIconWithModel:)]) {
+        [self.delegate clickIconWithModel:self.model.user];
+    }
+}
 
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
     
@@ -264,11 +270,13 @@
     self.iconNode = [ASNetworkImageNode new];
     self.iconNode.style.preferredSize = CGSizeMake(30, 30);
     self.iconNode.cornerRadius = 15;
+    [self.iconNode addTarget:self action:@selector(clickIcon) forControlEvents:ASControlNodeEventTouchUpInside];
     [self addSubnode:self.iconNode];
 }
 
 - (void)addNameNode {
     self.nameNode = [ASTextNode new];
+    [self.nameNode addTarget:self action:@selector(clickIcon) forControlEvents:ASControlNodeEventTouchUpInside];
     [self addSubnode:self.nameNode];
 }
 
@@ -380,7 +388,6 @@
     _picturesLayout = layout;
     return layout;
 }
-
 
 - (NSMutableArray *)picturesNodes {
     if (_picturesNodes) {

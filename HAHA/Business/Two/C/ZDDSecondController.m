@@ -11,7 +11,7 @@
 #import "ZDDCommentListController.h"
 #import "ZDDPostDyController.h"
 
-@interface ZDDSecondController ()
+@interface ZDDSecondController ()<ZDDSecondListCellNodeDelegate>
 
 @property (nonatomic, strong) NSMutableArray <ZDDDuanziModel *>*dataArr;
 
@@ -46,6 +46,11 @@
 - (void)clickPostDyBtn {
     ZDDPostDyController *vc = [ZDDPostDyController new];
     [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
+//点击头像
+- (void)clickIconWithModel:(GODUserModel *)model {
     
 }
 
@@ -89,6 +94,7 @@
 - (ASCellNodeBlock)tableNode:(ASTableNode *)tableNode nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
     return ^ASCellNode *(){
         ZDDSecondListCellNode *node = [[ZDDSecondListCellNode alloc] initWithModel:self.dataArr[indexPath.row]];
+        node.delegate = self;
         return node;
     };
 }
