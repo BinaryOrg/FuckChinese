@@ -85,6 +85,8 @@
 		37DD96762251E0A600489BE6 /* ZDDSecondListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD96752251E0A600489BE6 /* ZDDSecondListCellNode.m */; };
 		37DD96792251E53F00489BE6 /* ZDDCommentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD96782251E53F00489BE6 /* ZDDCommentListController.m */; };
 		37DD967C2251F59300489BE6 /* ZDDPostDyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD967B2251F59300489BE6 /* ZDDPostDyController.m */; };
+		4A0D7A4722535F5B00D9F466 /* YMHLSecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D7A4622535F5B00D9F466 /* YMHLSecondTableViewCell.m */; };
+		4A0D7A4A22535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D7A4922535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m */; };
 		7521BA1E224F0D7F00292099 /* YMHLUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA1D224F0D7F00292099 /* YMHLUserModel.m */; };
 		7521BA22224F994000292099 /* YMHLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA21224F994000292099 /* YMHLBaseViewController.m */; };
 		7521BA2522505AA000292099 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA2422505AA000292099 /* ASButtonNode+LHExtension.m */; };
@@ -323,6 +325,10 @@
 		37DD967A2251F59300489BE6 /* ZDDPostDyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDPostDyController.h; sourceTree = "<group>"; };
 		37DD967B2251F59300489BE6 /* ZDDPostDyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDPostDyController.m; sourceTree = "<group>"; };
 		452E8D43C2BC0FAAEEAFA7EA /* Pods-HAHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.release.xcconfig"; path = "Pods/Target Support Files/Pods-HAHA/Pods-HAHA.release.xcconfig"; sourceTree = "<group>"; };
+		4A0D7A4522535F5B00D9F466 /* YMHLSecondTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLSecondTableViewCell.h; sourceTree = "<group>"; };
+		4A0D7A4622535F5B00D9F466 /* YMHLSecondTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLSecondTableViewCell.m; sourceTree = "<group>"; };
+		4A0D7A4822535F6800D9F466 /* YMHLPersonLogoutTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLPersonLogoutTableViewCell.h; sourceTree = "<group>"; };
+		4A0D7A4922535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLPersonLogoutTableViewCell.m; sourceTree = "<group>"; };
 		5E4B2110EE268EF4AA6ABCD8 /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
 		7521BA1C224F0D7F00292099 /* YMHLUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLUserModel.h; sourceTree = "<group>"; };
 		7521BA1D224F0D7F00292099 /* YMHLUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLUserModel.m; sourceTree = "<group>"; };
@@ -1101,6 +1107,10 @@
 			children = (
 				755AEA68225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.h */,
 				755AEA69225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m */,
+				4A0D7A4522535F5B00D9F466 /* YMHLSecondTableViewCell.h */,
+				4A0D7A4622535F5B00D9F466 /* YMHLSecondTableViewCell.m */,
+				4A0D7A4822535F6800D9F466 /* YMHLPersonLogoutTableViewCell.h */,
+				4A0D7A4922535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1338,6 +1348,7 @@
 				755AEA4F2250E404008E0F33 /* XJEmojePreView.m in Sources */,
 				755AEA3922507680008E0F33 /* YMHLSubcommentTableViewCell.m in Sources */,
 				752A1ABC224E8359004B4B31 /* GODWebViewController.m in Sources */,
+				4A0D7A4722535F5B00D9F466 /* YMHLSecondTableViewCell.m in Sources */,
 				752A1AE3224E8400004B4B31 /* YMHLVideoCollectionViewCell.m in Sources */,
 				372AF38A22522E590023EFAB /* HXCollectionView.m in Sources */,
 				752A1A97224E7FC3004B4B31 /* TEMPKeyConfiguration.m in Sources */,
@@ -1375,6 +1386,7 @@
 				752A1A8C224E7F7F004B4B31 /* UIColor+CustomColors.m in Sources */,
 				372AF39B22522E590023EFAB /* HXAlbumModel.m in Sources */,
 				372AF37522522E590023EFAB /* HXPhotoPreviewBottomView.m in Sources */,
+				4A0D7A4A22535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m in Sources */,
 				7521BA2522505AA000292099 /* ASButtonNode+LHExtension.m in Sources */,
 				372AF38122522E590023EFAB /* NSBundle+HXPhotoPicker.m in Sources */,
 				372AF39222522E590023EFAB /* HXPhotoViewFlowLayout.m in Sources */,

@@ -10,6 +10,8 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "YMHLPeronHeaderTableViewCell.h"
 #import "ZDDLogInController.h"
+#import "YMHLSecondTableViewCell.h"
+#import "YMHLPersonLogoutTableViewCell.h"
 
 @interface ZDDThridController ()
 <
@@ -18,9 +20,29 @@ UITableViewDataSource
 >
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) GODUserModel *user;
+@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) NSArray *images;
 @end
 
 @implementation ZDDThridController
+
+- (NSArray *)titles {
+    if (!_titles) {
+        _titles = @[
+                    
+                    ];
+    }
+    return _titles;
+}
+
+- (NSArray *)images {
+    if (!_images) {
+        _images = @[
+                    
+                    ];
+    }
+    return _images;
+}
 
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -55,11 +77,14 @@ UITableViewDataSource
 
 //获取用户信息
 - (void)sendRequest {
-    [MFNETWROK post:@""
-             params:@{}
+    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/User/GetUserInfoByUserId"
+             params:@{
+                      @"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"",
+                      @"targetUserId": self.type ? self.user_id : [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @""
+                      }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 if ([result[@"resultCode"] isEqualToString:@"0"]) {
-                    self.user = [GODUserModel yy_modelWithJSON:result[@"data"]];
+                    self.user = [GODUserModel yy_modelWithJSON:result[@"user"]];
                     [self.view addSubview:self.tableView];
                 }else {
                     [self addNetworkErrorView];
@@ -117,8 +142,30 @@ UITableViewDataSource
             [cell.loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
         }
         return cell;
+    }else if (indexPath.section == 1) {
+        YMHLSecondTableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:@"sec_cell"];
+        if (!cell) {
+            cell = [[YMHLSecondTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sec_cell"];
+        }
+        
+        return cell;
+    }else {
+        YMHLPersonLogoutTableViewCell *logout = [tableView dequeueReusableCellWithIdentifier:@"logout_cell"];
+        if (!logout) {
+            logout = [[YMHLPersonLogoutTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"logout_cell"];
+        }
+        return logout;
     }
-    return nil;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 2) {
+        //logout
+    }else if (indexPath.section == 1) {
+        
+    }
 }
 
 - (void)login {
@@ -130,7 +177,7 @@ UITableViewDataSource
     if (!indexPath.section) {
         return 300;
     }else {
-        return 44;
+        return 50;
     }
 }
 
