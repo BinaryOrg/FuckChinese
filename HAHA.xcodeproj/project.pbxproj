@@ -82,6 +82,7 @@
 		372AF3A022522E590023EFAB /* HXPhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF36E22522E590023EFAB /* HXPhotoEditViewController.m */; };
 		372AF3A122522E590023EFAB /* HXDatePhotoToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF37022522E590023EFAB /* HXDatePhotoToolManager.m */; };
 		372AF3A222522E590023EFAB /* HXVideoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF37322522E590023EFAB /* HXVideoEditViewController.m */; };
+		37AC82A3225378B30081478E /* ZDDRetryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AC82A2225378B30081478E /* ZDDRetryView.m */; };
 		37DD96762251E0A600489BE6 /* ZDDSecondListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD96752251E0A600489BE6 /* ZDDSecondListCellNode.m */; };
 		37DD96792251E53F00489BE6 /* ZDDCommentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD96782251E53F00489BE6 /* ZDDCommentListController.m */; };
 		37DD967C2251F59300489BE6 /* ZDDPostDyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD967B2251F59300489BE6 /* ZDDPostDyController.m */; };
@@ -318,6 +319,8 @@
 		372AF37122522E590023EFAB /* HXPhotoViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoViewFlowLayout.h; sourceTree = "<group>"; };
 		372AF37222522E590023EFAB /* HXPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoViewController.h; sourceTree = "<group>"; };
 		372AF37322522E590023EFAB /* HXVideoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXVideoEditViewController.m; sourceTree = "<group>"; };
+		37AC82A1225378B30081478E /* ZDDRetryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDRetryView.h; sourceTree = "<group>"; };
+		37AC82A2225378B30081478E /* ZDDRetryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDRetryView.m; sourceTree = "<group>"; };
 		37DD96742251E0A600489BE6 /* ZDDSecondListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDSecondListCellNode.h; sourceTree = "<group>"; };
 		37DD96752251E0A600489BE6 /* ZDDSecondListCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDSecondListCellNode.m; sourceTree = "<group>"; };
 		37DD96772251E53F00489BE6 /* ZDDCommentListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDCommentListController.h; sourceTree = "<group>"; };
@@ -933,6 +936,8 @@
 				752A1AD3224E83DB004B4B31 /* ZDDNavController.m */,
 				752A1AD1224E83DA004B4B31 /* ZDDTabBarController.h */,
 				752A1AD0224E83DA004B4B31 /* ZDDTabBarController.m */,
+				37AC82A1225378B30081478E /* ZDDRetryView.h */,
+				37AC82A2225378B30081478E /* ZDDRetryView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1362,6 +1367,7 @@
 				372025A1224F49AF00E25AA4 /* ZDDDuanziModel.m in Sources */,
 				752A1AC4224E8377004B4B31 /* TEMPAppDelegate+PushService.m in Sources */,
 				752A1AB4224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m in Sources */,
+				37AC82A3225378B30081478E /* ZDDRetryView.m in Sources */,
 				752A1AB3224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m in Sources */,
 				372AF39422522E590023EFAB /* HXCustomCameraController.m in Sources */,
 				372AF39D22522E590023EFAB /* HXCustomPreviewView.m in Sources */,
