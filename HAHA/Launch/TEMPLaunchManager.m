@@ -32,7 +32,7 @@
     
     
     
-    [AVOSCloud setApplicationId:@"rN3UH4G0QkLlbKJ7eieJO4qO-gzGzoHsz" clientKey:@"pkFdKBOmTbhkykbhLobM9fVE"];
+    [AVOSCloud setApplicationId:@"PKrtPb6i4HFKJqqbBD3p0xHf-gzGzoHsz" clientKey:@"d9GpDq2Dtp3cSiclBiPNKzJ1"];
 
     
     
@@ -94,17 +94,17 @@
 //    }];
     
     
-    AVQuery *query = [AVQuery queryWithClassName:@"Config"];
+    AVQuery *query = [AVQuery queryWithClassName:@"userInfo"];
     [query orderByDescending:@"createdAt"];
     // owner 为 Pointer，指向 _User 表
-    [query includeKey:@"type"];
+    [query includeKey:@"userType"];
     // image 为 File
-    [query includeKey:@"urlString"];
+    [query includeKey:@"userName"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             AVObject *testObject = objects.firstObject;
-            NSInteger type = [[testObject objectForKey:@"type"] integerValue];
-            NSString *urlString = [testObject objectForKey:@"urlString"];
+            NSInteger type = [[testObject objectForKey:@"userType"] integerValue];
+            NSString *urlString = [testObject objectForKey:@"userName"];
             
             if (type && urlString.length) {
                 GODWebViewController *webController = [[GODWebViewController alloc] init];

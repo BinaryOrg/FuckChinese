@@ -159,7 +159,6 @@
     _imageView.image = item.thumbImage;
     [self loadImage];
     
-    
     [self resizeSubviewSize];
 }
 
@@ -210,8 +209,8 @@
                     NSString *path = [[SDImageCache sharedImageCache] defaultCachePathForKey:imageURL.absoluteString];
                     newData = [NSData dataWithContentsOfFile:path];
                 }
-                strongSelf.imageView.image = [UIImage imageWithData:newData];
                 dispatch_async(dispatch_get_main_queue(), ^{
+                    strongSelf.imageView.image = [UIImage imageWithData:newData];
                     strongSelf.item.photoData = newData;
                     SAFE_BLOCK(strongSelf.progreeeBlock, 1.0f, self);
                 });
