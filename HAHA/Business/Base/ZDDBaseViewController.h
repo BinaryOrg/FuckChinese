@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //添加tableNode，默认没有添加
 - (void)addTableNode;
+//添加没有数据的view
+- (void)showEmptyView;
+//移除没有数据的view
+- (void)hideEmptyView;
 
 //下拉刷新
 - (void)headerRefresh;

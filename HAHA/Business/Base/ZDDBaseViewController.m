@@ -12,10 +12,13 @@
 
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
+#import "ZDDRetryView.h"
+
 
 @interface ZDDBaseViewController ()
 
 @property (nonatomic, strong) ASTableNode *tableNode;
+@property (nonatomic, strong) ZDDRetryView *emptyView;
 
 @end
 
@@ -52,6 +55,7 @@
         make.top.mas_equalTo(0);
         make.bottom.mas_equalTo(-bottomH);
     }];
+    
     
 }
 
@@ -146,6 +150,27 @@
     if (self.tableNode) {
         [self.tableNode.view.mj_footer resetNoMoreData];
     }
+}
+
+- (void)showEmptyView {
+    [self.view addSubview:self.emptyView];
+    [self.view bringSubviewToFront:self.emptyView];
+}
+
+- (void)hideEmptyView {
+    [self.emptyView removeFromSuperview];
+}
+
+- (ZDDRetryView *)emptyView {
+    if (!_emptyView) {
+        _emptyView = [[ZDDRetryView alloc] initWithFrame:CGRectMake(0, -TabBarHeight, ScreenWidth, ScreenHeight - TabBarHeight)];
+        _emptyView.backgroundColor = [UIColor whiteColor];
+        __weak typeof(self)weakSelf = self;
+        _emptyView.block = ^{
+            [weakSelf headerRefresh];
+        };
+    }
+    return _emptyView;
 }
 
 @end

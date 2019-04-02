@@ -53,17 +53,24 @@
         [self endHeaderRefresh];
         [self endFooterRefresh];
         if (statusCode == 200) {
+            [self hideEmptyView];
             if (!isAdd) {
                 [self.dataArr removeAllObjects];
             }
             [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDDuanziModel.class json:result[@"data"]]];
             [self.tableNode reloadData];
         }else {
+            if (!isAdd) {
+                [self showEmptyView];
+            }
             [MFHUDManager showError:@"刷新失败请重试"];
         }
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
         [self endHeaderRefresh];
         [self endFooterRefresh];
+        if (!isAdd) {
+            [self showEmptyView];
+        }
         [MFHUDManager showError:@"刷新失败请重试"];
     }];
 }
