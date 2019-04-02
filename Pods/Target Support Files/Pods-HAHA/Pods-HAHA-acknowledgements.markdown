@@ -1333,7 +1333,7 @@ Apache License
 ## QMUIKit
 
 Tencent is pleased to support the open source community by making QMUI_iOS available.  
-Copyright (C) 2016-2019 THL A29 Limited, a Tencent company.  All rights reserved.
+Copyright (C) 2016-2018 THL A29 Limited, a Tencent company.  All rights reserved.
 If you have downloaded a copy of the QMUI_iOS binary from Tencent, please note that the QMUI_iOS binary is licensed under the MIT License.
 If you have downloaded a copy of the QMUI_iOS source code from Tencent, please note that QMUI_iOS source code is licensed under the MIT License.  Your integration of QMUI_iOS into your own projects may require compliance with the MIT License.
 A copy of the MIT License is included in this file.
@@ -1490,10 +1490,16 @@ SOFTWARE.
 
 ## Texture
 
-The Texture project was created by Pinterest as a continuation, under a different
-name and license, of the AsyncDisplayKit codebase originally developed by Facebook.
+The Texture project was created by Pinterest as a continuation, under a 
+different name and license, of the AsyncDisplayKit codebase originally developed
+by Facebook.  AsyncDisplayKit was originally released by Facebook under a BSD
+license and additional patent grant.  Those BSD and patent licenses govern use
+of code in Texture contributed prior to 4/13/2017 (the original AsyncDisplayKit 
+code), and copies of the licenses are included in the /ASDK-Licenses directory 
+of this source tree for reference.
 
-All code in Texture is covered by the Apache License, Version 2.0.
+All code contributed to Texture after 4/13/2017 is released by Pinterest under
+the Apache License, Version 2.0.
 
 Apache License
                            Version 2.0, January 2004
@@ -1671,7 +1677,6 @@ Apache License
       of your accepting any such warranty or additional liability.
 
    END OF TERMS AND CONDITIONS
-
 
 ## UITextView+Placeholder
 
