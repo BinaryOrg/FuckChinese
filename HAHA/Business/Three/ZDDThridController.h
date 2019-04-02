@@ -10,8 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDDThridController : ZDDBaseViewController
-
+@interface ZDDThridController : YMHLBaseViewController
+/**
+ 0 - 自己
+ 1 - 他人
+ */
+@property (nonatomic, assign) NSInteger type;
+@property (nonatomic, strong) NSString *user_id;
 @end
 
 NS_ASSUME_NONNULL_END

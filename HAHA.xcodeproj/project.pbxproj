@@ -148,6 +148,7 @@
 		755AEA612250E45B008E0F33 /* XJInputView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA5C2250E45B008E0F33 /* XJInputView.bundle */; };
 		755AEA622250E45B008E0F33 /* UIColor+ZS.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */; };
 		755AEA662250F28E008E0F33 /* ZTWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA642250F28D008E0F33 /* ZTWButton.m */; };
+		755AEA6A225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA69225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m */; };
 		B281997060E7376A8BA1C87E /* libPods-HAHA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC519B347F9056DD4EFD649 /* libPods-HAHA.a */; };
 /* End PBXBuildFile section */
 
@@ -448,6 +449,8 @@
 		755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZS.m"; sourceTree = "<group>"; };
 		755AEA642250F28D008E0F33 /* ZTWButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTWButton.m; sourceTree = "<group>"; };
 		755AEA652250F28D008E0F33 /* ZTWButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTWButton.h; sourceTree = "<group>"; };
+		755AEA68225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLPeronHeaderTableViewCell.h; sourceTree = "<group>"; };
+		755AEA69225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLPeronHeaderTableViewCell.m; sourceTree = "<group>"; };
 		7606C474EC02E36B64289221 /* Pods-HAHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.release.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.release.xcconfig"; sourceTree = "<group>"; };
 		7743CABEB5DEBF347F67798C /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -971,6 +974,7 @@
 		752A1AE8224E8418004B4B31 /* Three */ = {
 			isa = PBXGroup;
 			children = (
+				755AEA67225248D0008E0F33 /* Cell */,
 				752A1AEA224E8433004B4B31 /* ZDDThridController.h */,
 				752A1AE9224E8432004B4B31 /* ZDDThridController.m */,
 			);
@@ -1092,6 +1096,15 @@
 				755AEA642250F28D008E0F33 /* ZTWButton.m */,
 			);
 			path = YMHLButton;
+			sourceTree = "<group>";
+		};
+		755AEA67225248D0008E0F33 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				755AEA68225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.h */,
+				755AEA69225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		E131989F0D313136377B77C6 /* Frameworks */ = {
@@ -1252,6 +1265,7 @@
 				372AF38022522E590023EFAB /* NSArray+HXExtension.m in Sources */,
 				372AF38E22522E590023EFAB /* HXPhotoCustomNavigationBar.m in Sources */,
 				755AEA562250E404008E0F33 /* XJInputView.m in Sources */,
+				755AEA6A225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m in Sources */,
 				752A1AFF224E847C004B4B31 /* ZDDInputView.m in Sources */,
 				755AEA502250E404008E0F33 /* XJItemSelView.m in Sources */,
 				752A1A91224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
