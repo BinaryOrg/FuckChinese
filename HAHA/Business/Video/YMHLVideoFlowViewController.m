@@ -22,6 +22,7 @@ UICollectionViewDataSource
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *list;
 @property (nonatomic, strong) UIView *refreshView;
+@property (nonatomic, assign) NSInteger page;
 @end
 
 @implementation YMHLVideoFlowViewController
@@ -56,12 +57,14 @@ UICollectionViewDataSource
 }
 
 - (void)refresh:(UIButton *)sender {
+    _page++;
     [self rotateView:sender];
     sender.userInteractionEnabled = NO;
     [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
              params:@{
                       @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
-                      @"category": @"video"
+                      @"category": @"video",
+                      @"page": @(_page)
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 NSLog(@"%@", result);
@@ -129,6 +132,7 @@ UICollectionViewDataSource
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf sendRequest];
     };
+    _page = 1;
     [self sendRequest];
 }
 
@@ -142,7 +146,8 @@ UICollectionViewDataSource
     [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
              params:@{
                       @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
-                      @"category": @"video"
+                      @"category": @"video",
+                      @"page": @(_page)
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 dispatch_async(dispatch_get_main_queue(), ^{
