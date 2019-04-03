@@ -36,9 +36,9 @@ QMUIImagePickerViewControllerDelegate
 - (NSArray *)titles {
     if (!_titles) {
         _titles = @[
-                    @"的动态",
-                    @"的视频",
-                    @"的图文"
+                    @"的😊动态",
+                    @"的👍视频",
+                    @"的👍图文"
                     ];
     }
     return _titles;

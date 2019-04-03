@@ -37,7 +37,7 @@
         if ([result[@"resultCode"] isEqualToString:@"0"]) {
             
             [self.dataArr removeAllObjects];
-            [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDDuanziModel.class json:result[@"data"][@"video_text"]]];
+            [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDDuanziModel.class json:result[@"data"][@"graph_text"]]];
             if (self.dataArr.count) {
                 [self.tableNode reloadData];
             }else {
