@@ -8,9 +8,12 @@
 
 #import "ZDDPhotoBrowseView.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-//#import <FLAnimatedImageView+WebCache.h>
 #import <YYCategories.h>
+#import <UIImage+GIF.h>
 #import <UIImageView+WebCache.h>
+
+#import <FLAnimatedImageView+WebCache.h>
+
 
 #define kPadding 20
 #define kHiColor [UIColor colorWithRGBHex:0x2dd6b8]
@@ -67,7 +70,7 @@
 
 @interface YYPhotoGroupCell : UIScrollView <UIScrollViewDelegate>
 @property (nonatomic, strong) UIView *imageContainerView;
-@property (nonatomic, strong) YYAnimatedImageView *imageView;
+@property (nonatomic, strong) FLAnimatedImageView *imageView;
 @property (nonatomic, assign) NSInteger page;
 
 @property (nonatomic, assign) BOOL showProgress;
@@ -101,7 +104,7 @@
     _imageContainerView.clipsToBounds = YES;
     [self addSubview:_imageContainerView];
     
-    _imageView = [YYAnimatedImageView new];
+    _imageView = [FLAnimatedImageView new];
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.clipsToBounds = YES;
     _imageView.backgroundColor = [UIColor colorWithWhite:1.000 alpha:0.500];
@@ -209,8 +212,8 @@
                     NSString *path = [[SDImageCache sharedImageCache] defaultCachePathForKey:imageURL.absoluteString];
                     newData = [NSData dataWithContentsOfFile:path];
                 }
+                strongSelf.imageView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:newData];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    strongSelf.imageView.image = [UIImage imageWithData:newData];
                     strongSelf.item.photoData = newData;
                     SAFE_BLOCK(strongSelf.progreeeBlock, 1.0f, self);
                 });

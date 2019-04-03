@@ -28,6 +28,8 @@ pod 'AVOSCloudIM'
 pod 'TTAnimationButton'
 pod 'SVProgressHUD'
 pod 'SDWebImage'
+pod 'SDWebImage/GIF'
+pod 'FLAnimatedImage'
 pod 'TZImagePickerController'
 pod 'UITextView+Placeholder',:inhibit_warnings => true
 end
