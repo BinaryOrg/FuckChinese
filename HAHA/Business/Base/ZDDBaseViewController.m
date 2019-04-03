@@ -19,10 +19,26 @@
 
 @property (nonatomic, strong) ASTableNode *tableNode;
 @property (nonatomic, strong) ZDDRetryView *emptyView;
-
+@property (nonatomic, strong) UIView *hlEmptyView;
 @end
 
 @implementation ZDDBaseViewController
+
+- (UIView *)hlEmptyView {
+    if (!_hlEmptyView) {
+        _hlEmptyView = [[UIView alloc] initWithFrame:self.view.bounds];
+        _hlEmptyView.backgroundColor = [UIColor whiteColor];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 150, 150)];
+        imageView.image = [UIImage imageNamed:@"empty_icon_150x150_"];
+        imageView.center = CGPointMake(SCREENWIDTH/2, (SCREENHEIGHT-STATUSBARANDNAVIGATIONBARHEIGHT)/2);
+        [_hlEmptyView addSubview:imageView];
+    }
+    return _hlEmptyView;
+}
+
+- (void)addEmptyView {
+    [self.view addSubview:self.hlEmptyView];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

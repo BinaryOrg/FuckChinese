@@ -209,7 +209,7 @@ UITableViewDataSource
             cell = [[YMHLCommentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"comment_cell"];
         }
         
-        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:comment.user.avatar] placeholder:[UIImage imageNamed:@"sex_boy_110x110_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:comment.user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         [cell.avatarButton addTarget:self action:@selector(avatarClick:) forControlEvents:UIControlEventTouchUpInside];
         cell.nickLabel.text = comment.user.user_name;
         cell.commentLabel.text = comment.content;
@@ -236,7 +236,7 @@ UITableViewDataSource
             cell = [[YMHLSubcommentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sub_comment_cell"];
         }
         
-        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:subcomment.src_user.avatar] placeholder:[UIImage imageNamed:@"sex_boy_110x110_"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
+        [cell.avatar yy_setImageWithURL:[NSURL URLWithString:subcomment.src_user.avatar] placeholder:[UIImage imageNamed:@"bg"] options:(YYWebImageOptionProgressiveBlur|YYWebImageOptionProgressive) completion:nil];
         [cell.avatarButton addTarget:self action:@selector(avatarClick2:) forControlEvents:UIControlEventTouchUpInside];
         cell.src_nickLabel.text = subcomment.src_user.user_name;
         cell.tar_nickLabel.text = subcomment.tar_user.user_name;

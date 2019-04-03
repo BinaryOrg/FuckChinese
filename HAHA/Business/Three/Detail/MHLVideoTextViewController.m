@@ -1,106 +1,28 @@
 //
-//  YMHLVideoFlowViewController.m
-//  笑笑
+//  MHLVideoTextViewController.m
+//  HAHA
 //
-//  Created by 张冬冬 on 2019/3/29.
-//  Copyright © 2019 MakerYang.com. All rights reserved.
+//  Created by 张冬冬 on 2019/4/3.
+//  Copyright © 2019 ZDD. All rights reserved.
 //
 
-#import "YMHLVideoFlowViewController.h"
+#import "MHLVideoTextViewController.h"
 #import "YMHLVideoflowLayout.h"
 #import "YMHLVideoCollectionViewCell.h"
 #import <YYCategories/YYCategories.h>
 #import "YMHLVideoModel.h"
 #import <YYModel/NSObject+YYModel.h>
 #import "YMHLVideoDetailViewController.h"
-
-@interface YMHLVideoFlowViewController ()
+@interface MHLVideoTextViewController ()
 <
 UICollectionViewDelegate,
 UICollectionViewDataSource
 >
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *list;
-@property (nonatomic, strong) UIView *refreshView;
-@property (nonatomic, assign) NSInteger page;
 @end
 
-@implementation YMHLVideoFlowViewController
-
-- (UIView *)refreshView {
-    if (!_refreshView) {
-        _refreshView = [[UIView alloc] initWithFrame:CGRectMake(SCREENWIDTH - 60, SCREENHEIGHT - STATUSBARANDNAVIGATIONBARHEIGHT - 60 - TABBARHEIGHT, 40, 40)];
-        _refreshView.layer.cornerRadius = 15;
-        _refreshView.layer.masksToBounds = YES;
-        UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
-        b.frame = _refreshView.bounds;
-        [b setImage:[UIImage imageNamed:@"icon_main_refresh_active"] forState:UIControlStateNormal];
-        [b setImage:[UIImage imageNamed:@"icon_main_refresh_active"] forState:UIControlStateHighlighted];
-        [b addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventTouchUpInside];
-        [_refreshView addSubview:b];
-        _refreshView.backgroundColor = [UIColor whiteColor];
-    }
-    return _refreshView;
-}
-
-- (void)rotateView:(UIView *)view {
-    CABasicAnimation *rotationAnimation;
-    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = [NSNumber numberWithFloat:M_PI*2.0];
-    rotationAnimation.duration = 0.5;
-    rotationAnimation.repeatCount = HUGE_VALF;
-    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
-}
-
-- (void)stopRatateWithView:(UIView *)view {
-    [view.layer removeAllAnimations];
-}
-
-- (void)refresh:(UIButton *)sender {
-    _page++;
-    [self rotateView:sender];
-    sender.userInteractionEnabled = NO;
-    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
-             params:@{
-                      @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
-                      @"category": @"video",
-                      @"page": @(_page)
-                      }
-            success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-                NSLog(@"%@", result);
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    sender.userInteractionEnabled = YES;
-                    [self stopRatateWithView:sender];
-                });
-                if ([result[@"resultCode"] isEqualToString:@"0"]) {
-                    NSMutableArray *inserts = @[].mutableCopy;
-                    for (NSDictionary *dic in result[@"data"]) {
-                        YMHLVideoModel *video = [YMHLVideoModel yy_modelWithJSON:dic];
-                        if (video) {
-                            [inserts addObject:video];
-                        }
-                    }
-                    [self.list insertObjects:inserts atIndex:0];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [MFHUDManager showSuccess:@"为您推荐40条新鲜视频～"];
-                        [self.collectionView reloadData];
-                        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:(UICollectionViewScrollPositionTop) animated:YES];
-                    });
-                }else {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        sender.userInteractionEnabled = YES;
-                        [MFHUDManager showError:@"刷新失败，请检查网络"];
-                    });
-                }
-            }
-            failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self stopRatateWithView:sender];
-                    sender.userInteractionEnabled = YES;
-                    [MFHUDManager showError:@"刷新失败，请检查网络"];
-                });
-            }];
-}
+@implementation MHLVideoTextViewController
 
 - (NSMutableArray *)list {
     if (!_list) {
@@ -118,7 +40,7 @@ UICollectionViewDataSource
         _collectionView.dataSource = self;
         [_collectionView registerClass:[YMHLVideoCollectionViewCell class] forCellWithReuseIdentifier:@"video_cell"];
         _collectionView.backgroundColor = [UIColor whiteColor];
-//        _collectionView.prefetchingEnabled = NO;
+        //        _collectionView.prefetchingEnabled = NO;
     }
     return _collectionView;
 }
@@ -127,27 +49,19 @@ UICollectionViewDataSource
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self setNavi];
-    __weak __typeof(self)weakSelf = self;
-    self.errorViewClickBlock = ^{
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
-        [strongSelf sendRequest];
-    };
-    _page = 1;
+
     [self sendRequest];
 }
 
 - (void)setNavi {
-    self.navigationItem.title = @"视频圈";
+    self.navigationItem.title = @"👍";
 }
 
 - (void)sendRequest {
-    [self removeErrorView];
     [SVProgressHUD show];
-    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListRecommendDuanzi"
+    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListStaredDuanziByUserId"
              params:@{
-                      @"userId": [GODUserTool isLogin] ? [GODUserTool shared].user.user_id : @"",
-                      @"category": @"video",
-                      @"page": @(_page)
+                      @"userId": self.user_id,
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -155,28 +69,30 @@ UICollectionViewDataSource
                 });
                 if ([result[@"resultCode"] isEqualToString:@"0"]) {
                     [self.list removeAllObjects];
-                    for (NSDictionary *dic in result[@"data"]) {
+                    for (NSDictionary *dic in result[@"data"][@"video_text"]) {
                         YMHLVideoModel *video = [YMHLVideoModel yy_modelWithJSON:dic];
                         if (video) {
                             [self.list addObject:video];
                         }
                     }
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self removeErrorView];
-                        [self.view addSubview:self.collectionView];
-                        [self.view addSubview:self.refreshView];
-                        [self.collectionView reloadData];
+                        if (self.list.count) {
+                            [self.view addSubview:self.collectionView];
+                            [self.collectionView reloadData];
+                        }else {
+                            [self addEmptyView];
+                        }
                     });
                 }else {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self addNetworkErrorView];
+                        [self addEmptyView];
                     });
                 }
             }
             failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [SVProgressHUD dismiss];
-                    [self addNetworkErrorView];
+                    [self addEmptyView];
                 });
             }];
     

@@ -88,6 +88,9 @@
 		37DD967C2251F59300489BE6 /* ZDDPostDyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD967B2251F59300489BE6 /* ZDDPostDyController.m */; };
 		4A0D7A4722535F5B00D9F466 /* YMHLSecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D7A4622535F5B00D9F466 /* YMHLSecondTableViewCell.m */; };
 		4A0D7A4A22535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D7A4922535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m */; };
+		4A92296322543A9400B9589A /* PersonDuanziController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A92296222543A9400B9589A /* PersonDuanziController.m */; };
+		4A922966225443DF00B9589A /* MHLGraphTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A922965225443DF00B9589A /* MHLGraphTextViewController.m */; };
+		4A922969225443E900B9589A /* MHLVideoTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A922968225443E900B9589A /* MHLVideoTextViewController.m */; };
 		7521BA1E224F0D7F00292099 /* YMHLUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA1D224F0D7F00292099 /* YMHLUserModel.m */; };
 		7521BA22224F994000292099 /* YMHLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA21224F994000292099 /* YMHLBaseViewController.m */; };
 		7521BA2522505AA000292099 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA2422505AA000292099 /* ASButtonNode+LHExtension.m */; };
@@ -333,6 +336,12 @@
 		4A0D7A4622535F5B00D9F466 /* YMHLSecondTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLSecondTableViewCell.m; sourceTree = "<group>"; };
 		4A0D7A4822535F6800D9F466 /* YMHLPersonLogoutTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLPersonLogoutTableViewCell.h; sourceTree = "<group>"; };
 		4A0D7A4922535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLPersonLogoutTableViewCell.m; sourceTree = "<group>"; };
+		4A92296122543A9400B9589A /* PersonDuanziController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDuanziController.h; sourceTree = "<group>"; };
+		4A92296222543A9400B9589A /* PersonDuanziController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDuanziController.m; sourceTree = "<group>"; };
+		4A922964225443DF00B9589A /* MHLGraphTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHLGraphTextViewController.h; sourceTree = "<group>"; };
+		4A922965225443DF00B9589A /* MHLGraphTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHLGraphTextViewController.m; sourceTree = "<group>"; };
+		4A922967225443E900B9589A /* MHLVideoTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHLVideoTextViewController.h; sourceTree = "<group>"; };
+		4A922968225443E900B9589A /* MHLVideoTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHLVideoTextViewController.m; sourceTree = "<group>"; };
 		5E4B2110EE268EF4AA6ABCD8 /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
 		7521BA1C224F0D7F00292099 /* YMHLUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLUserModel.h; sourceTree = "<group>"; };
 		7521BA1D224F0D7F00292099 /* YMHLUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLUserModel.m; sourceTree = "<group>"; };
@@ -723,6 +732,19 @@
 			path = V;
 			sourceTree = "<group>";
 		};
+		4A922960225439AC00B9589A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4A92296122543A9400B9589A /* PersonDuanziController.h */,
+				4A92296222543A9400B9589A /* PersonDuanziController.m */,
+				4A922964225443DF00B9589A /* MHLGraphTextViewController.h */,
+				4A922965225443DF00B9589A /* MHLGraphTextViewController.m */,
+				4A922967225443E900B9589A /* MHLVideoTextViewController.h */,
+				4A922968225443E900B9589A /* MHLVideoTextViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		7521BA1B224F0D5B00292099 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -986,6 +1008,7 @@
 		752A1AE8224E8418004B4B31 /* Three */ = {
 			isa = PBXGroup;
 			children = (
+				4A922960225439AC00B9589A /* Detail */,
 				755AEA67225248D0008E0F33 /* Cell */,
 				752A1AEA224E8433004B4B31 /* ZDDThridController.h */,
 				752A1AE9224E8432004B4B31 /* ZDDThridController.m */,
@@ -1298,6 +1321,7 @@
 				753BD057224E6B66003C4424 /* main.m in Sources */,
 				372AF37A22522E590023EFAB /* HXPhotoInteractiveTransition.m in Sources */,
 				752A1AC3224E8377004B4B31 /* TEMPAppDelegate+OpenURL.m in Sources */,
+				4A92296322543A9400B9589A /* PersonDuanziController.m in Sources */,
 				372025A9224F57E400E25AA4 /* ZDDLogInController.m in Sources */,
 				372AF39F22522E590023EFAB /* HXCircleProgressView.m in Sources */,
 				752A1AE4224E8400004B4B31 /* YMHLVideoflowLayout.m in Sources */,
@@ -1388,6 +1412,7 @@
 				752A1AD6224E83DC004B4B31 /* ZDDTabBarController.m in Sources */,
 				7521BA2E2250714E00292099 /* YMHLSubCommentsModel.m in Sources */,
 				372AF3A122522E590023EFAB /* HXDatePhotoToolManager.m in Sources */,
+				4A922966225443DF00B9589A /* MHLGraphTextViewController.m in Sources */,
 				752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */,
 				372AF37E22522E590023EFAB /* NSString+HXExtension.m in Sources */,
 				755AEA622250E45B008E0F33 /* UIColor+ZS.m in Sources */,
@@ -1400,6 +1425,7 @@
 				7521BA2522505AA000292099 /* ASButtonNode+LHExtension.m in Sources */,
 				372AF38122522E590023EFAB /* NSBundle+HXPhotoPicker.m in Sources */,
 				372AF39222522E590023EFAB /* HXPhotoViewFlowLayout.m in Sources */,
+				4A922969225443E900B9589A /* MHLVideoTextViewController.m in Sources */,
 				372AF3A022522E590023EFAB /* HXPhotoEditViewController.m in Sources */,
 				37202597224F225200E25AA4 /* POPLayerExtras.mm in Sources */,
 				372AF37F22522E590023EFAB /* UIViewController+HXExtension.m in Sources */,

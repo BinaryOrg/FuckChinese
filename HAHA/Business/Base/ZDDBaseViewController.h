@@ -42,6 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setNoMoreData;
 //设置底部可以再刷新
 - (void)resetFooter;
+
+- (void)addEmptyView;
 @end
 
 NS_ASSUME_NONNULL_END

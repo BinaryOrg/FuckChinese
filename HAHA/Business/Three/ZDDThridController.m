@@ -14,6 +14,10 @@
 #import "YMHLPersonLogoutTableViewCell.h"
 #import <QMUIKit/QMUIKit.h>
 
+#import "PersonDuanziController.h"
+#import "MHLGraphTextViewController.h"
+#import "MHLVideoTextViewController.h"
+
 @interface ZDDThridController ()
 <
 UITableViewDelegate,
@@ -33,7 +37,8 @@ QMUIImagePickerViewControllerDelegate
     if (!_titles) {
         _titles = @[
                     @"的动态",
-                    @"的点赞"
+                    @"的视频",
+                    @"的图文"
                     ];
     }
     return _titles;
@@ -120,7 +125,7 @@ QMUIImagePickerViewControllerDelegate
         if (!section) {
             return 1;
         }else if (section == 1) {
-            return 2;
+            return self.titles.count;
         }else {
             return 1;
         }
@@ -128,7 +133,7 @@ QMUIImagePickerViewControllerDelegate
         if (!section) {
             return 1;
         }else {
-            return 2;
+            return self.titles.count;
         }
     }
 }
@@ -366,13 +371,25 @@ QMUIImagePickerViewControllerDelegate
     }else if (indexPath.section == 1) {
         if (!indexPath.row) {
             if ([GODUserTool isLogin]) {
-                
+                PersonDuanziController *duanzi = [[PersonDuanziController alloc] init];
+                duanzi.user_id = self.type ? self.user_id : self.user.user_id;
+                [self.navigationController pushViewController:duanzi animated:YES];
+            }else {
+                [self login];
+            }
+        }else if (indexPath.row == 1) {
+            if ([GODUserTool isLogin]) {
+                MHLVideoTextViewController *v = [MHLVideoTextViewController new];
+                v.user_id = self.type ? self.user_id : self.user.user_id;
+                [self.navigationController pushViewController:v animated:YES];
             }else {
                 [self login];
             }
         }else {
             if ([GODUserTool isLogin]) {
-                
+                MHLGraphTextViewController *v = [MHLGraphTextViewController new];
+                v.user_id = self.type ? self.user_id : self.user.user_id;
+                [self.navigationController pushViewController:v animated:YES];
             }else {
                 [self login];
             }

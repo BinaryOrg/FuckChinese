@@ -32,7 +32,7 @@
         [self addTimeNode];
         [self addIconNode];
         
-        self.iconNode.defaultImage = [UIImage imageNamed:@"defaultImgae"];
+        self.iconNode.defaultImage = [UIImage imageNamed:@"bg"];
         self.iconNode.URL = [NSURL URLWithString:model.user.avatar];
         
         self.nameNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.user.user_name attributes:^(NSMutableDictionary *make) {

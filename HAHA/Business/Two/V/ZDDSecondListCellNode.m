@@ -49,7 +49,7 @@
         [model addObserver:self forKeyPath:@"star_num" options:NSKeyValueObservingOptionNew context:nil];
         [model addObserver:self forKeyPath:@"comment_num" options:NSKeyValueObservingOptionNew context:nil];
         
-        self.iconNode.defaultImage = [UIImage imageNamed:@"defaultImgae"];
+        self.iconNode.defaultImage = [UIImage imageNamed:@"bg"];
         self.iconNode.URL = [NSURL URLWithString:model.user.avatar];
 
         NSMutableAttributedString *name = [[NSMutableAttributedString alloc] initWithString:model.user.user_name.length?model.user.user_name:@"" attributes:@{NSForegroundColorAttributeName : GODColor(53, 64, 72), NSFontAttributeName : [UIFont fontWithName:@"PingFangSC-Medium" size:14]}];

@@ -1,53 +1,29 @@
 //
-//  ZDDSecondController.m
-//  笑笑
+//  PersonDuanziController.m
+//  HAHA
 //
-//  Created by Maker on 2019/3/28.
-//  Copyright © 2019 MakerYang.com. All rights reserved.
+//  Created by 张冬冬 on 2019/4/3.
+//  Copyright © 2019 ZDD. All rights reserved.
 //
 
-#import "ZDDSecondController.h"
+#import "PersonDuanziController.h"
 #import "ZDDSecondListCellNode.h"
 #import "ZDDCommentListController.h"
-#import "ZDDPostDyController.h"
 #import "ZDDThridController.h"
 
-@interface ZDDSecondController ()<ZDDSecondListCellNodeDelegate>
-
+@interface PersonDuanziController ()
+<ZDDSecondListCellNodeDelegate>
 @property (nonatomic, strong) NSMutableArray <ZDDDuanziModel *>*dataArr;
-@property (nonatomic, assign) NSInteger page;
-
 @end
 
-@implementation ZDDSecondController
-
+@implementation PersonDuanziController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self addTableNode];
     self.showRefrehHeader = YES;
-    self.showRefrehFooter = YES;
     [self headerRefresh];
-    
-    UIButton *nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    nextButton.titleLabel.font = [UIFont systemFontOfSize:15.0f];
-    [nextButton setTitleColor:[UIColor qmui_colorWithHexString:@"666666"] forState:UIControlStateNormal];
-    [nextButton setTitle:@"发布" forState:UIControlStateNormal];
-    [nextButton addTarget:self action:@selector(clickPostDyBtn) forControlEvents:UIControlEventTouchUpInside];
-    [nextButton sizeToFit];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:nextButton];
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(headerRefresh) name:@"shouldReloadDy" object:nil ];
-    
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-    
-- (void)clickPostDyBtn {
-    ZDDPostDyController *vc = [ZDDPostDyController new];
-    [self.navigationController pushViewController:vc animated:YES];
-    
+    self.navigationItem.title = @"动态";
 }
 
 //点击头像
@@ -60,32 +36,29 @@
 
 #pragma mark - 网路请求
 - (void)headerRefresh {
-    _page = 1;
     [self loadData:NO];
 }
 
-- (void)footerRefresh {
-    [self loadData:YES];
-}
 
 - (void)loadData:(BOOL)isAdd {
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"Duanzi/ListDynamic" params:@{@"userId": [GODUserTool shared].user.user_id.length ? [GODUserTool shared].user.user_id : @"", @"category" : @"graph_text", @"page": @(_page)} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListDynamicByUserId" params:@{@"userId": self.user_id} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [self endHeaderRefresh];
-        [self endFooterRefresh];
-        if (statusCode == 200) {
-            if (!isAdd) {
-                [self.dataArr removeAllObjects];
-            }
+        if ([result[@"resultCode"] isEqualToString:@"0"]) {
+            [self.dataArr removeAllObjects];
             [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDDuanziModel.class json:result[@"data"]]];
-            [self.tableNode reloadData];
-            self.page++;
-        }else {
+            
+            if (self.dataArr.count) {
+                [self.tableNode reloadData];
+            }else {
+                [self addEmptyView];
+            }
+        }
+        else {
             [MFHUDManager showError:@"刷新失败请重试"];
         }
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
         [self endHeaderRefresh];
-        [self endFooterRefresh];
         [MFHUDManager showError:@"刷新失败请重试"];
     }];
 }
@@ -124,5 +97,4 @@
     }
     return _dataArr;
 }
-
 @end
