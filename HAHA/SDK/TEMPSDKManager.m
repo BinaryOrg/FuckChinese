@@ -37,7 +37,7 @@ JPUSHRegisterDelegate
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     [JPUSHService setupWithOption:launchOptions appKey:JPUSH_KEY
                           channel:JPUSH_CHANNEL
-                 apsForProduction:NO
+                 apsForProduction:YES
             advertisingIdentifier:nil];
     
     [MFHUDManager setHUDType:MFHUDTypeNormal];

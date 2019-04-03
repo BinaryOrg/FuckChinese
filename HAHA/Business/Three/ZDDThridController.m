@@ -87,6 +87,7 @@ QMUIImagePickerViewControllerDelegate
 }
 
 - (void)reload0 {
+    self.user = [GODUserTool shared].user;
     [self.tableView reloadData];
 }
 
