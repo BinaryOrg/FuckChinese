@@ -77,9 +77,12 @@
             if (!isAdd) {
                 [self.dataArr removeAllObjects];
             }
-            [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDDuanziModel.class json:result[@"data"]]];
-            [self.tableNode reloadData];
-            self.page++;
+            NSArray *tempArr = [NSArray yy_modelArrayWithClass:ZDDDuanziModel.class json:result[@"data"]];
+            if (tempArr.count) {
+                [self.dataArr addObjectsFromArray:tempArr];
+                [self.tableNode reloadData];
+                self.page++;
+            }
         }else {
             [MFHUDManager showError:@"刷新失败请重试"];
         }
