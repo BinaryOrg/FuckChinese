@@ -328,6 +328,9 @@ PODS:
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
+  - SDWebImage/GIF (4.4.6):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
   - SuperPlayer (2.4.0):
     - AFNetworking (~> 3.1)
     - Masonry (~> 1.1.0)
@@ -370,6 +373,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - ESPictureBrowser
   - FFPopup
+  - FLAnimatedImage
   - FreeStreamer (~> 3.8.2)
   - JPush
   - JXCategoryView
@@ -380,6 +384,7 @@ DEPENDENCIES:
   - mob_smssdk
   - QMUIKit
   - SDWebImage
+  - SDWebImage/GIF
   - SuperPlayer
   - SVProgressHUD
   - Texture
@@ -474,6 +479,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 9f18ccf7c81280ae814efbaa3ba93a8e3e12acb7
+PODFILE CHECKSUM: 16014067ad9754bf3551bef9674e024eaaa94cf0
 
 COCOAPODS: 1.6.1
