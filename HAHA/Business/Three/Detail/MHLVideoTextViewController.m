@@ -61,7 +61,7 @@ UICollectionViewDataSource
     [SVProgressHUD show];
     [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListStaredDuanziByUserId"
              params:@{
-                      @"userId": self.user_id,
+                      @"userId": self.user_id ?:@"",
                       }
             success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
                 dispatch_async(dispatch_get_main_queue(), ^{

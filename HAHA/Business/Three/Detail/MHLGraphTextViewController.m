@@ -32,7 +32,7 @@
 - (void)loadData:(BOOL)isAdd {
     
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListStaredDuanziByUserId" params:@{@"userId": self.user_id,} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK post:@"http://120.78.124.36:10010/MRYX/Duanzi/ListStaredDuanziByUserId" params:@{@"userId": self.user_id ?:@"",} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [self endHeaderRefresh];
         if ([result[@"resultCode"] isEqualToString:@"0"]) {
             
