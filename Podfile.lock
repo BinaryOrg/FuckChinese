@@ -33,6 +33,7 @@ PODS:
   - FLAnimatedImage (1.0.12)
   - FreeStreamer (3.8.3):
     - Reachability (~> 3.0)
+  - GLYPageView (0.0.1)
   - JCore (1.2.6)
   - JPush (3.1.2):
     - JCore (~> 1.2.6)
@@ -375,6 +376,7 @@ DEPENDENCIES:
   - FFPopup
   - FLAnimatedImage
   - FreeStreamer (~> 3.8.2)
+  - GLYPageView (~> 0.0.1)
   - JPush
   - JXCategoryView
   - MFExtractColor
@@ -408,6 +410,7 @@ SPEC REPOS:
     - FFPopup
     - FLAnimatedImage
     - FreeStreamer
+    - GLYPageView
     - JCore
     - JPush
     - JXCategoryView
@@ -449,6 +452,7 @@ SPEC CHECKSUMS:
   FFPopup: f1a9c2bb1df9d9cd254f15081e74112d9ccb6969
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FreeStreamer: b205b0bf6a2e7855f935369145498f930eb27cac
+  GLYPageView: 8e9507e2c48ef34e1a17bb98217e157545af1207
   JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
   JPush: d0cead70ba223a6a3b52749899ebda830dfbc49a
   JXCategoryView: b3bf1bedb51b5f98b63d51f0e31007a2ef80de14
@@ -479,6 +483,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 16014067ad9754bf3551bef9674e024eaaa94cf0
+PODFILE CHECKSUM: 0cadea7baa06c48143127c61b1a97847e6c9c8e8
 
 COCOAPODS: 1.6.1

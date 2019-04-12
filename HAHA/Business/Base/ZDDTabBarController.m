@@ -15,6 +15,7 @@
 #import "ZDDThridController.h"
 #import "ZDDSecondController.h"
 #import "ZDDFirstController.h"
+#import "ZDDFirstBaseController.h"
 
 #import "YMHLVideoFlowViewController.h"
 
@@ -59,16 +60,16 @@ UITabBarControllerDelegate
 }
 
 - (void)addButtonClick {
-    NSLog(@"%@", @"fuck");
+
 }
 
 - (void)setupChildViewControllers {
     
-    ZDDFirstController *one = [[ZDDFirstController alloc] init];
-    [self addChileVcWithTitle:@"笑笑" vc:one imageName:@"lauth_unSelected" selImageName:@"lauth_selected"];
+//    ZDDFirstController *one = [[ZDDFirstController alloc] init];
+//    [self addChileVcWithTitle:@"笑笑" vc:one imageName:@"lauth_unSelected" selImageName:@"lauth_selected"];
     
-    YMHLVideoFlowViewController *second = [[YMHLVideoFlowViewController alloc] init];
-    [self addChileVcWithTitle:@"视频圈" vc:second imageName:@"video_unSelected" selImageName:@"video_selected"];
+    ZDDFirstBaseController *second = [[ZDDFirstBaseController alloc] init];
+    [self addChileVcWithTitle:@"笑笑" vc:second imageName:@"video_unSelected" selImageName:@"video_selected"];
     
     ZDDSecondController *three = [[ZDDSecondController alloc] init];
     [self addChileVcWithTitle:@"动态" vc:three imageName:@"dynamic_unSelected" selImageName:@"dynamic_selected"];
