@@ -81,7 +81,7 @@
         _pageView.scrollViewBackgroundColor = [UIColor clearColor];
         _pageView.titleColor = color(137, 137, 137, 1);
         _pageView.backgroundColor = [UIColor clearColor];
-        _pageView.lineBackgroundColor = [UIColor grayColor];
+        _pageView.lineBackgroundColor = [UIColor clearColor];
         [_pageView initalUI];
     }
     return _pageView;
