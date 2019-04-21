@@ -1,7 +1,7 @@
 target 'HAHA' do
     # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
     # use_frameworks!
-    
+pod 'GLYPageView', '~> 0.0.1'
 pod 'YYWebImage'
 pod 'QMUIKit'
 pod 'MFNetworkManager'
@@ -22,9 +22,7 @@ pod 'ESPictureBrowser'
 pod 'YYCategories'
 pod 'YYModel'
 pod 'Bugly',:inhibit_warnings => true
-pod 'XHLaunchAd'
-pod 'AVOSCloud'               # 数据存储、短信、云引擎调用等基础服务模块
-pod 'AVOSCloudIM'
+#pod 'XHLaunchAd'
 pod 'TTAnimationButton'
 pod 'SVProgressHUD'
 pod 'SDWebImage'
