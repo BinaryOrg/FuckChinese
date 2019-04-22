@@ -228,6 +228,7 @@ UITableViewDataSource
             cell.starButton.tintColor = [UIColor zdd_colorWithRed:120 green:120 blue:120];
         }
 //        cell.line.alpha = 1;
+        [cell.dotButton addTarget:self action:@selector(dotClick) forControlEvents:(UIControlEventTouchUpInside)];
         return cell;
     }else {
         YMHLSubCommentsModel *subcomment = comment.subcomments[indexPath.row-1];
@@ -252,8 +253,62 @@ UITableViewDataSource
 //        }else {
 //            cell.line.alpha = 1;
 //        }
+        [cell.dotButton addTarget:self action:@selector(dotClick) forControlEvents:(UIControlEventTouchUpInside)];
         return cell;
     }
+}
+
+- (void)dotClick {
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"拉黑该用户" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MFHUDManager showLoading:@"loading"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MFHUDManager showSuccess:@"拉黑成功，正在审核"];
+            });
+        });
+    }];
+    
+    UIAlertAction *a2 = [UIAlertAction actionWithTitle:@"举报" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        [self showAlert];
+    }];
+    UIAlertAction *a3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    [sheet addAction:a1];
+    [sheet addAction:a2];
+    [sheet addAction:a3];
+    [self presentViewController:sheet animated:YES completion:nil];
+}
+
+- (void)showAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"举报" preferredStyle:(UIAlertControllerStyleAlert)];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"填写举报内容";
+    }];
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        if (!alert.textFields[0].text.length) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MFHUDManager showError:@"请填写举报内容"];
+                return;
+            });
+        }else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MFHUDManager showLoading:@"loading"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [MFHUDManager showSuccess:@"举报成功，正在审核"];
+                });
+            });
+        }
+    }];
+    
+    
+    UIAlertAction *a3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    [alert addAction:a1];
+    [alert addAction:a3];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)avatarClick:(UIButton *)sender {

@@ -62,6 +62,10 @@
 //        self.line = [[UILabel alloc] initWithFrame:CGRectMake(MinX(self.avatar), 0, SCREENWIDTH - MinX(self.avatar), 1)];
 //        self.line.backgroundColor = [UIColor zdd_colorWithRed:238 green:238 blue:238];
 //        [self.contentView addSubview:self.line];
+        self.dotButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.dotButton setImage:[UIImage imageNamed:@"fav_edit_22x22_"] forState:(UIControlStateNormal)];
+        self.dotButton.frame = CGRectMake(SCREENWIDTH - 20 - 40, MinY(self.avatar), 40, 40);
+        [self.contentView addSubview:self.dotButton];
     }
     return self;
 }

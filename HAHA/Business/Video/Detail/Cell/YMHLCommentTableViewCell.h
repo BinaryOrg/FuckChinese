@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ZTWButton *starButton;
 @property (nonatomic, strong) ZTWButton *commentButton;
 @property (nonatomic, strong) UILabel *line;
+@property (nonatomic, strong) UIButton *dotButton;
 @end
 
 NS_ASSUME_NONNULL_END
