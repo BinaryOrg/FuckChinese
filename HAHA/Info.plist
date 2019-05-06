@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.2</string>
+	<string>1.0.4</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MOBAppKey</key>
@@ -32,15 +32,15 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>为了可以修改头像，请允许使用相机功能</string>
+	<string>为了能使用app的发布功能，请允许使用</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>为了拍照时候可以使用您的地理位置信息，请允许本应用使用位置权限</string>
+	<string>为了能使用app的发布定位功能，请允许使用</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>为了拍照时候可以使用您的地理位置信息，请允许本应用使用位置权限</string>
+	<string>为了能使用app的发布定位功能，请允许使用</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>为了可以修改头像，请允许使用相册功能</string>
+	<string>为了能使用app的发布功能，请允许使用</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>为了可以修改头像，请允许使用相机功能</string>
+	<string>为了能使用app的发布功能，请允许使用</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

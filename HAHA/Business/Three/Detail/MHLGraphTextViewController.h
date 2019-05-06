@@ -3,14 +3,14 @@
 //  HAHA
 //
 //  Created by 张冬冬 on 2019/4/3.
-//  Copyright © 2019 ZDD. All rights reserved.
+//  Copyright © 2019 HaHa. All rights reserved.
 //
 
-#import "ZDDBaseViewController.h"
+#import "HaHaBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MHLGraphTextViewController : ZDDBaseViewController
+@interface MHLGraphTextViewController : HaHaBaseViewController
 @property (nonatomic, strong) NSString *user_id;
 @end
 

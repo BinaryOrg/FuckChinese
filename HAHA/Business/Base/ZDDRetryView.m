@@ -6,9 +6,9 @@
 //  Copyright © 2019 ZDD. All rights reserved.
 //
 
-#import "ZDDRetryView.h"
+#import "HaHaRetryView.h"
 
-@implementation ZDDRetryView
+@implementation HaHaRetryView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {

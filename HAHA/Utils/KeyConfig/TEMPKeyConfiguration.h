@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "TEMPMacro.h"
 NS_ASSUME_NONNULL_BEGIN
-typedef NSString * ZDDKey;
+typedef NSString * HaHaKey;
 @interface TEMPKeyConfiguration : NSObject
 
-TEMP_EXTERN ZDDKey const JPUSH_KEY;
-TEMP_EXTERN ZDDKey const JPUSH_CHANNEL;
+TEMP_EXTERN HaHaKey const JPUSH_KEY;
+TEMP_EXTERN HaHaKey const JPUSH_CHANNEL;
 @end
 
 NS_ASSUME_NONNULL_END

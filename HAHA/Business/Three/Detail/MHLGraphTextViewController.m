@@ -3,23 +3,24 @@
 //  HAHA
 //
 //  Created by 张冬冬 on 2019/4/3.
-//  Copyright © 2019 ZDD. All rights reserved.
+//  Copyright © 2019 HaHa. All rights reserved.
 //
 
 #import "MHLGraphTextViewController.h"
-#import "ZDDFistListCellNode.h"
-#import "ZDDCommentLIstView.h"
-#import "ZDDLogInController.h"
+#import "HaHaFistListCellNode.h"
+#import "HaHaCommentLIstView.h"
+#import "HaHaLogInController.h"
 
 @interface MHLGraphTextViewController ()
-@property (nonatomic, strong) ZDDCommentLIstView *commentListView;
-@property (nonatomic, strong) NSMutableArray <ZDDDuanziModel *>*dataArr;
+@property (nonatomic, strong) HaHaCommentLIstView *commentListView;
+@property (nonatomic, strong) NSMutableArray <HaHaDuanziModel *>*dataArr;
 @end
 
 @implementation MHLGraphTextViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"我的图文";
     [self addTableNode];
     self.showRefrehHeader = YES;
     [self headerRefresh];
@@ -37,7 +38,7 @@
         if ([result[@"resultCode"] isEqualToString:@"0"]) {
             
             [self.dataArr removeAllObjects];
-            [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDDuanziModel.class json:result[@"data"][@"graph_text"]]];
+            [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:HaHaDuanziModel.class json:result[@"data"][@"graph_text"]]];
             if (self.dataArr.count) {
                 [self.tableNode reloadData];
             }else {
@@ -52,7 +53,7 @@
     }];
 }
 
-- (void)geitCommentListWithModel:(ZDDDuanziModel *)model {
+- (void)geitCommentListWithModel:(HaHaDuanziModel *)model {
     if (model.id.length == 0) {
         return;
     }
@@ -61,7 +62,7 @@
     [MFNETWROK post:@"Comment/ListCommentByTargetid" params:@{@"targetId" : model.id} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         if (statusCode == 200) {
-            NSArray *tempArr = [NSArray yy_modelArrayWithClass:ZDDCommentModel.class json:result[@"data"]];
+            NSArray *tempArr = [NSArray yy_modelArrayWithClass:HaHaCommentModel.class json:result[@"data"]];
             [self.commentListView showWithArray:tempArr duanzi:model];
         }else {
             [MFHUDManager showError:@"刷新失败请重试"];
@@ -79,33 +80,33 @@
 
 - (ASCellNodeBlock)tableNode:(ASTableNode *)tableNode nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
     return ^ASCellNode *(){
-        ZDDFistListCellNode *node = [[ZDDFistListCellNode alloc] initWithModel:self.dataArr[indexPath.row]];
+        HaHaFistListCellNode *node = [[HaHaFistListCellNode alloc] initWithModel:self.dataArr[indexPath.row]];
         return node;
     };
 }
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([GODUserTool isLogin]) {
-        ZDDDuanziModel *model = self.dataArr[indexPath.row];
+        HaHaDuanziModel *model = self.dataArr[indexPath.row];
         [self geitCommentListWithModel:model];
     }else {
-        ZDDLogInController *vc = [ZDDLogInController new];
+        HaHaLogInController *vc = [HaHaLogInController new];
         [self.navigationController presentViewController:vc animated:YES completion:nil] ;
     }
     
 }
 
 #pragma mark - 懒加载
-- (NSMutableArray <ZDDDuanziModel *>*)dataArr {
+- (NSMutableArray <HaHaDuanziModel *>*)dataArr {
     if (!_dataArr) {
         _dataArr = [NSMutableArray array];
     }
     return _dataArr;
 }
 
-- (ZDDCommentLIstView *)commentListView {
+- (HaHaCommentLIstView *)commentListView {
     if (!_commentListView) {
-        _commentListView = [[ZDDCommentLIstView alloc] init];
+        _commentListView = [[HaHaCommentLIstView alloc] init];
     }
     return _commentListView;
 }

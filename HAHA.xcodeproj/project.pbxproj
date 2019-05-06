@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370F19572252FCA5000850BF /* ZDDPhotoBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 370F19552252FCA4000850BF /* ZDDPhotoBrowseView.m */; };
-		3720254A224F0B1E00E25AA4 /* ZDDCommentCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37202548224F0B1D00E25AA4 /* ZDDCommentCellNode.m */; };
+		3720254A224F0B1E00E25AA4 /* HaHaCommentCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37202548224F0B1D00E25AA4 /* HaHaCommentCellNode.m */; };
 		37202584224F225200E25AA4 /* POPCGUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37202552224F225100E25AA4 /* POPCGUtils.mm */; };
 		37202585224F225200E25AA4 /* pop-ios-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37202554224F225100E25AA4 /* pop-ios-Info.plist */; };
 		37202586224F225200E25AA4 /* POPMath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37202558224F225100E25AA4 /* POPMath.mm */; };
@@ -32,9 +32,9 @@
 		37202598224F225200E25AA4 /* POPVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37202580224F225200E25AA4 /* POPVector.mm */; };
 		3720259D224F491900E25AA4 /* GODUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37202599224F491700E25AA4 /* GODUserModel.m */; };
 		3720259E224F491900E25AA4 /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3720259B224F491800E25AA4 /* GODUserTool.m */; };
-		372025A1224F49AF00E25AA4 /* ZDDDuanziModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A0224F49AF00E25AA4 /* ZDDDuanziModel.m */; };
-		372025A4224F51DA00E25AA4 /* ZDDCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A3224F51DA00E25AA4 /* ZDDCommentModel.m */; };
-		372025A9224F57E400E25AA4 /* ZDDLogInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A8224F57E400E25AA4 /* ZDDLogInController.m */; };
+		372025A1224F49AF00E25AA4 /* HaHaDuanziModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A0224F49AF00E25AA4 /* HaHaDuanziModel.m */; };
+		372025A4224F51DA00E25AA4 /* HaHaCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A3224F51DA00E25AA4 /* HaHaCommentModel.m */; };
+		372025A9224F57E400E25AA4 /* HaHaLogInController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372025A8224F57E400E25AA4 /* HaHaLogInController.m */; };
 		372AF37422522E590023EFAB /* HXCustomCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF31222522E590023EFAB /* HXCustomCameraViewController.m */; };
 		372AF37522522E590023EFAB /* HXPhotoPreviewBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF31322522E590023EFAB /* HXPhotoPreviewBottomView.m */; };
 		372AF37622522E590023EFAB /* HXPhotoConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF31422522E590023EFAB /* HXPhotoConfiguration.m */; };
@@ -82,16 +82,15 @@
 		372AF3A022522E590023EFAB /* HXPhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF36E22522E590023EFAB /* HXPhotoEditViewController.m */; };
 		372AF3A122522E590023EFAB /* HXDatePhotoToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF37022522E590023EFAB /* HXDatePhotoToolManager.m */; };
 		372AF3A222522E590023EFAB /* HXVideoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AF37322522E590023EFAB /* HXVideoEditViewController.m */; };
-		3746913122603E2500A6DFCF /* ZDDFirstBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3746913022603E2500A6DFCF /* ZDDFirstBaseController.m */; };
-		37AC82A3225378B30081478E /* ZDDRetryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AC82A2225378B30081478E /* ZDDRetryView.m */; };
-		37DD96762251E0A600489BE6 /* ZDDSecondListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD96752251E0A600489BE6 /* ZDDSecondListCellNode.m */; };
-		37DD96792251E53F00489BE6 /* ZDDCommentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD96782251E53F00489BE6 /* ZDDCommentListController.m */; };
-		37DD967C2251F59300489BE6 /* ZDDPostDyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD967B2251F59300489BE6 /* ZDDPostDyController.m */; };
+		3746913122603E2500A6DFCF /* HaHaFirstBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3746913022603E2500A6DFCF /* HaHaFirstBaseController.m */; };
+		37AC82A3225378B30081478E /* HaHaRetryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AC82A2225378B30081478E /* HaHaRetryView.m */; };
+		37DD96762251E0A600489BE6 /* HaHaSecondListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD96752251E0A600489BE6 /* HaHaSecondListCellNode.m */; };
+		37DD96792251E53F00489BE6 /* HaHaCommentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD96782251E53F00489BE6 /* HaHaCommentListController.m */; };
+		37DD967C2251F59300489BE6 /* HaHaPostDyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DD967B2251F59300489BE6 /* HaHaPostDyController.m */; };
 		4A0D7A4722535F5B00D9F466 /* YMHLSecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D7A4622535F5B00D9F466 /* YMHLSecondTableViewCell.m */; };
 		4A0D7A4A22535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D7A4922535F6800D9F466 /* YMHLPersonLogoutTableViewCell.m */; };
 		4A92296322543A9400B9589A /* PersonDuanziController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A92296222543A9400B9589A /* PersonDuanziController.m */; };
 		4A922966225443DF00B9589A /* MHLGraphTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A922965225443DF00B9589A /* MHLGraphTextViewController.m */; };
-		4A922969225443E900B9589A /* MHLVideoTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A922968225443E900B9589A /* MHLVideoTextViewController.m */; };
 		751CA534226C83FB0053583A /* QQKK1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751CA533226C83FB0053583A /* QQKK1ViewController.m */; };
 		751CA537226C847B0053583A /* QQKK12ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751CA536226C847B0053583A /* QQKK12ViewController.m */; };
 		751CA53A226C84BB0053583A /* RREE1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751CA539226C84BB0053583A /* RREE1ViewController.m */; };
@@ -107,12 +106,7 @@
 		751CA55B226C99610053583A /* QDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751CA550226C99600053583A /* QDTabBarViewController.m */; };
 		751CA55C226C99610053583A /* QDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751CA555226C99610053583A /* QDNavigationController.m */; };
 		751CA56A226C9A500053583A /* QDThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 751CA563226C9A4F0053583A /* QDThemeManager.m */; };
-		7521BA1E224F0D7F00292099 /* YMHLUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA1D224F0D7F00292099 /* YMHLUserModel.m */; };
-		7521BA22224F994000292099 /* YMHLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA21224F994000292099 /* YMHLBaseViewController.m */; };
 		7521BA2522505AA000292099 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA2422505AA000292099 /* ASButtonNode+LHExtension.m */; };
-		7521BA2922505FCA00292099 /* YMHLVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA2822505FCA00292099 /* YMHLVideoDetailViewController.m */; };
-		7521BA2E2250714E00292099 /* YMHLSubCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA2D2250714E00292099 /* YMHLSubCommentsModel.m */; };
-		7521BA31225074F200292099 /* YMHLCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7521BA30225074F200292099 /* YMHLCommentTableViewCell.m */; };
 		752A1A77224E7F5F004B4B31 /* mook.json in Resources */ = {isa = PBXBuildFile; fileRef = 752A1A76224E7F5F004B4B31 /* mook.json */; };
 		752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7A224E7F7A004B4B31 /* UIView+LH.m */; };
 		752A1A89224E7F7F004B4B31 /* NSMutableDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A7E224E7F7C004B4B31 /* NSMutableDictionary+Attributes.m */; };
@@ -124,50 +118,25 @@
 		752A1A9B224E7FD2004B4B31 /* ZDDNotificationName.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A9A224E7FD2004B4B31 /* ZDDNotificationName.m */; };
 		752A1A9F224E7FE0004B4B31 /* ZDDThemeConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1A9E224E7FE0004B4B31 /* ZDDThemeConfiguration.m */; };
 		752A1AA2224E7FEC004B4B31 /* UIColor+ZDDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AA1224E7FEC004B4B31 /* UIColor+ZDDColor.m */; };
-		752A1AA8224E7FF6004B4B31 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AA5224E7FF6004B4B31 /* UIImage+Blur.m */; };
-		752A1AB1224E8011004B4B31 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AAB224E800F004B4B31 /* Foundation+Log.m */; };
-		752A1AB2224E8011004B4B31 /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AAD224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.m */; };
-		752A1AB3224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AAF224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m */; };
-		752A1AB4224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AB0224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m */; };
-		752A1ABC224E8359004B4B31 /* GODWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ABA224E8358004B4B31 /* GODWebViewController.m */; };
-		752A1AC3224E8377004B4B31 /* TEMPAppDelegate+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ABF224E8375004B4B31 /* TEMPAppDelegate+OpenURL.m */; };
-		752A1AC4224E8377004B4B31 /* TEMPAppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AC1224E8376004B4B31 /* TEMPAppDelegate+PushService.m */; };
-		752A1AC5224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AC2224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m */; };
+		752A1AC3224E8377004B4B31 /* HaHaAppDelegate+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ABF224E8375004B4B31 /* HaHaAppDelegate+OpenURL.m */; };
+		752A1AC4224E8377004B4B31 /* HaHaAppDelegate+PushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AC1224E8376004B4B31 /* HaHaAppDelegate+PushService.m */; };
+		752A1AC5224E8377004B4B31 /* HaHaAppDelegate+BackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AC2224E8377004B4B31 /* HaHaAppDelegate+BackgroundTask.m */; };
 		752A1ACA224E83A8004B4B31 /* TEMPLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AC9224E83A8004B4B31 /* TEMPLaunchManager.m */; };
 		752A1ACD224E83B5004B4B31 /* TEMPSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ACC224E83B5004B4B31 /* TEMPSDKManager.m */; };
-		752A1AD6224E83DC004B4B31 /* ZDDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD0224E83DA004B4B31 /* ZDDTabBarController.m */; };
-		752A1AD7224E83DC004B4B31 /* ZDDNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD3224E83DB004B4B31 /* ZDDNavController.m */; };
-		752A1AD8224E83DC004B4B31 /* ZDDBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD5224E83DC004B4B31 /* ZDDBaseViewController.m */; };
-		752A1ADC224E83F7004B4B31 /* YMHLVideoFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ADB224E83F6004B4B31 /* YMHLVideoFlowViewController.m */; };
-		752A1AE3224E8400004B4B31 /* YMHLVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */; };
-		752A1AE4224E8400004B4B31 /* YMHLVideoflowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE0224E83FE004B4B31 /* YMHLVideoflowLayout.m */; };
-		752A1AE5224E8400004B4B31 /* YMHLVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE2224E83FF004B4B31 /* YMHLVideoModel.m */; };
-		752A1AEB224E8433004B4B31 /* ZDDThridController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE9224E8432004B4B31 /* ZDDThridController.m */; };
-		752A1AEE224E8441004B4B31 /* ZDDSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AEC224E8440004B4B31 /* ZDDSecondController.m */; };
-		752A1AF5224E8462004B4B31 /* ZDDFirstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AF3224E8461004B4B31 /* ZDDFirstController.m */; };
-		752A1AFF224E847C004B4B31 /* ZDDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AFB224E847B004B4B31 /* ZDDInputView.m */; };
-		752A1B00224E847C004B4B31 /* ZDDFistListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AFC224E847B004B4B31 /* ZDDFistListCellNode.m */; };
-		752A1B01224E847C004B4B31 /* ZDDCommentLIstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AFE224E847C004B4B31 /* ZDDCommentLIstView.m */; };
-		753BD049224E6B65003C4424 /* TEMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BD048224E6B65003C4424 /* TEMPAppDelegate.m */; };
+		752A1AD6224E83DC004B4B31 /* HaHaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD0224E83DA004B4B31 /* HaHaTabBarController.m */; };
+		752A1AD7224E83DC004B4B31 /* HaHaNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD3224E83DB004B4B31 /* HaHaNavController.m */; };
+		752A1AD8224E83DC004B4B31 /* HaHaBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AD5224E83DC004B4B31 /* HaHaBaseViewController.m */; };
+		752A1AEB224E8433004B4B31 /* HaHaThridController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AE9224E8432004B4B31 /* HaHaThridController.m */; };
+		752A1AEE224E8441004B4B31 /* HaHaSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AEC224E8440004B4B31 /* HaHaSecondController.m */; };
+		752A1AF5224E8462004B4B31 /* HaHaFirstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AF3224E8461004B4B31 /* HaHaFirstController.m */; };
+		752A1AFF224E847C004B4B31 /* HaHaInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AFB224E847B004B4B31 /* HaHaInputView.m */; };
+		752A1B00224E847C004B4B31 /* HaHaFistListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AFC224E847B004B4B31 /* HaHaFistListCellNode.m */; };
+		752A1B01224E847C004B4B31 /* HaHaCommentLIstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752A1AFE224E847C004B4B31 /* HaHaCommentLIstView.m */; };
+		753BD049224E6B65003C4424 /* HaHaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BD048224E6B65003C4424 /* HaHaAppDelegate.m */; };
 		753BD051224E6B66003C4424 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 753BD050224E6B66003C4424 /* Assets.xcassets */; };
 		753BD054224E6B66003C4424 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 753BD052224E6B66003C4424 /* LaunchScreen.storyboard */; };
 		753BD057224E6B66003C4424 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 753BD056224E6B66003C4424 /* main.m */; };
-		755AEA3922507680008E0F33 /* YMHLSubcommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA3822507680008E0F33 /* YMHLSubcommentTableViewCell.m */; };
 		755AEA3C22509A1A008E0F33 /* NSString+YMHLAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA3B22509A1A008E0F33 /* NSString+YMHLAdditions.m */; };
-		755AEA4F2250E404008E0F33 /* XJEmojePreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA3E2250E3FE008E0F33 /* XJEmojePreView.m */; };
-		755AEA502250E404008E0F33 /* XJItemSelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA412250E3FF008E0F33 /* XJItemSelView.m */; };
-		755AEA512250E404008E0F33 /* XJMulitFuctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA422250E3FF008E0F33 /* XJMulitFuctionView.m */; };
-		755AEA522250E404008E0F33 /* XJChatInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA492250E401008E0F33 /* XJChatInputView.m */; };
-		755AEA532250E404008E0F33 /* XJToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA4A2250E402008E0F33 /* XJToolBarView.m */; };
-		755AEA542250E404008E0F33 /* XJFaceEmojeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA4B2250E402008E0F33 /* XJFaceEmojeView.m */; };
-		755AEA552250E404008E0F33 /* XJFaceInputHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA4C2250E403008E0F33 /* XJFaceInputHelper.m */; };
-		755AEA562250E404008E0F33 /* XJInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA4E2250E404008E0F33 /* XJInputView.m */; };
-		755AEA5E2250E45B008E0F33 /* xjemoje1.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA572250E458008E0F33 /* xjemoje1.bundle */; };
-		755AEA5F2250E45B008E0F33 /* UIView+FrameUtilty.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA582250E459008E0F33 /* UIView+FrameUtilty.m */; };
-		755AEA602250E45B008E0F33 /* expression.plist in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA5B2250E45A008E0F33 /* expression.plist */; };
-		755AEA612250E45B008E0F33 /* XJInputView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA5C2250E45B008E0F33 /* XJInputView.bundle */; };
-		755AEA622250E45B008E0F33 /* UIColor+ZS.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */; };
-		755AEA662250F28E008E0F33 /* ZTWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA642250F28D008E0F33 /* ZTWButton.m */; };
 		755AEA6A225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 755AEA69225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m */; };
 		755AEA6C22537BF6008E0F33 /* gg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 755AEA6B22537BF5008E0F33 /* gg.jpg */; };
 		B281997060E7376A8BA1C87E /* libPods-HAHA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC519B347F9056DD4EFD649 /* libPods-HAHA.a */; };
@@ -177,8 +146,8 @@
 		0FC519B347F9056DD4EFD649 /* libPods-HAHA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HAHA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		370F19552252FCA4000850BF /* ZDDPhotoBrowseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDPhotoBrowseView.m; sourceTree = "<group>"; };
 		370F19562252FCA4000850BF /* ZDDPhotoBrowseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDPhotoBrowseView.h; sourceTree = "<group>"; };
-		37202548224F0B1D00E25AA4 /* ZDDCommentCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentCellNode.m; sourceTree = "<group>"; };
-		37202549224F0B1E00E25AA4 /* ZDDCommentCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDCommentCellNode.h; sourceTree = "<group>"; };
+		37202548224F0B1D00E25AA4 /* HaHaCommentCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaCommentCellNode.m; sourceTree = "<group>"; };
+		37202549224F0B1E00E25AA4 /* HaHaCommentCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaCommentCellNode.h; sourceTree = "<group>"; };
 		3720254C224F225100E25AA4 /* POPMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPMath.h; sourceTree = "<group>"; };
 		3720254D224F225100E25AA4 /* POPDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPDefines.h; sourceTree = "<group>"; };
 		3720254E224F225100E25AA4 /* POPAnimationInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POPAnimationInternal.h; sourceTree = "<group>"; };
@@ -238,12 +207,12 @@
 		3720259A224F491800E25AA4 /* GODUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserModel.h; sourceTree = "<group>"; };
 		3720259B224F491800E25AA4 /* GODUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserTool.m; sourceTree = "<group>"; };
 		3720259C224F491900E25AA4 /* GODUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserTool.h; sourceTree = "<group>"; };
-		3720259F224F49AF00E25AA4 /* ZDDDuanziModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDDuanziModel.h; sourceTree = "<group>"; };
-		372025A0224F49AF00E25AA4 /* ZDDDuanziModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDDuanziModel.m; sourceTree = "<group>"; };
-		372025A2224F51DA00E25AA4 /* ZDDCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDCommentModel.h; sourceTree = "<group>"; };
-		372025A3224F51DA00E25AA4 /* ZDDCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentModel.m; sourceTree = "<group>"; };
-		372025A7224F57E400E25AA4 /* ZDDLogInController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDLogInController.h; sourceTree = "<group>"; };
-		372025A8224F57E400E25AA4 /* ZDDLogInController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDLogInController.m; sourceTree = "<group>"; };
+		3720259F224F49AF00E25AA4 /* HaHaDuanziModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaHaDuanziModel.h; sourceTree = "<group>"; };
+		372025A0224F49AF00E25AA4 /* HaHaDuanziModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaHaDuanziModel.m; sourceTree = "<group>"; };
+		372025A2224F51DA00E25AA4 /* HaHaCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaHaCommentModel.h; sourceTree = "<group>"; };
+		372025A3224F51DA00E25AA4 /* HaHaCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaHaCommentModel.m; sourceTree = "<group>"; };
+		372025A7224F57E400E25AA4 /* HaHaLogInController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaHaLogInController.h; sourceTree = "<group>"; };
+		372025A8224F57E400E25AA4 /* HaHaLogInController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaHaLogInController.m; sourceTree = "<group>"; };
 		372AF31222522E590023EFAB /* HXCustomCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXCustomCameraViewController.m; sourceTree = "<group>"; };
 		372AF31322522E590023EFAB /* HXPhotoPreviewBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoPreviewBottomView.m; sourceTree = "<group>"; };
 		372AF31422522E590023EFAB /* HXPhotoConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXPhotoConfiguration.m; sourceTree = "<group>"; };
@@ -339,16 +308,16 @@
 		372AF37122522E590023EFAB /* HXPhotoViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoViewFlowLayout.h; sourceTree = "<group>"; };
 		372AF37222522E590023EFAB /* HXPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXPhotoViewController.h; sourceTree = "<group>"; };
 		372AF37322522E590023EFAB /* HXVideoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXVideoEditViewController.m; sourceTree = "<group>"; };
-		3746912F22603E2500A6DFCF /* ZDDFirstBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDFirstBaseController.h; sourceTree = "<group>"; };
-		3746913022603E2500A6DFCF /* ZDDFirstBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDFirstBaseController.m; sourceTree = "<group>"; };
-		37AC82A1225378B30081478E /* ZDDRetryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDRetryView.h; sourceTree = "<group>"; };
-		37AC82A2225378B30081478E /* ZDDRetryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDRetryView.m; sourceTree = "<group>"; };
-		37DD96742251E0A600489BE6 /* ZDDSecondListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDSecondListCellNode.h; sourceTree = "<group>"; };
-		37DD96752251E0A600489BE6 /* ZDDSecondListCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDSecondListCellNode.m; sourceTree = "<group>"; };
-		37DD96772251E53F00489BE6 /* ZDDCommentListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDCommentListController.h; sourceTree = "<group>"; };
-		37DD96782251E53F00489BE6 /* ZDDCommentListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentListController.m; sourceTree = "<group>"; };
-		37DD967A2251F59300489BE6 /* ZDDPostDyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDPostDyController.h; sourceTree = "<group>"; };
-		37DD967B2251F59300489BE6 /* ZDDPostDyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDPostDyController.m; sourceTree = "<group>"; };
+		3746912F22603E2500A6DFCF /* HaHaFirstBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaHaFirstBaseController.h; sourceTree = "<group>"; };
+		3746913022603E2500A6DFCF /* HaHaFirstBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaHaFirstBaseController.m; sourceTree = "<group>"; };
+		37AC82A1225378B30081478E /* HaHaRetryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaHaRetryView.h; sourceTree = "<group>"; };
+		37AC82A2225378B30081478E /* HaHaRetryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaHaRetryView.m; sourceTree = "<group>"; };
+		37DD96742251E0A600489BE6 /* HaHaSecondListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaHaSecondListCellNode.h; sourceTree = "<group>"; };
+		37DD96752251E0A600489BE6 /* HaHaSecondListCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaHaSecondListCellNode.m; sourceTree = "<group>"; };
+		37DD96772251E53F00489BE6 /* HaHaCommentListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaHaCommentListController.h; sourceTree = "<group>"; };
+		37DD96782251E53F00489BE6 /* HaHaCommentListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaHaCommentListController.m; sourceTree = "<group>"; };
+		37DD967A2251F59300489BE6 /* HaHaPostDyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaHaPostDyController.h; sourceTree = "<group>"; };
+		37DD967B2251F59300489BE6 /* HaHaPostDyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaHaPostDyController.m; sourceTree = "<group>"; };
 		452E8D43C2BC0FAAEEAFA7EA /* Pods-HAHA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.release.xcconfig"; path = "Pods/Target Support Files/Pods-HAHA/Pods-HAHA.release.xcconfig"; sourceTree = "<group>"; };
 		4A0D7A4522535F5B00D9F466 /* YMHLSecondTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLSecondTableViewCell.h; sourceTree = "<group>"; };
 		4A0D7A4622535F5B00D9F466 /* YMHLSecondTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLSecondTableViewCell.m; sourceTree = "<group>"; };
@@ -358,8 +327,6 @@
 		4A92296222543A9400B9589A /* PersonDuanziController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDuanziController.m; sourceTree = "<group>"; };
 		4A922964225443DF00B9589A /* MHLGraphTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHLGraphTextViewController.h; sourceTree = "<group>"; };
 		4A922965225443DF00B9589A /* MHLGraphTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHLGraphTextViewController.m; sourceTree = "<group>"; };
-		4A922967225443E900B9589A /* MHLVideoTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHLVideoTextViewController.h; sourceTree = "<group>"; };
-		4A922968225443E900B9589A /* MHLVideoTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHLVideoTextViewController.m; sourceTree = "<group>"; };
 		4A92296A22547A3A00B9589A /* HAHA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HAHA.entitlements; sourceTree = "<group>"; };
 		5E4B2110EE268EF4AA6ABCD8 /* Pods-HAHA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAHA.debug.xcconfig"; path = "Target Support Files/Pods-HAHA/Pods-HAHA.debug.xcconfig"; sourceTree = "<group>"; };
 		751CA532226C83FB0053583A /* QQKK1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQKK1ViewController.h; sourceTree = "<group>"; };
@@ -393,18 +360,8 @@
 		751CA562226C9A4F0053583A /* QDThemeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThemeProtocol.h; sourceTree = "<group>"; };
 		751CA563226C9A4F0053583A /* QDThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDThemeManager.m; sourceTree = "<group>"; };
 		751CA566226C9A500053583A /* QDThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDThemeManager.h; sourceTree = "<group>"; };
-		7521BA1C224F0D7F00292099 /* YMHLUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLUserModel.h; sourceTree = "<group>"; };
-		7521BA1D224F0D7F00292099 /* YMHLUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLUserModel.m; sourceTree = "<group>"; };
-		7521BA20224F994000292099 /* YMHLBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLBaseViewController.h; sourceTree = "<group>"; };
-		7521BA21224F994000292099 /* YMHLBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLBaseViewController.m; sourceTree = "<group>"; };
 		7521BA2322505AA000292099 /* ASButtonNode+LHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASButtonNode+LHExtension.h"; sourceTree = "<group>"; };
 		7521BA2422505AA000292099 /* ASButtonNode+LHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASButtonNode+LHExtension.m"; sourceTree = "<group>"; };
-		7521BA2722505FCA00292099 /* YMHLVideoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLVideoDetailViewController.h; sourceTree = "<group>"; };
-		7521BA2822505FCA00292099 /* YMHLVideoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoDetailViewController.m; sourceTree = "<group>"; };
-		7521BA2C2250714E00292099 /* YMHLSubCommentsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLSubCommentsModel.h; sourceTree = "<group>"; };
-		7521BA2D2250714E00292099 /* YMHLSubCommentsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLSubCommentsModel.m; sourceTree = "<group>"; };
-		7521BA2F225074F200292099 /* YMHLCommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLCommentTableViewCell.h; sourceTree = "<group>"; };
-		7521BA30225074F200292099 /* YMHLCommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLCommentTableViewCell.m; sourceTree = "<group>"; };
 		752A1A74224E7EF7004B4B31 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		752A1A76224E7F5F004B4B31 /* mook.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mook.json; sourceTree = "<group>"; };
 		752A1A79224E7F7A004B4B31 /* NSMutableAttributedString+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Chain.h"; sourceTree = "<group>"; };
@@ -428,90 +385,43 @@
 		752A1A9E224E7FE0004B4B31 /* ZDDThemeConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDThemeConfiguration.m; sourceTree = "<group>"; };
 		752A1AA0224E7FEB004B4B31 /* UIColor+ZDDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZDDColor.h"; sourceTree = "<group>"; };
 		752A1AA1224E7FEC004B4B31 /* UIColor+ZDDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZDDColor.m"; sourceTree = "<group>"; };
-		752A1AA4224E7FF6004B4B31 /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blur.h"; sourceTree = "<group>"; };
-		752A1AA5224E7FF6004B4B31 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
-		752A1AAA224E800F004B4B31 /* NSSet+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
-		752A1AAB224E800F004B4B31 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
-		752A1AAC224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
-		752A1AAD224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
-		752A1AAE224E8010004B4B31 /* NSArray+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
-		752A1AAF224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
-		752A1AB0224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
-		752A1ABA224E8358004B4B31 /* GODWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODWebViewController.m; sourceTree = "<group>"; };
-		752A1ABB224E8358004B4B31 /* GODWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODWebViewController.h; sourceTree = "<group>"; };
-		752A1ABD224E8374004B4B31 /* TEMPAppDelegate+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TEMPAppDelegate+OpenURL.h"; sourceTree = "<group>"; };
-		752A1ABE224E8374004B4B31 /* TEMPAppDelegate+BackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TEMPAppDelegate+BackgroundTask.h"; sourceTree = "<group>"; };
-		752A1ABF224E8375004B4B31 /* TEMPAppDelegate+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TEMPAppDelegate+OpenURL.m"; sourceTree = "<group>"; };
-		752A1AC0224E8376004B4B31 /* TEMPAppDelegate+PushService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TEMPAppDelegate+PushService.h"; sourceTree = "<group>"; };
-		752A1AC1224E8376004B4B31 /* TEMPAppDelegate+PushService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TEMPAppDelegate+PushService.m"; sourceTree = "<group>"; };
-		752A1AC2224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TEMPAppDelegate+BackgroundTask.m"; sourceTree = "<group>"; };
+		752A1ABD224E8374004B4B31 /* HaHaAppDelegate+OpenURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HaHaAppDelegate+OpenURL.h"; sourceTree = "<group>"; };
+		752A1ABE224E8374004B4B31 /* HaHaAppDelegate+BackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HaHaAppDelegate+BackgroundTask.h"; sourceTree = "<group>"; };
+		752A1ABF224E8375004B4B31 /* HaHaAppDelegate+OpenURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HaHaAppDelegate+OpenURL.m"; sourceTree = "<group>"; };
+		752A1AC0224E8376004B4B31 /* HaHaAppDelegate+PushService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HaHaAppDelegate+PushService.h"; sourceTree = "<group>"; };
+		752A1AC1224E8376004B4B31 /* HaHaAppDelegate+PushService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HaHaAppDelegate+PushService.m"; sourceTree = "<group>"; };
+		752A1AC2224E8377004B4B31 /* HaHaAppDelegate+BackgroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HaHaAppDelegate+BackgroundTask.m"; sourceTree = "<group>"; };
 		752A1AC8224E83A7004B4B31 /* TEMPLaunchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPLaunchManager.h; sourceTree = "<group>"; };
 		752A1AC9224E83A8004B4B31 /* TEMPLaunchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPLaunchManager.m; sourceTree = "<group>"; };
 		752A1ACB224E83B5004B4B31 /* TEMPSDKManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEMPSDKManager.h; sourceTree = "<group>"; };
 		752A1ACC224E83B5004B4B31 /* TEMPSDKManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEMPSDKManager.m; sourceTree = "<group>"; };
-		752A1AD0224E83DA004B4B31 /* ZDDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDTabBarController.m; sourceTree = "<group>"; };
-		752A1AD1224E83DA004B4B31 /* ZDDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDTabBarController.h; sourceTree = "<group>"; };
-		752A1AD2224E83DB004B4B31 /* ZDDBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDBaseViewController.h; sourceTree = "<group>"; };
-		752A1AD3224E83DB004B4B31 /* ZDDNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDNavController.m; sourceTree = "<group>"; };
-		752A1AD4224E83DB004B4B31 /* ZDDNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDNavController.h; sourceTree = "<group>"; };
-		752A1AD5224E83DC004B4B31 /* ZDDBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDBaseViewController.m; sourceTree = "<group>"; };
-		752A1ADA224E83F6004B4B31 /* YMHLVideoFlowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoFlowViewController.h; sourceTree = "<group>"; };
-		752A1ADB224E83F6004B4B31 /* YMHLVideoFlowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoFlowViewController.m; sourceTree = "<group>"; };
-		752A1ADD224E83FD004B4B31 /* YMHLVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoModel.h; sourceTree = "<group>"; };
-		752A1ADE224E83FD004B4B31 /* YMHLVideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoCollectionViewCell.h; sourceTree = "<group>"; };
-		752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoCollectionViewCell.m; sourceTree = "<group>"; };
-		752A1AE0224E83FE004B4B31 /* YMHLVideoflowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoflowLayout.m; sourceTree = "<group>"; };
-		752A1AE1224E83FF004B4B31 /* YMHLVideoflowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHLVideoflowLayout.h; sourceTree = "<group>"; };
-		752A1AE2224E83FF004B4B31 /* YMHLVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHLVideoModel.m; sourceTree = "<group>"; };
-		752A1AE9224E8432004B4B31 /* ZDDThridController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDThridController.m; sourceTree = "<group>"; };
-		752A1AEA224E8433004B4B31 /* ZDDThridController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDThridController.h; sourceTree = "<group>"; };
-		752A1AEC224E8440004B4B31 /* ZDDSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDSecondController.m; sourceTree = "<group>"; };
-		752A1AED224E8441004B4B31 /* ZDDSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDSecondController.h; sourceTree = "<group>"; };
-		752A1AF3224E8461004B4B31 /* ZDDFirstController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDFirstController.m; sourceTree = "<group>"; };
-		752A1AF4224E8462004B4B31 /* ZDDFirstController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDFirstController.h; sourceTree = "<group>"; };
-		752A1AF9224E847A004B4B31 /* ZDDCommentLIstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDCommentLIstView.h; sourceTree = "<group>"; };
-		752A1AFA224E847A004B4B31 /* ZDDFistListCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDFistListCellNode.h; sourceTree = "<group>"; };
-		752A1AFB224E847B004B4B31 /* ZDDInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDInputView.m; sourceTree = "<group>"; };
-		752A1AFC224E847B004B4B31 /* ZDDFistListCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDFistListCellNode.m; sourceTree = "<group>"; };
-		752A1AFD224E847B004B4B31 /* ZDDInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDInputView.h; sourceTree = "<group>"; };
-		752A1AFE224E847C004B4B31 /* ZDDCommentLIstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentLIstView.m; sourceTree = "<group>"; };
+		752A1AD0224E83DA004B4B31 /* HaHaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaTabBarController.m; sourceTree = "<group>"; };
+		752A1AD1224E83DA004B4B31 /* HaHaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaTabBarController.h; sourceTree = "<group>"; };
+		752A1AD2224E83DB004B4B31 /* HaHaBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaBaseViewController.h; sourceTree = "<group>"; };
+		752A1AD3224E83DB004B4B31 /* HaHaNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaNavController.m; sourceTree = "<group>"; };
+		752A1AD4224E83DB004B4B31 /* HaHaNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaNavController.h; sourceTree = "<group>"; };
+		752A1AD5224E83DC004B4B31 /* HaHaBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaBaseViewController.m; sourceTree = "<group>"; };
+		752A1AE9224E8432004B4B31 /* HaHaThridController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaThridController.m; sourceTree = "<group>"; };
+		752A1AEA224E8433004B4B31 /* HaHaThridController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaThridController.h; sourceTree = "<group>"; };
+		752A1AEC224E8440004B4B31 /* HaHaSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaSecondController.m; sourceTree = "<group>"; };
+		752A1AED224E8441004B4B31 /* HaHaSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaSecondController.h; sourceTree = "<group>"; };
+		752A1AF3224E8461004B4B31 /* HaHaFirstController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaFirstController.m; sourceTree = "<group>"; };
+		752A1AF4224E8462004B4B31 /* HaHaFirstController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaFirstController.h; sourceTree = "<group>"; };
+		752A1AF9224E847A004B4B31 /* HaHaCommentLIstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaCommentLIstView.h; sourceTree = "<group>"; };
+		752A1AFA224E847A004B4B31 /* HaHaFistListCellNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaFistListCellNode.h; sourceTree = "<group>"; };
+		752A1AFB224E847B004B4B31 /* HaHaInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaInputView.m; sourceTree = "<group>"; };
+		752A1AFC224E847B004B4B31 /* HaHaFistListCellNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaFistListCellNode.m; sourceTree = "<group>"; };
+		752A1AFD224E847B004B4B31 /* HaHaInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HaHaInputView.h; sourceTree = "<group>"; };
+		752A1AFE224E847C004B4B31 /* HaHaCommentLIstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaHaCommentLIstView.m; sourceTree = "<group>"; };
 		753BD044224E6B64003C4424 /* HAHA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAHA.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		753BD047224E6B64003C4424 /* TEMPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEMPAppDelegate.h; sourceTree = "<group>"; };
-		753BD048224E6B65003C4424 /* TEMPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEMPAppDelegate.m; sourceTree = "<group>"; };
+		753BD047224E6B64003C4424 /* HaHaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HaHaAppDelegate.h; sourceTree = "<group>"; };
+		753BD048224E6B65003C4424 /* HaHaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaHaAppDelegate.m; sourceTree = "<group>"; };
 		753BD050224E6B66003C4424 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		753BD053224E6B66003C4424 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		753BD055224E6B66003C4424 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		753BD056224E6B66003C4424 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		755AEA3722507680008E0F33 /* YMHLSubcommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLSubcommentTableViewCell.h; sourceTree = "<group>"; };
-		755AEA3822507680008E0F33 /* YMHLSubcommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLSubcommentTableViewCell.m; sourceTree = "<group>"; };
 		755AEA3A22509A1A008E0F33 /* NSString+YMHLAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YMHLAdditions.h"; sourceTree = "<group>"; };
 		755AEA3B22509A1A008E0F33 /* NSString+YMHLAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YMHLAdditions.m"; sourceTree = "<group>"; };
-		755AEA3E2250E3FE008E0F33 /* XJEmojePreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJEmojePreView.m; sourceTree = "<group>"; };
-		755AEA3F2250E3FE008E0F33 /* XJEmojePreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJEmojePreView.h; sourceTree = "<group>"; };
-		755AEA402250E3FF008E0F33 /* XJItemSelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJItemSelView.h; sourceTree = "<group>"; };
-		755AEA412250E3FF008E0F33 /* XJItemSelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJItemSelView.m; sourceTree = "<group>"; };
-		755AEA422250E3FF008E0F33 /* XJMulitFuctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJMulitFuctionView.m; sourceTree = "<group>"; };
-		755AEA432250E400008E0F33 /* XJToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJToolBarView.h; sourceTree = "<group>"; };
-		755AEA442250E400008E0F33 /* XJMulitFuctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJMulitFuctionView.h; sourceTree = "<group>"; };
-		755AEA452250E400008E0F33 /* XJInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJInputView.h; sourceTree = "<group>"; };
-		755AEA462250E401008E0F33 /* XJChatInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJChatInputView.h; sourceTree = "<group>"; };
-		755AEA472250E401008E0F33 /* XJFaceEmojeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJFaceEmojeView.h; sourceTree = "<group>"; };
-		755AEA482250E401008E0F33 /* XJFaceInputHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJFaceInputHelper.h; sourceTree = "<group>"; };
-		755AEA492250E401008E0F33 /* XJChatInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJChatInputView.m; sourceTree = "<group>"; };
-		755AEA4A2250E402008E0F33 /* XJToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJToolBarView.m; sourceTree = "<group>"; };
-		755AEA4B2250E402008E0F33 /* XJFaceEmojeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJFaceEmojeView.m; sourceTree = "<group>"; };
-		755AEA4C2250E403008E0F33 /* XJFaceInputHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJFaceInputHelper.m; sourceTree = "<group>"; };
-		755AEA4D2250E404008E0F33 /* XJInputDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJInputDefine.h; sourceTree = "<group>"; };
-		755AEA4E2250E404008E0F33 /* XJInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJInputView.m; sourceTree = "<group>"; };
-		755AEA572250E458008E0F33 /* xjemoje1.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = xjemoje1.bundle; sourceTree = "<group>"; };
-		755AEA582250E459008E0F33 /* UIView+FrameUtilty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameUtilty.m"; sourceTree = "<group>"; };
-		755AEA592250E459008E0F33 /* UIView+FrameUtilty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameUtilty.h"; sourceTree = "<group>"; };
-		755AEA5A2250E459008E0F33 /* UIColor+ZS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZS.h"; sourceTree = "<group>"; };
-		755AEA5B2250E45A008E0F33 /* expression.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = expression.plist; sourceTree = "<group>"; };
-		755AEA5C2250E45B008E0F33 /* XJInputView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XJInputView.bundle; sourceTree = "<group>"; };
-		755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZS.m"; sourceTree = "<group>"; };
-		755AEA642250F28D008E0F33 /* ZTWButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTWButton.m; sourceTree = "<group>"; };
-		755AEA652250F28D008E0F33 /* ZTWButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTWButton.h; sourceTree = "<group>"; };
 		755AEA68225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMHLPeronHeaderTableViewCell.h; sourceTree = "<group>"; };
 		755AEA69225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMHLPeronHeaderTableViewCell.m; sourceTree = "<group>"; };
 		755AEA6B22537BF5008E0F33 /* gg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gg.jpg; sourceTree = "<group>"; };
@@ -621,8 +531,8 @@
 		372025A6224F57CE00E25AA4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				372025A7224F57E400E25AA4 /* ZDDLogInController.h */,
-				372025A8224F57E400E25AA4 /* ZDDLogInController.m */,
+				372025A7224F57E400E25AA4 /* HaHaLogInController.h */,
+				372025A8224F57E400E25AA4 /* HaHaLogInController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -763,12 +673,12 @@
 		37DD96712251E07200489BE6 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				752A1AED224E8441004B4B31 /* ZDDSecondController.h */,
-				752A1AEC224E8440004B4B31 /* ZDDSecondController.m */,
-				37DD96772251E53F00489BE6 /* ZDDCommentListController.h */,
-				37DD96782251E53F00489BE6 /* ZDDCommentListController.m */,
-				37DD967A2251F59300489BE6 /* ZDDPostDyController.h */,
-				37DD967B2251F59300489BE6 /* ZDDPostDyController.m */,
+				752A1AED224E8441004B4B31 /* HaHaSecondController.h */,
+				752A1AEC224E8440004B4B31 /* HaHaSecondController.m */,
+				37DD96772251E53F00489BE6 /* HaHaCommentListController.h */,
+				37DD96782251E53F00489BE6 /* HaHaCommentListController.m */,
+				37DD967A2251F59300489BE6 /* HaHaPostDyController.h */,
+				37DD967B2251F59300489BE6 /* HaHaPostDyController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -776,8 +686,8 @@
 		37DD96732251E07200489BE6 /* V */ = {
 			isa = PBXGroup;
 			children = (
-				37DD96742251E0A600489BE6 /* ZDDSecondListCellNode.h */,
-				37DD96752251E0A600489BE6 /* ZDDSecondListCellNode.m */,
+				37DD96742251E0A600489BE6 /* HaHaSecondListCellNode.h */,
+				37DD96752251E0A600489BE6 /* HaHaSecondListCellNode.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -789,8 +699,6 @@
 				4A92296222543A9400B9589A /* PersonDuanziController.m */,
 				4A922964225443DF00B9589A /* MHLGraphTextViewController.h */,
 				4A922965225443DF00B9589A /* MHLGraphTextViewController.m */,
-				4A922967225443E900B9589A /* MHLVideoTextViewController.h */,
-				4A922968225443E900B9589A /* MHLVideoTextViewController.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -833,66 +741,13 @@
 			path = Unuse;
 			sourceTree = "<group>";
 		};
-		7521BA1B224F0D5B00292099 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7521BA1C224F0D7F00292099 /* YMHLUserModel.h */,
-				7521BA1D224F0D7F00292099 /* YMHLUserModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7521BA1F224F992300292099 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				7521BA20224F994000292099 /* YMHLBaseViewController.h */,
-				7521BA21224F994000292099 /* YMHLBaseViewController.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		7521BA2622505F9E00292099 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				7521BA2B2250713000292099 /* Model */,
-				7521BA2A22506EF000292099 /* Cell */,
-				7521BA2722505FCA00292099 /* YMHLVideoDetailViewController.h */,
-				7521BA2822505FCA00292099 /* YMHLVideoDetailViewController.m */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		7521BA2A22506EF000292099 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				7521BA2F225074F200292099 /* YMHLCommentTableViewCell.h */,
-				7521BA30225074F200292099 /* YMHLCommentTableViewCell.m */,
-				755AEA3722507680008E0F33 /* YMHLSubcommentTableViewCell.h */,
-				755AEA3822507680008E0F33 /* YMHLSubcommentTableViewCell.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		7521BA2B2250713000292099 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7521BA2C2250714E00292099 /* YMHLSubCommentsModel.h */,
-				7521BA2D2250714E00292099 /* YMHLSubCommentsModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		752A1A75224E7F4A004B4B31 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				755AEA6B22537BF5008E0F33 /* gg.jpg */,
 				370F19542252FCA4000850BF /* ZDDPhotoBrowse */,
 				372AF31122522E590023EFAB /* HXPhotoPicker */,
-				755AEA632250F265008E0F33 /* YMHLButton */,
-				755AEA3D2250E3C8008E0F33 /* InputView */,
 				3720254B224F225100E25AA4 /* pop */,
-				752A1AB5224E8016004B4B31 /* PB */,
-				752A1AA9224E8006004B4B31 /* UniLog */,
 				752A1A9C224E7FD6004B4B31 /* Theme */,
 				752A1A98224E7FC7004B4B31 /* Noti */,
 				752A1A94224E7FB6004B4B31 /* KeyConfig */,
@@ -909,12 +764,12 @@
 			children = (
 				7521BA2322505AA000292099 /* ASButtonNode+LHExtension.h */,
 				7521BA2422505AA000292099 /* ASButtonNode+LHExtension.m */,
-				752A1ABE224E8374004B4B31 /* TEMPAppDelegate+BackgroundTask.h */,
-				752A1AC2224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m */,
-				752A1ABD224E8374004B4B31 /* TEMPAppDelegate+OpenURL.h */,
-				752A1ABF224E8375004B4B31 /* TEMPAppDelegate+OpenURL.m */,
-				752A1AC0224E8376004B4B31 /* TEMPAppDelegate+PushService.h */,
-				752A1AC1224E8376004B4B31 /* TEMPAppDelegate+PushService.m */,
+				752A1ABE224E8374004B4B31 /* HaHaAppDelegate+BackgroundTask.h */,
+				752A1AC2224E8377004B4B31 /* HaHaAppDelegate+BackgroundTask.m */,
+				752A1ABD224E8374004B4B31 /* HaHaAppDelegate+OpenURL.h */,
+				752A1ABF224E8375004B4B31 /* HaHaAppDelegate+OpenURL.m */,
+				752A1AC0224E8376004B4B31 /* HaHaAppDelegate+PushService.h */,
+				752A1AC1224E8376004B4B31 /* HaHaAppDelegate+PushService.m */,
 				752A1A79224E7F7A004B4B31 /* NSMutableAttributedString+Chain.h */,
 				752A1A83224E7F7E004B4B31 /* NSMutableAttributedString+Chain.m */,
 				752A1A84224E7F7E004B4B31 /* NSMutableDictionary+Attributes.h */,
@@ -943,8 +798,6 @@
 		752A1A92224E7F9B004B4B31 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
-				752A1AA4224E7FF6004B4B31 /* UIImage+Blur.h */,
-				752A1AA5224E7FF6004B4B31 /* UIImage+Blur.m */,
 				752A1A93224E7FAB004B4B31 /* TEMPMacro.h */,
 			);
 			path = Macro;
@@ -979,36 +832,6 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		752A1AA9224E8006004B4B31 /* UniLog */ = {
-			isa = PBXGroup;
-			children = (
-				752A1AAB224E800F004B4B31 /* Foundation+Log.m */,
-				752A1AAE224E8010004B4B31 /* NSArray+HYBUnicodeReadable.h */,
-				752A1AAF224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m */,
-				752A1AAC224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.h */,
-				752A1AAD224E8010004B4B31 /* NSDictionary+HYBUnicodeReadable.m */,
-				752A1AAA224E800F004B4B31 /* NSSet+HYBUnicodeReadable.h */,
-				752A1AB0224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m */,
-			);
-			path = UniLog;
-			sourceTree = "<group>";
-		};
-		752A1AB5224E8016004B4B31 /* PB */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PB;
-			sourceTree = "<group>";
-		};
-		752A1AB9224E833D004B4B31 /* WebView */ = {
-			isa = PBXGroup;
-			children = (
-				752A1ABB224E8358004B4B31 /* GODWebViewController.h */,
-				752A1ABA224E8358004B4B31 /* GODWebViewController.m */,
-			);
-			path = WebView;
-			sourceTree = "<group>";
-		};
 		752A1AC6224E8388004B4B31 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -1034,7 +857,6 @@
 				752A1AE8224E8418004B4B31 /* Three */,
 				752A1AE7224E8413004B4B31 /* Two */,
 				752A1AE6224E840D004B4B31 /* One */,
-				752A1AD9224E83E8004B4B31 /* Video */,
 				752A1ACF224E83CB004B4B31 /* Base */,
 			);
 			path = Business;
@@ -1043,34 +865,16 @@
 		752A1ACF224E83CB004B4B31 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				752A1AD2224E83DB004B4B31 /* ZDDBaseViewController.h */,
-				752A1AD5224E83DC004B4B31 /* ZDDBaseViewController.m */,
-				752A1AD4224E83DB004B4B31 /* ZDDNavController.h */,
-				752A1AD3224E83DB004B4B31 /* ZDDNavController.m */,
-				752A1AD1224E83DA004B4B31 /* ZDDTabBarController.h */,
-				752A1AD0224E83DA004B4B31 /* ZDDTabBarController.m */,
-				37AC82A1225378B30081478E /* ZDDRetryView.h */,
-				37AC82A2225378B30081478E /* ZDDRetryView.m */,
+				752A1AD2224E83DB004B4B31 /* HaHaBaseViewController.h */,
+				752A1AD5224E83DC004B4B31 /* HaHaBaseViewController.m */,
+				752A1AD4224E83DB004B4B31 /* HaHaNavController.h */,
+				752A1AD3224E83DB004B4B31 /* HaHaNavController.m */,
+				752A1AD1224E83DA004B4B31 /* HaHaTabBarController.h */,
+				752A1AD0224E83DA004B4B31 /* HaHaTabBarController.m */,
+				37AC82A1225378B30081478E /* HaHaRetryView.h */,
+				37AC82A2225378B30081478E /* HaHaRetryView.m */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		752A1AD9224E83E8004B4B31 /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				7521BA2622505F9E00292099 /* Detail */,
-				7521BA1F224F992300292099 /* Base */,
-				7521BA1B224F0D5B00292099 /* Model */,
-				752A1ADE224E83FD004B4B31 /* YMHLVideoCollectionViewCell.h */,
-				752A1ADF224E83FE004B4B31 /* YMHLVideoCollectionViewCell.m */,
-				752A1AE1224E83FF004B4B31 /* YMHLVideoflowLayout.h */,
-				752A1AE0224E83FE004B4B31 /* YMHLVideoflowLayout.m */,
-				752A1ADD224E83FD004B4B31 /* YMHLVideoModel.h */,
-				752A1AE2224E83FF004B4B31 /* YMHLVideoModel.m */,
-				752A1ADA224E83F6004B4B31 /* YMHLVideoFlowViewController.h */,
-				752A1ADB224E83F6004B4B31 /* YMHLVideoFlowViewController.m */,
-			);
-			path = Video;
 			sourceTree = "<group>";
 		};
 		752A1AE6224E840D004B4B31 /* One */ = {
@@ -1079,8 +883,8 @@
 				752A1AF2224E8453004B4B31 /* M */,
 				752A1AF1224E844F004B4B31 /* V */,
 				752A1AEF224E8444004B4B31 /* C */,
-				3746912F22603E2500A6DFCF /* ZDDFirstBaseController.h */,
-				3746913022603E2500A6DFCF /* ZDDFirstBaseController.m */,
+				3746912F22603E2500A6DFCF /* HaHaFirstBaseController.h */,
+				3746913022603E2500A6DFCF /* HaHaFirstBaseController.m */,
 			);
 			path = One;
 			sourceTree = "<group>";
@@ -1100,8 +904,8 @@
 			children = (
 				4A922960225439AC00B9589A /* Detail */,
 				755AEA67225248D0008E0F33 /* Cell */,
-				752A1AEA224E8433004B4B31 /* ZDDThridController.h */,
-				752A1AE9224E8432004B4B31 /* ZDDThridController.m */,
+				752A1AEA224E8433004B4B31 /* HaHaThridController.h */,
+				752A1AE9224E8432004B4B31 /* HaHaThridController.m */,
 			);
 			path = Three;
 			sourceTree = "<group>";
@@ -1109,8 +913,8 @@
 		752A1AEF224E8444004B4B31 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				752A1AF4224E8462004B4B31 /* ZDDFirstController.h */,
-				752A1AF3224E8461004B4B31 /* ZDDFirstController.m */,
+				752A1AF4224E8462004B4B31 /* HaHaFirstController.h */,
+				752A1AF3224E8461004B4B31 /* HaHaFirstController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1118,14 +922,14 @@
 		752A1AF1224E844F004B4B31 /* V */ = {
 			isa = PBXGroup;
 			children = (
-				752A1AFA224E847A004B4B31 /* ZDDFistListCellNode.h */,
-				752A1AFC224E847B004B4B31 /* ZDDFistListCellNode.m */,
-				752A1AF9224E847A004B4B31 /* ZDDCommentLIstView.h */,
-				752A1AFE224E847C004B4B31 /* ZDDCommentLIstView.m */,
-				37202549224F0B1E00E25AA4 /* ZDDCommentCellNode.h */,
-				37202548224F0B1D00E25AA4 /* ZDDCommentCellNode.m */,
-				752A1AFD224E847B004B4B31 /* ZDDInputView.h */,
-				752A1AFB224E847B004B4B31 /* ZDDInputView.m */,
+				752A1AFA224E847A004B4B31 /* HaHaFistListCellNode.h */,
+				752A1AFC224E847B004B4B31 /* HaHaFistListCellNode.m */,
+				752A1AF9224E847A004B4B31 /* HaHaCommentLIstView.h */,
+				752A1AFE224E847C004B4B31 /* HaHaCommentLIstView.m */,
+				37202549224F0B1E00E25AA4 /* HaHaCommentCellNode.h */,
+				37202548224F0B1D00E25AA4 /* HaHaCommentCellNode.m */,
+				752A1AFD224E847B004B4B31 /* HaHaInputView.h */,
+				752A1AFB224E847B004B4B31 /* HaHaInputView.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1137,10 +941,10 @@
 				37202599224F491700E25AA4 /* GODUserModel.m */,
 				3720259C224F491900E25AA4 /* GODUserTool.h */,
 				3720259B224F491800E25AA4 /* GODUserTool.m */,
-				3720259F224F49AF00E25AA4 /* ZDDDuanziModel.h */,
-				372025A0224F49AF00E25AA4 /* ZDDDuanziModel.m */,
-				372025A2224F51DA00E25AA4 /* ZDDCommentModel.h */,
-				372025A3224F51DA00E25AA4 /* ZDDCommentModel.m */,
+				3720259F224F49AF00E25AA4 /* HaHaDuanziModel.h */,
+				372025A0224F49AF00E25AA4 /* HaHaDuanziModel.m */,
+				372025A2224F51DA00E25AA4 /* HaHaCommentModel.h */,
+				372025A3224F51DA00E25AA4 /* HaHaCommentModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1171,10 +975,9 @@
 				752A1ACE224E83C1004B4B31 /* Business */,
 				752A1AC7224E838E004B4B31 /* SDK */,
 				752A1AC6224E8388004B4B31 /* Launch */,
-				752A1AB9224E833D004B4B31 /* WebView */,
 				752A1A75224E7F4A004B4B31 /* Utils */,
-				753BD047224E6B64003C4424 /* TEMPAppDelegate.h */,
-				753BD048224E6B65003C4424 /* TEMPAppDelegate.m */,
+				753BD047224E6B64003C4424 /* HaHaAppDelegate.h */,
+				753BD048224E6B65003C4424 /* HaHaAppDelegate.m */,
 				753BD050224E6B66003C4424 /* Assets.xcassets */,
 				753BD052224E6B66003C4424 /* LaunchScreen.storyboard */,
 				753BD055224E6B66003C4424 /* Info.plist */,
@@ -1182,47 +985,6 @@
 				752A1A74224E7EF7004B4B31 /* PrefixHeader.pch */,
 			);
 			path = HAHA;
-			sourceTree = "<group>";
-		};
-		755AEA3D2250E3C8008E0F33 /* InputView */ = {
-			isa = PBXGroup;
-			children = (
-				755AEA5B2250E45A008E0F33 /* expression.plist */,
-				755AEA5A2250E459008E0F33 /* UIColor+ZS.h */,
-				755AEA5D2250E45B008E0F33 /* UIColor+ZS.m */,
-				755AEA592250E459008E0F33 /* UIView+FrameUtilty.h */,
-				755AEA582250E459008E0F33 /* UIView+FrameUtilty.m */,
-				755AEA572250E458008E0F33 /* xjemoje1.bundle */,
-				755AEA5C2250E45B008E0F33 /* XJInputView.bundle */,
-				755AEA462250E401008E0F33 /* XJChatInputView.h */,
-				755AEA492250E401008E0F33 /* XJChatInputView.m */,
-				755AEA3F2250E3FE008E0F33 /* XJEmojePreView.h */,
-				755AEA3E2250E3FE008E0F33 /* XJEmojePreView.m */,
-				755AEA472250E401008E0F33 /* XJFaceEmojeView.h */,
-				755AEA4B2250E402008E0F33 /* XJFaceEmojeView.m */,
-				755AEA482250E401008E0F33 /* XJFaceInputHelper.h */,
-				755AEA4C2250E403008E0F33 /* XJFaceInputHelper.m */,
-				755AEA4D2250E404008E0F33 /* XJInputDefine.h */,
-				755AEA452250E400008E0F33 /* XJInputView.h */,
-				755AEA4E2250E404008E0F33 /* XJInputView.m */,
-				755AEA402250E3FF008E0F33 /* XJItemSelView.h */,
-				755AEA412250E3FF008E0F33 /* XJItemSelView.m */,
-				755AEA442250E400008E0F33 /* XJMulitFuctionView.h */,
-				755AEA422250E3FF008E0F33 /* XJMulitFuctionView.m */,
-				755AEA432250E400008E0F33 /* XJToolBarView.h */,
-				755AEA4A2250E402008E0F33 /* XJToolBarView.m */,
-			);
-			name = InputView;
-			path = "New Groupiew";
-			sourceTree = "<group>";
-		};
-		755AEA632250F265008E0F33 /* YMHLButton */ = {
-			isa = PBXGroup;
-			children = (
-				755AEA652250F28D008E0F33 /* ZTWButton.h */,
-				755AEA642250F28D008E0F33 /* ZTWButton.m */,
-			);
-			path = YMHLButton;
 			sourceTree = "<group>";
 		};
 		755AEA67225248D0008E0F33 /* Cell */ = {
@@ -1325,11 +1087,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				37202585224F225200E25AA4 /* pop-ios-Info.plist in Resources */,
-				755AEA612250E45B008E0F33 /* XJInputView.bundle in Resources */,
 				372AF39E22522E590023EFAB /* HXPhotoPicker.bundle in Resources */,
-				755AEA5E2250E45B008E0F33 /* xjemoje1.bundle in Resources */,
 				755AEA6C22537BF6008E0F33 /* gg.jpg in Resources */,
-				755AEA602250E45B008E0F33 /* expression.plist in Resources */,
 				3720258D224F225200E25AA4 /* pop-osx-Info.plist in Resources */,
 				753BD054224E6B66003C4424 /* LaunchScreen.storyboard in Resources */,
 				3720258B224F225200E25AA4 /* pop-tvos-Info.plist in Resources */,
@@ -1404,48 +1163,38 @@
 				372AF38022522E590023EFAB /* NSArray+HXExtension.m in Sources */,
 				751CA540226C85030053583A /* YYIILLMOdel.m in Sources */,
 				372AF38E22522E590023EFAB /* HXPhotoCustomNavigationBar.m in Sources */,
-				755AEA562250E404008E0F33 /* XJInputView.m in Sources */,
 				755AEA6A225248FC008E0F33 /* YMHLPeronHeaderTableViewCell.m in Sources */,
-				752A1AFF224E847C004B4B31 /* ZDDInputView.m in Sources */,
-				755AEA502250E404008E0F33 /* XJItemSelView.m in Sources */,
+				752A1AFF224E847C004B4B31 /* HaHaInputView.m in Sources */,
 				752A1A91224E7F93004B4B31 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				751CA53D226C84E00053583A /* WWASViewController.m in Sources */,
 				372AF38322522E590023EFAB /* UIFont+HXExtension.m in Sources */,
 				3720258F224F225200E25AA4 /* POPAnimation.mm in Sources */,
-				755AEA522250E404008E0F33 /* XJChatInputView.m in Sources */,
-				755AEA552250E404008E0F33 /* XJFaceInputHelper.m in Sources */,
 				3720258E224F225200E25AA4 /* POPPropertyAnimation.mm in Sources */,
-				752A1B00224E847C004B4B31 /* ZDDFistListCellNode.m in Sources */,
-				752A1ADC224E83F7004B4B31 /* YMHLVideoFlowViewController.m in Sources */,
+				752A1B00224E847C004B4B31 /* HaHaFistListCellNode.m in Sources */,
 				37202588224F225200E25AA4 /* POPCustomAnimation.mm in Sources */,
 				372AF37D22522E590023EFAB /* HXPhotoViewTransition.m in Sources */,
 				753BD057224E6B66003C4424 /* main.m in Sources */,
 				372AF37A22522E590023EFAB /* HXPhotoInteractiveTransition.m in Sources */,
-				752A1AC3224E8377004B4B31 /* TEMPAppDelegate+OpenURL.m in Sources */,
+				752A1AC3224E8377004B4B31 /* HaHaAppDelegate+OpenURL.m in Sources */,
 				4A92296322543A9400B9589A /* PersonDuanziController.m in Sources */,
-				372025A9224F57E400E25AA4 /* ZDDLogInController.m in Sources */,
+				372025A9224F57E400E25AA4 /* HaHaLogInController.m in Sources */,
 				372AF39F22522E590023EFAB /* HXCircleProgressView.m in Sources */,
-				752A1AE4224E8400004B4B31 /* YMHLVideoflowLayout.m in Sources */,
 				372AF38F22522E590023EFAB /* HXPhotoPreviewViewController.m in Sources */,
-				752A1AE5224E8400004B4B31 /* YMHLVideoModel.m in Sources */,
 				752A1A9B224E7FD2004B4B31 /* ZDDNotificationName.m in Sources */,
-				37DD96792251E53F00489BE6 /* ZDDCommentListController.m in Sources */,
+				37DD96792251E53F00489BE6 /* HaHaCommentListController.m in Sources */,
 				372AF38822522E590023EFAB /* UIButton+HXExtension.m in Sources */,
 				372AF37C22522E590023EFAB /* HXPhotoPersentInteractiveTransition.m in Sources */,
 				37202586224F225200E25AA4 /* POPMath.mm in Sources */,
 				37202587224F225200E25AA4 /* POPSpringAnimation.mm in Sources */,
-				755AEA532250E404008E0F33 /* XJToolBarView.m in Sources */,
 				755AEA3C22509A1A008E0F33 /* NSString+YMHLAdditions.m in Sources */,
 				751CA545226C98C50053583A /* MODropAlertView.m in Sources */,
 				752A1A8A224E7F7F004B4B31 /* NSString+Regex.m in Sources */,
-				7521BA22224F994000292099 /* YMHLBaseViewController.m in Sources */,
 				37202593224F225200E25AA4 /* POPAnimator.mm in Sources */,
-				755AEA5F2250E45B008E0F33 /* UIView+FrameUtilty.m in Sources */,
 				752A1ACD224E83B5004B4B31 /* TEMPSDKManager.m in Sources */,
-				372025A4224F51DA00E25AA4 /* ZDDCommentModel.m in Sources */,
+				372025A4224F51DA00E25AA4 /* HaHaCommentModel.m in Sources */,
 				37202598224F225200E25AA4 /* POPVector.mm in Sources */,
 				372AF38722522E590023EFAB /* NSTimer+HXExtension.m in Sources */,
-				37DD967C2251F59300489BE6 /* ZDDPostDyController.m in Sources */,
+				37DD967C2251F59300489BE6 /* HaHaPostDyController.m in Sources */,
 				751CA55A226C99610053583A /* QDCommonGridViewController.m in Sources */,
 				37202592224F225200E25AA4 /* TransformationMatrix.mm in Sources */,
 				372AF3A222522E590023EFAB /* HXVideoEditViewController.m in Sources */,
@@ -1459,14 +1208,12 @@
 				370F19572252FCA5000850BF /* ZDDPhotoBrowseView.m in Sources */,
 				372AF37822522E590023EFAB /* HXPhoto3DTouchViewController.m in Sources */,
 				3720259D224F491900E25AA4 /* GODUserModel.m in Sources */,
-				755AEA512250E404008E0F33 /* XJMulitFuctionView.m in Sources */,
-				755AEA662250F28E008E0F33 /* ZTWButton.m in Sources */,
 				37202595224F225200E25AA4 /* POPAnimationRuntime.mm in Sources */,
-				752A1AC5224E8377004B4B31 /* TEMPAppDelegate+BackgroundTask.m in Sources */,
+				752A1AC5224E8377004B4B31 /* HaHaAppDelegate+BackgroundTask.m in Sources */,
 				37202584224F225200E25AA4 /* POPCGUtils.mm in Sources */,
 				372AF37922522E590023EFAB /* HXPhotoEditTransition.m in Sources */,
 				372AF37B22522E590023EFAB /* HXPhotoViewPresentTransition.m in Sources */,
-				752A1AD8224E83DC004B4B31 /* ZDDBaseViewController.m in Sources */,
+				752A1AD8224E83DC004B4B31 /* HaHaBaseViewController.m in Sources */,
 				372AF38B22522E590023EFAB /* HXPhotoModel.m in Sources */,
 				372AF37422522E590023EFAB /* HXCustomCameraViewController.m in Sources */,
 				372AF39922522E590023EFAB /* HXCustomNavigationController.m in Sources */,
@@ -1474,59 +1221,45 @@
 				372AF38422522E590023EFAB /* UIView+HXExtension.m in Sources */,
 				372AF39722522E590023EFAB /* HXPhotoView.m in Sources */,
 				37202596224F225200E25AA4 /* POPAnimationEvent.mm in Sources */,
-				752A1AB1224E8011004B4B31 /* Foundation+Log.m in Sources */,
 				752A1AA2224E7FEC004B4B31 /* UIColor+ZDDColor.m in Sources */,
 				372AF38D22522E590023EFAB /* HXAlbumListViewController.m in Sources */,
 				751CA558226C99610053583A /* QDCommonViewController.m in Sources */,
 				752A1A8B224E7F7F004B4B31 /* NSMutableAttributedString+Chain.m in Sources */,
 				751CA534226C83FB0053583A /* QQKK1ViewController.m in Sources */,
-				752A1AEB224E8433004B4B31 /* ZDDThridController.m in Sources */,
+				752A1AEB224E8433004B4B31 /* HaHaThridController.m in Sources */,
 				3720259E224F491900E25AA4 /* GODUserTool.m in Sources */,
 				751CA55B226C99610053583A /* QDTabBarViewController.m in Sources */,
 				3720258A224F225200E25AA4 /* POPAnimationExtras.mm in Sources */,
 				372AF38C22522E590023EFAB /* HXPhotoCommon.m in Sources */,
-				755AEA4F2250E404008E0F33 /* XJEmojePreView.m in Sources */,
-				755AEA3922507680008E0F33 /* YMHLSubcommentTableViewCell.m in Sources */,
-				752A1ABC224E8359004B4B31 /* GODWebViewController.m in Sources */,
 				4A0D7A4722535F5B00D9F466 /* YMHLSecondTableViewCell.m in Sources */,
-				752A1AE3224E8400004B4B31 /* YMHLVideoCollectionViewCell.m in Sources */,
 				372AF38A22522E590023EFAB /* HXCollectionView.m in Sources */,
 				752A1A97224E7FC3004B4B31 /* TEMPKeyConfiguration.m in Sources */,
 				372AF39A22522E590023EFAB /* HXPhotoSubViewCell.m in Sources */,
 				752A1A89224E7F7F004B4B31 /* NSMutableDictionary+Attributes.m in Sources */,
 				372AF38222522E590023EFAB /* UIImageView+HXExtension.m in Sources */,
-				7521BA2922505FCA00292099 /* YMHLVideoDetailViewController.m in Sources */,
 				751CA55C226C99610053583A /* QDNavigationController.m in Sources */,
 				751CA546226C98C50053583A /* UIImage+ImageEffects.m in Sources */,
-				7521BA31225074F200292099 /* YMHLCommentTableViewCell.m in Sources */,
-				752A1B01224E847C004B4B31 /* ZDDCommentLIstView.m in Sources */,
+				752A1B01224E847C004B4B31 /* HaHaCommentLIstView.m in Sources */,
 				372AF39022522E590023EFAB /* HXPhotoTools.m in Sources */,
-				3746913122603E2500A6DFCF /* ZDDFirstBaseController.m in Sources */,
-				372025A1224F49AF00E25AA4 /* ZDDDuanziModel.m in Sources */,
-				752A1AC4224E8377004B4B31 /* TEMPAppDelegate+PushService.m in Sources */,
-				752A1AB4224E8011004B4B31 /* NSSet+HYBUnicodeReadable.m in Sources */,
-				37AC82A3225378B30081478E /* ZDDRetryView.m in Sources */,
+				3746913122603E2500A6DFCF /* HaHaFirstBaseController.m in Sources */,
+				372025A1224F49AF00E25AA4 /* HaHaDuanziModel.m in Sources */,
+				752A1AC4224E8377004B4B31 /* HaHaAppDelegate+PushService.m in Sources */,
+				37AC82A3225378B30081478E /* HaHaRetryView.m in Sources */,
 				751CA537226C847B0053583A /* QQKK12ViewController.m in Sources */,
-				752A1AB3224E8011004B4B31 /* NSArray+HYBUnicodeReadable.m in Sources */,
 				372AF39422522E590023EFAB /* HXCustomCameraController.m in Sources */,
 				372AF39D22522E590023EFAB /* HXCustomPreviewView.m in Sources */,
 				372AF39822522E590023EFAB /* HXFullScreenCameraPlayView.m in Sources */,
-				7521BA1E224F0D7F00292099 /* YMHLUserModel.m in Sources */,
 				372AF39122522E590023EFAB /* HXPhotoViewController.m in Sources */,
-				752A1AA8224E7FF6004B4B31 /* UIImage+Blur.m in Sources */,
-				752A1AD7224E83DC004B4B31 /* ZDDNavController.m in Sources */,
-				3720254A224F0B1E00E25AA4 /* ZDDCommentCellNode.m in Sources */,
+				752A1AD7224E83DC004B4B31 /* HaHaNavController.m in Sources */,
+				3720254A224F0B1E00E25AA4 /* HaHaCommentCellNode.m in Sources */,
 				37202591224F225200E25AA4 /* POPBasicAnimation.mm in Sources */,
 				752A1A9F224E7FE0004B4B31 /* ZDDThemeConfiguration.m in Sources */,
 				372AF39522522E590023EFAB /* HXCustomCollectionReusableView.m in Sources */,
-				755AEA542250E404008E0F33 /* XJFaceEmojeView.m in Sources */,
-				752A1AD6224E83DC004B4B31 /* ZDDTabBarController.m in Sources */,
-				7521BA2E2250714E00292099 /* YMHLSubCommentsModel.m in Sources */,
+				752A1AD6224E83DC004B4B31 /* HaHaTabBarController.m in Sources */,
 				372AF3A122522E590023EFAB /* HXDatePhotoToolManager.m in Sources */,
 				4A922966225443DF00B9589A /* MHLGraphTextViewController.m in Sources */,
 				752A1A87224E7F7F004B4B31 /* UIView+LH.m in Sources */,
 				372AF37E22522E590023EFAB /* NSString+HXExtension.m in Sources */,
-				755AEA622250E45B008E0F33 /* UIColor+ZS.m in Sources */,
 				372AF38522522E590023EFAB /* UIImage+HXExtension.m in Sources */,
 				372AF37622522E590023EFAB /* HXPhotoConfiguration.m in Sources */,
 				752A1A8C224E7F7F004B4B31 /* UIColor+CustomColors.m in Sources */,
@@ -1537,21 +1270,19 @@
 				372AF38122522E590023EFAB /* NSBundle+HXPhotoPicker.m in Sources */,
 				751CA557226C99610053583A /* QDCommonGroupListViewController.m in Sources */,
 				372AF39222522E590023EFAB /* HXPhotoViewFlowLayout.m in Sources */,
-				4A922969225443E900B9589A /* MHLVideoTextViewController.m in Sources */,
 				372AF3A022522E590023EFAB /* HXPhotoEditViewController.m in Sources */,
 				37202597224F225200E25AA4 /* POPLayerExtras.mm in Sources */,
 				751CA56A226C9A500053583A /* QDThemeManager.m in Sources */,
 				372AF37F22522E590023EFAB /* UIViewController+HXExtension.m in Sources */,
-				752A1AB2224E8011004B4B31 /* NSDictionary+HYBUnicodeReadable.m in Sources */,
 				37202590224F225200E25AA4 /* POPGeometry.mm in Sources */,
 				752A1ACA224E83A8004B4B31 /* TEMPLaunchManager.m in Sources */,
-				37DD96762251E0A600489BE6 /* ZDDSecondListCellNode.m in Sources */,
+				37DD96762251E0A600489BE6 /* HaHaSecondListCellNode.m in Sources */,
 				751CA559226C99610053583A /* QDCommonTableViewController.m in Sources */,
-				752A1AEE224E8441004B4B31 /* ZDDSecondController.m in Sources */,
+				752A1AEE224E8441004B4B31 /* HaHaSecondController.m in Sources */,
 				37202589224F225200E25AA4 /* POPAnimationTracer.mm in Sources */,
 				372AF39322522E590023EFAB /* HXPhotoManager.m in Sources */,
-				752A1AF5224E8462004B4B31 /* ZDDFirstController.m in Sources */,
-				753BD049224E6B65003C4424 /* TEMPAppDelegate.m in Sources */,
+				752A1AF5224E8462004B4B31 /* HaHaFirstController.m in Sources */,
+				753BD049224E6B65003C4424 /* HaHaAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

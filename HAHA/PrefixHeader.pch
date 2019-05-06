@@ -2,8 +2,8 @@
 //  PrefixHeader.pch
 //  HAHA
 //
-//  Created by ZDD on 2019/3/30.
-//  Copyright © 2019 ZDD. All rights reserved.
+//  Created by HaHa on 2019/3/30.
+//  Copyright © 2019 HaHa. All rights reserved.
 //
 
 #ifndef PrefixHeader_pch
@@ -22,8 +22,7 @@
 #import "TEMPMacro.h"
 #import "NSMutableAttributedString+Chain.h"
 #import "GODUserTool.h"
-#import "ZDDLogInController.h"
-#import "YMHLBaseViewController.h"
+#import "HaHaLogInController.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <Masonry.h>
 #import <UIColor+QMUI.h>
@@ -34,6 +33,6 @@
 #import "UIColor+ZDDColor.h"
 #import "ZDDThemeConfiguration.h"
 #import "UIView+LH.h"
-#import "ZDDBaseViewController.h"
+#import "HaHaBaseViewController.h"
 
 #endif /* PrefixHeader_pch */

@@ -10,11 +10,9 @@
 #import "UIColor+ZDDColor.h"
 
 #import "ZDDThemeConfiguration.h"
-#import "ZDDTabBarController.h"
+#import "HaHaTabBarController.h"
 
 #import "UIColor+CustomColors.h"
-#import "GODWebViewController.h"
-#import "YMHLVideoFlowViewController.h"
 
 @implementation TEMPLaunchManager
 + (instancetype)defaultManager {
@@ -56,7 +54,7 @@
     }
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-    ZDDTabBarController *tabBarController = [[ZDDTabBarController alloc] initWithCenterButton:NO];
+    HaHaTabBarController *tabBarController = [[HaHaTabBarController alloc] init];
     window.rootViewController = tabBarController;
     window.backgroundColor = [UIColor whiteColor];
     [window makeKeyAndVisible];

@@ -3,17 +3,17 @@
 //  HAHA
 //
 //  Created by 张冬冬 on 2019/4/3.
-//  Copyright © 2019 ZDD. All rights reserved.
+//  Copyright © 2019 HaHa. All rights reserved.
 //
 
 #import "PersonDuanziController.h"
-#import "ZDDSecondListCellNode.h"
-#import "ZDDCommentListController.h"
-#import "ZDDThridController.h"
+#import "HaHaSecondListCellNode.h"
+#import "HaHaCommentListController.h"
+#import "HaHaThridController.h"
 
 @interface PersonDuanziController ()
-<ZDDSecondListCellNodeDelegate>
-@property (nonatomic, strong) NSMutableArray <ZDDDuanziModel *>*dataArr;
+<HaHaSecondListCellNodeDelegate>
+@property (nonatomic, strong) NSMutableArray <HaHaDuanziModel *>*dataArr;
 @end
 
 @implementation PersonDuanziController
@@ -23,12 +23,12 @@
     [self addTableNode];
     self.showRefrehHeader = YES;
     [self headerRefresh];
-    self.navigationItem.title = @"动态";
+    self.navigationItem.title = @"我的动态";
 }
 
 //点击头像
 - (void)clickIconWithModel:(GODUserModel *)model {
-    ZDDThridController *t = [ZDDThridController new];
+    HaHaThridController *t = [HaHaThridController new];
     t.type = 1;
     t.user_id = model.user_id;
     [self.navigationController pushViewController:t animated:YES];
@@ -46,7 +46,7 @@
         [self endHeaderRefresh];
         if ([result[@"resultCode"] isEqualToString:@"0"]) {
             [self.dataArr removeAllObjects];
-            [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDDuanziModel.class json:result[@"data"]]];
+            [self.dataArr addObjectsFromArray:[NSArray yy_modelArrayWithClass:HaHaDuanziModel.class json:result[@"data"]]];
             
             if (self.dataArr.count) {
                 [self.tableNode reloadData];
@@ -71,7 +71,7 @@
 
 - (ASCellNodeBlock)tableNode:(ASTableNode *)tableNode nodeBlockForRowAtIndexPath:(NSIndexPath *)indexPath {
     return ^ASCellNode *(){
-        ZDDSecondListCellNode *node = [[ZDDSecondListCellNode alloc] initWithModel:self.dataArr[indexPath.row]];
+        HaHaSecondListCellNode *node = [[HaHaSecondListCellNode alloc] initWithModel:self.dataArr[indexPath.row]];
         node.delegate = self;
         return node;
     };
@@ -79,19 +79,19 @@
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([GODUserTool isLogin]) {
-        ZDDDuanziModel *model = self.dataArr[indexPath.row];
-        ZDDCommentListController *vc = [ZDDCommentListController new];
+        HaHaDuanziModel *model = self.dataArr[indexPath.row];
+        HaHaCommentListController *vc = [HaHaCommentListController new];
         [self.navigationController pushViewController:vc animated:YES];
         vc.model = model;
     }else {
-        ZDDLogInController *vc = [ZDDLogInController new];
+        HaHaLogInController *vc = [HaHaLogInController new];
         [self.navigationController presentViewController:vc animated:YES completion:nil] ;
     }
     
 }
 
 #pragma mark - 懒加载
-- (NSMutableArray <ZDDDuanziModel *>*)dataArr {
+- (NSMutableArray <HaHaDuanziModel *>*)dataArr {
     if (!_dataArr) {
         _dataArr = [NSMutableArray array];
     }

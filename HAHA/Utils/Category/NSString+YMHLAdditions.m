@@ -3,8 +3,8 @@
 //  NSString+YMHLAdditions.m
 //  HAHA
 //
-//  Created by ZDD on 2019/3/31.
-//  Copyright © 2019 ZDD. All rights reserved.
+//  Created by HaHa on 2019/3/31.
+//  Copyright © 2019 HaHa. All rights reserved.
 //
 
 #import "NSString+YMHLAdditions.h"
